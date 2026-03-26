@@ -1,0 +1,11 @@
+
+    
+    
+    truncate table "privatbank"."main"."loan_repayments";
+    -- dbt seed --
+    
+          COPY "privatbank"."main"."loan_repayments" FROM 'D:\DE_HW_3\privatbank_analytics\seeds\loan_repayments.csv' (FORMAT CSV, HEADER TRUE, DELIMITER ',')
+        
+
+;
+  

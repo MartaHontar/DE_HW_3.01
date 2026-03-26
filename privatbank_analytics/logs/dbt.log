@@ -1,0 +1,2037 @@
+[0m22:36:54.138868 [debug] [MainThread]: Got an exception trying to initialize tracking
+
+
+============================== 22:36:54.229738 | 4ddc9ce6-134f-48a0-9a9b-34515c4d3087 ==============================
+[0m22:36:54.229738 [info ] [MainThread]: Running with dbt=1.11.7
+[0m22:36:54.231439 [debug] [MainThread]: running dbt with arguments {'partial_parse': 'True', 'write_json': 'True', 'send_anonymous_usage_stats': 'True', 'version_check': 'True', 'cache_selected_only': 'False', 'target_path': 'None', 'warn_error': 'None', 'invocation_command': 'dbt seed', 'log_format': 'default', 'use_colors': 'True', 'introspect': 'True', 'debug': 'False', 'printer_width': '80', 'fail_fast': 'False', 'no_print': 'None', 'quiet': 'False', 'log_cache_events': 'False', 'empty': 'None', 'use_experimental_parser': 'False', 'log_path': 'D:\\DE_HW_3\\privatbank_analytics\\logs', 'indirect_selection': 'eager', 'profiles_dir': 'C:\\Users\\Admin\\.dbt', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'static_parser': 'True'}
+[0m22:36:54.951501 [info ] [MainThread]: Registered adapter: duckdb=1.10.1
+[0m22:36:55.339784 [debug] [MainThread]: checksum: b80718358155fc17c3559352095564dd56ada1cc1a1c0ef2e62c857e71583775, vars: {}, profile: , target: , version: 1.11.7
+[0m22:36:55.342722 [info ] [MainThread]: Unable to do partial parsing because saved manifest not found. Starting full parse.
+[0m22:36:58.859727 [debug] [MainThread]: Wrote artifact WritableManifest to D:\DE_HW_3\privatbank_analytics\target\manifest.json
+[0m22:36:58.866291 [debug] [MainThread]: Wrote artifact SemanticManifest to D:\DE_HW_3\privatbank_analytics\target\semantic_manifest.json
+[0m22:36:58.921703 [info ] [MainThread]: Found 20 models, 7 seeds, 478 macros
+[0m22:36:58.926180 [info ] [MainThread]: 
+[0m22:36:58.927498 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m22:36:58.928751 [info ] [MainThread]: 
+[0m22:36:58.930942 [debug] [MainThread]: Acquiring new duckdb connection 'master'
+[0m22:36:58.943941 [debug] [ThreadPool]: Acquiring new duckdb connection 'list_privatbank'
+[0m22:36:59.285296 [debug] [ThreadPool]: Using duckdb connection "list_privatbank"
+[0m22:36:59.285980 [debug] [ThreadPool]: On list_privatbank: /* {"app": "dbt", "dbt_version": "1.11.7", "profile_name": "privatbank_duckdb", "target_name": "dev", "connection_name": "list_privatbank"} */
+
+    
+    select schema_name
+    from system.information_schema.schemata
+    
+    where lower(catalog_name) = '"privatbank"'
+    
+  
+  
+[0m22:36:59.286511 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m22:36:59.341620 [debug] [ThreadPool]: SQL status: OK in 0.055 seconds
+[0m22:36:59.344303 [debug] [ThreadPool]: On list_privatbank: Close
+[0m22:36:59.345602 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_privatbank, now create_privatbank_main)
+[0m22:36:59.346406 [debug] [ThreadPool]: Creating schema "database: "privatbank"
+schema: "main"
+"
+[0m22:36:59.358149 [debug] [ThreadPool]: Using duckdb connection "create_privatbank_main"
+[0m22:36:59.358821 [debug] [ThreadPool]: On create_privatbank_main: /* {"app": "dbt", "dbt_version": "1.11.7", "profile_name": "privatbank_duckdb", "target_name": "dev", "connection_name": "create_privatbank_main"} */
+
+    
+        select type from duckdb_databases()
+        where lower(database_name)='privatbank'
+        and type='sqlite'
+    
+  
+[0m22:36:59.359340 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m22:36:59.361360 [debug] [ThreadPool]: SQL status: OK in 0.002 seconds
+[0m22:36:59.363699 [debug] [ThreadPool]: Using duckdb connection "create_privatbank_main"
+[0m22:36:59.364288 [debug] [ThreadPool]: On create_privatbank_main: BEGIN
+[0m22:36:59.365203 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m22:36:59.365750 [debug] [ThreadPool]: Using duckdb connection "create_privatbank_main"
+[0m22:36:59.366257 [debug] [ThreadPool]: On create_privatbank_main: /* {"app": "dbt", "dbt_version": "1.11.7", "profile_name": "privatbank_duckdb", "target_name": "dev", "connection_name": "create_privatbank_main"} */
+
+    
+    
+        create schema if not exists "privatbank"."main"
+    
+[0m22:36:59.367663 [debug] [ThreadPool]: SQL status: OK in 0.001 seconds
+[0m22:36:59.369263 [debug] [ThreadPool]: On create_privatbank_main: COMMIT
+[0m22:36:59.369835 [debug] [ThreadPool]: Using duckdb connection "create_privatbank_main"
+[0m22:36:59.370339 [debug] [ThreadPool]: On create_privatbank_main: COMMIT
+[0m22:36:59.371271 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m22:36:59.371867 [debug] [ThreadPool]: On create_privatbank_main: Close
+[0m22:36:59.377479 [debug] [ThreadPool]: Acquiring new duckdb connection 'list_privatbank_main'
+[0m22:36:59.388275 [debug] [ThreadPool]: Using duckdb connection "list_privatbank_main"
+[0m22:36:59.388916 [debug] [ThreadPool]: On list_privatbank_main: BEGIN
+[0m22:36:59.389404 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m22:36:59.390442 [debug] [ThreadPool]: SQL status: OK in 0.001 seconds
+[0m22:36:59.390980 [debug] [ThreadPool]: Using duckdb connection "list_privatbank_main"
+[0m22:36:59.391503 [debug] [ThreadPool]: On list_privatbank_main: /* {"app": "dbt", "dbt_version": "1.11.7", "profile_name": "privatbank_duckdb", "target_name": "dev", "connection_name": "list_privatbank_main"} */
+select
+      'privatbank' as database,
+      table_name as name,
+      table_schema as schema,
+      CASE table_type
+        WHEN 'BASE TABLE' THEN 'table'
+        WHEN 'VIEW' THEN 'view'
+        WHEN 'LOCAL TEMPORARY' THEN 'table'
+        END as type
+    from system.information_schema.tables
+    where lower(table_schema) = 'main'
+    and lower(table_catalog) = 'privatbank'
+  
+[0m22:36:59.421764 [debug] [ThreadPool]: SQL status: OK in 0.030 seconds
+[0m22:36:59.424001 [debug] [ThreadPool]: On list_privatbank_main: ROLLBACK
+[0m22:36:59.427287 [debug] [ThreadPool]: Failed to rollback 'list_privatbank_main'
+[0m22:36:59.427900 [debug] [ThreadPool]: On list_privatbank_main: Close
+[0m22:36:59.429620 [debug] [MainThread]: Using duckdb connection "master"
+[0m22:36:59.430659 [debug] [MainThread]: On master: BEGIN
+[0m22:36:59.431503 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m22:36:59.433272 [debug] [MainThread]: SQL status: OK in 0.002 seconds
+[0m22:36:59.434205 [debug] [MainThread]: On master: COMMIT
+[0m22:36:59.435076 [debug] [MainThread]: Using duckdb connection "master"
+[0m22:36:59.435918 [debug] [MainThread]: On master: COMMIT
+[0m22:36:59.437287 [debug] [MainThread]: SQL status: OK in 0.001 seconds
+[0m22:36:59.438193 [debug] [MainThread]: On master: Close
+[0m22:36:59.448452 [debug] [Thread-1 (]: Began running node seed.privatbank_analytics.accounts
+[0m22:36:59.449534 [debug] [Thread-4 (]: Began running node seed.privatbank_analytics.fraud_alerts
+[0m22:36:59.450434 [debug] [Thread-2 (]: Began running node seed.privatbank_analytics.customers
+[0m22:36:59.451604 [debug] [Thread-3 (]: Began running node seed.privatbank_analytics.exchange_rates
+[0m22:36:59.452799 [info ] [Thread-1 (]: 1 of 7 START seed file main.accounts ........................................... [RUN]
+[0m22:36:59.453851 [info ] [Thread-4 (]: 4 of 7 START seed file main.fraud_alerts ....................................... [RUN]
+[0m22:36:59.457882 [debug] [Thread-1 (]: Acquiring new duckdb connection 'seed.privatbank_analytics.accounts'
+[0m22:36:59.458844 [debug] [Thread-4 (]: Acquiring new duckdb connection 'seed.privatbank_analytics.fraud_alerts'
+[0m22:36:59.455222 [info ] [Thread-2 (]: 2 of 7 START seed file main.customers .......................................... [RUN]
+[0m22:36:59.459968 [debug] [Thread-1 (]: Began compiling node seed.privatbank_analytics.accounts
+[0m22:36:59.456551 [info ] [Thread-3 (]: 3 of 7 START seed file main.exchange_rates ..................................... [RUN]
+[0m22:36:59.461327 [debug] [Thread-4 (]: Began compiling node seed.privatbank_analytics.fraud_alerts
+[0m22:36:59.462553 [debug] [Thread-2 (]: Acquiring new duckdb connection 'seed.privatbank_analytics.customers'
+[0m22:36:59.463571 [debug] [Thread-1 (]: Began executing node seed.privatbank_analytics.accounts
+[0m22:36:59.465049 [debug] [Thread-3 (]: Acquiring new duckdb connection 'seed.privatbank_analytics.exchange_rates'
+[0m22:36:59.466238 [debug] [Thread-4 (]: Began executing node seed.privatbank_analytics.fraud_alerts
+[0m22:36:59.467317 [debug] [Thread-2 (]: Began compiling node seed.privatbank_analytics.customers
+[0m22:36:59.471475 [debug] [Thread-3 (]: Began compiling node seed.privatbank_analytics.exchange_rates
+[0m22:36:59.512729 [debug] [Thread-2 (]: Began executing node seed.privatbank_analytics.customers
+[0m22:36:59.516441 [debug] [Thread-3 (]: Began executing node seed.privatbank_analytics.exchange_rates
+[0m22:36:59.558997 [debug] [Thread-4 (]: Using duckdb connection "seed.privatbank_analytics.fraud_alerts"
+[0m22:36:59.559800 [debug] [Thread-4 (]: On seed.privatbank_analytics.fraud_alerts: BEGIN
+[0m22:36:59.560437 [debug] [Thread-4 (]: Opening a new connection, currently in state init
+[0m22:36:59.570776 [debug] [Thread-1 (]: Using duckdb connection "seed.privatbank_analytics.accounts"
+[0m22:36:59.571541 [debug] [Thread-1 (]: On seed.privatbank_analytics.accounts: BEGIN
+[0m22:36:59.572543 [debug] [Thread-1 (]: Opening a new connection, currently in state init
+[0m22:36:59.580718 [debug] [Thread-4 (]: SQL status: OK in 0.020 seconds
+[0m22:36:59.582587 [debug] [Thread-2 (]: Using duckdb connection "seed.privatbank_analytics.customers"
+[0m22:36:59.584326 [debug] [Thread-3 (]: Using duckdb connection "seed.privatbank_analytics.exchange_rates"
+[0m22:36:59.585038 [debug] [Thread-4 (]: Using duckdb connection "seed.privatbank_analytics.fraud_alerts"
+[0m22:36:59.585816 [debug] [Thread-1 (]: SQL status: OK in 0.013 seconds
+[0m22:36:59.586746 [debug] [Thread-2 (]: On seed.privatbank_analytics.customers: BEGIN
+[0m22:36:59.587842 [debug] [Thread-3 (]: On seed.privatbank_analytics.exchange_rates: BEGIN
+[0m22:36:59.588509 [debug] [Thread-4 (]: On seed.privatbank_analytics.fraud_alerts: /* {"app": "dbt", "dbt_version": "1.11.7", "profile_name": "privatbank_duckdb", "target_name": "dev", "node_id": "seed.privatbank_analytics.fraud_alerts"} */
+
+    create table "privatbank"."main"."fraud_alerts" ("alert_id,transaction_id,account_id,alert_date,alert_type,risk_score,investigation_status,is_confirmed_fraud,fraud_type,loss_amount" text)
+  
+[0m22:36:59.589428 [debug] [Thread-1 (]: Using duckdb connection "seed.privatbank_analytics.accounts"
+[0m22:36:59.593453 [debug] [Thread-1 (]: On seed.privatbank_analytics.accounts: /* {"app": "dbt", "dbt_version": "1.11.7", "profile_name": "privatbank_duckdb", "target_name": "dev", "node_id": "seed.privatbank_analytics.accounts"} */
+
+    create table "privatbank"."main"."accounts" ("account_id,customer_id,account_type,currency,opened_date,status,credit_limit,current_balance,overdraft_limit" text)
+  
+[0m22:36:59.590525 [debug] [Thread-2 (]: Opening a new connection, currently in state init
+[0m22:36:59.591654 [debug] [Thread-3 (]: Opening a new connection, currently in state init
+[0m22:36:59.595559 [debug] [Thread-2 (]: SQL status: OK in 0.005 seconds
+[0m22:36:59.596375 [debug] [Thread-2 (]: Using duckdb connection "seed.privatbank_analytics.customers"
+[0m22:36:59.597212 [debug] [Thread-2 (]: On seed.privatbank_analytics.customers: /* {"app": "dbt", "dbt_version": "1.11.7", "profile_name": "privatbank_duckdb", "target_name": "dev", "node_id": "seed.privatbank_analytics.customers"} */
+
+    create table "privatbank"."main"."customers" ("customer_id" text,"first_name" text,"last_name" text,"date_of_birth" date,"gender" text,"phone" integer,"email" text,"city" text,"region" text,"registration_date" date,"customer_segment" text,"credit_score" integer,"is_active" boolean)
+  
+[0m22:36:59.598352 [debug] [Thread-3 (]: SQL status: OK in 0.007 seconds
+[0m22:36:59.599168 [debug] [Thread-3 (]: Using duckdb connection "seed.privatbank_analytics.exchange_rates"
+[0m22:36:59.599944 [debug] [Thread-3 (]: On seed.privatbank_analytics.exchange_rates: /* {"app": "dbt", "dbt_version": "1.11.7", "profile_name": "privatbank_duckdb", "target_name": "dev", "node_id": "seed.privatbank_analytics.exchange_rates"} */
+
+    create table "privatbank"."main"."exchange_rates" ("rate_id,rate_date,currency_from,currency_to,rate" text)
+  
+[0m22:36:59.618991 [debug] [Thread-3 (]: SQL status: OK in 0.018 seconds
+[0m22:36:59.619895 [debug] [Thread-1 (]: SQL status: OK in 0.026 seconds
+[0m22:36:59.620695 [debug] [Thread-2 (]: SQL status: OK in 0.023 seconds
+[0m22:36:59.621484 [debug] [Thread-4 (]: SQL status: OK in 0.029 seconds
+[0m22:36:59.645282 [debug] [Thread-3 (]: Using duckdb connection "seed.privatbank_analytics.exchange_rates"
+[0m22:36:59.648622 [debug] [Thread-1 (]: Using duckdb connection "seed.privatbank_analytics.accounts"
+[0m22:36:59.651249 [debug] [Thread-2 (]: Using duckdb connection "seed.privatbank_analytics.customers"
+[0m22:36:59.653559 [debug] [Thread-4 (]: Using duckdb connection "seed.privatbank_analytics.fraud_alerts"
+[0m22:36:59.654386 [debug] [Thread-3 (]: On seed.privatbank_analytics.exchange_rates: 
+          COPY "privatbank"."main"."exchange_rates" FROM 'D:\DE_HW_3\privatbank_analytics\seeds\exchange_rates.csv' (FORMAT CSV, HEADER TRUE, DELIMITER ',')
+        ...
+[0m22:36:59.655157 [debug] [Thread-1 (]: On seed.privatbank_analytics.accounts: 
+          COPY "privatbank"."main"."accounts" FROM 'D:\DE_HW_3\privatbank_analytics\seeds\accounts.csv' (FORMAT CSV, HEADER TRUE, DELIMITER ',')
+        ...
+[0m22:36:59.656025 [debug] [Thread-2 (]: On seed.privatbank_analytics.customers: 
+          COPY "privatbank"."main"."customers" FROM 'D:\DE_HW_3\privatbank_analytics\seeds\customers.csv' (FORMAT CSV, HEADER TRUE, DELIMITER ',')
+        ...
+[0m22:36:59.656747 [debug] [Thread-4 (]: On seed.privatbank_analytics.fraud_alerts: 
+          COPY "privatbank"."main"."fraud_alerts" FROM 'D:\DE_HW_3\privatbank_analytics\seeds\fraud_alerts.csv' (FORMAT CSV, HEADER TRUE, DELIMITER ',')
+        ...
+[0m22:36:59.673666 [debug] [Thread-1 (]: SQL status: OK in 0.016 seconds
+[0m22:36:59.690518 [debug] [Thread-3 (]: SQL status: OK in 0.033 seconds
+[0m22:36:59.691878 [debug] [Thread-4 (]: SQL status: OK in 0.023 seconds
+[0m22:36:59.698282 [debug] [Thread-1 (]: Writing runtime SQL for node "seed.privatbank_analytics.accounts"
+[0m22:36:59.699714 [debug] [Thread-3 (]: Writing runtime SQL for node "seed.privatbank_analytics.exchange_rates"
+[0m22:36:59.701446 [debug] [Thread-4 (]: Writing runtime SQL for node "seed.privatbank_analytics.fraud_alerts"
+[0m22:36:59.705667 [debug] [Thread-2 (]: DuckDB adapter: duckdb error: Conversion Error: CSV Error on Line: 2
+Original Line: C001,Oleksandr,Kovalenko,1985-03-12,M,+380501234567,o.kovalenko@gmail.com,Kyiv,Kyiv,2018-01-15,PREMIUM,780,TRUE
+Error when converting column "phone". Could not convert string "+380501234567" to 'INTEGER'
+
+Column phone is being converted as type INTEGER
+This type was either manually set or derived from an existing table. Select a different type to correctly parse this column.
+* Check whether the null string value is set correctly (e.g., nullstr = 'N/A')
+
+  file = D:\DE_HW_3\privatbank_analytics\seeds\customers.csv
+  delimiter = , (Set By User)
+  quote = (empty) (Auto-Detected)
+  escape = (empty) (Auto-Detected)
+  new_line = \r\n (Auto-Detected)
+  header = true (Set By User)
+  skip_rows = 0 (Auto-Detected)
+  comment = (empty) (Auto-Detected)
+  strict_mode = true (Auto-Detected)
+  date_format =  (Auto-Detected)
+  timestamp_format =  (Auto-Detected)
+  null_padding = 0
+  sample_size = 20480
+  ignore_errors = false
+  all_varchar = 0
+The Column types set by the user do not match the ones found by the sniffer. 
+Column at position: 5 Set type: INTEGER Sniffed type: VARCHAR
+Column at position: 11 Set type: INTEGER Sniffed type: BIGINT
+
+
+[0m22:36:59.707093 [debug] [Thread-2 (]: DuckDB adapter: Error running SQL: 
+          COPY "privatbank"."main"."customers" FROM 'D:\DE_HW_3\privatbank_analytics\seeds\customers.csv' (FORMAT CSV, HEADER TRUE, DELIMITER ',')
+        
+[0m22:36:59.708615 [debug] [Thread-2 (]: DuckDB adapter: Rolling back transaction.
+[0m22:36:59.710046 [debug] [Thread-2 (]: On seed.privatbank_analytics.customers: ROLLBACK
+[0m22:36:59.746580 [debug] [Thread-1 (]: On seed.privatbank_analytics.accounts: COMMIT
+[0m22:36:59.753894 [debug] [Thread-3 (]: On seed.privatbank_analytics.exchange_rates: COMMIT
+[0m22:36:59.747380 [debug] [Thread-1 (]: Using duckdb connection "seed.privatbank_analytics.accounts"
+[0m22:36:59.757520 [debug] [Thread-4 (]: On seed.privatbank_analytics.fraud_alerts: COMMIT
+[0m22:36:59.758603 [debug] [Thread-3 (]: Using duckdb connection "seed.privatbank_analytics.exchange_rates"
+[0m22:36:59.759930 [debug] [Thread-1 (]: On seed.privatbank_analytics.accounts: COMMIT
+[0m22:36:59.761230 [debug] [Thread-4 (]: Using duckdb connection "seed.privatbank_analytics.fraud_alerts"
+[0m22:36:59.762264 [debug] [Thread-3 (]: On seed.privatbank_analytics.exchange_rates: COMMIT
+[0m22:36:59.763845 [debug] [Thread-4 (]: On seed.privatbank_analytics.fraud_alerts: COMMIT
+[0m22:36:59.768552 [debug] [Thread-1 (]: SQL status: OK in 0.005 seconds
+[0m22:36:59.771100 [debug] [Thread-2 (]: Failed to rollback 'seed.privatbank_analytics.customers'
+[0m22:36:59.774570 [debug] [Thread-1 (]: On seed.privatbank_analytics.accounts: Close
+[0m22:36:59.775894 [debug] [Thread-2 (]: On seed.privatbank_analytics.customers: Close
+[0m22:36:59.776866 [debug] [Thread-4 (]: SQL status: OK in 0.011 seconds
+[0m22:36:59.777988 [debug] [Thread-3 (]: SQL status: OK in 0.013 seconds
+[0m22:36:59.782529 [debug] [Thread-4 (]: On seed.privatbank_analytics.fraud_alerts: Close
+[0m22:36:59.786705 [debug] [Thread-3 (]: On seed.privatbank_analytics.exchange_rates: Close
+[0m22:36:59.789369 [info ] [Thread-1 (]: 1 of 7 OK loaded seed file main.accounts ....................................... [[32mINSERT 38[0m in 0.32s]
+[0m22:36:59.792756 [debug] [Thread-1 (]: Finished running node seed.privatbank_analytics.accounts
+[0m22:36:59.790251 [info ] [Thread-4 (]: 4 of 7 OK loaded seed file main.fraud_alerts ................................... [[32mINSERT 28[0m in 0.33s]
+[0m22:36:59.793970 [debug] [Thread-1 (]: Began running node seed.privatbank_analytics.loan_applications
+[0m22:36:59.795313 [debug] [Thread-4 (]: Finished running node seed.privatbank_analytics.fraud_alerts
+[0m22:36:59.791344 [info ] [Thread-3 (]: 3 of 7 OK loaded seed file main.exchange_rates ................................. [[32mINSERT 16[0m in 0.32s]
+[0m22:36:59.797880 [debug] [Thread-4 (]: Began running node seed.privatbank_analytics.loan_repayments
+[0m22:36:59.799240 [debug] [Thread-3 (]: Finished running node seed.privatbank_analytics.exchange_rates
+[0m22:36:59.797044 [info ] [Thread-1 (]: 5 of 7 START seed file main.loan_applications .................................. [RUN]
+[0m22:36:59.801970 [debug] [Thread-3 (]: Began running node seed.privatbank_analytics.transactions
+[0m22:36:59.800669 [info ] [Thread-4 (]: 6 of 7 START seed file main.loan_repayments .................................... [RUN]
+[0m22:36:59.803526 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly seed.privatbank_analytics.accounts, now seed.privatbank_analytics.loan_applications)
+[0m22:36:59.806130 [debug] [Thread-4 (]: Re-using an available connection from the pool (formerly seed.privatbank_analytics.fraud_alerts, now seed.privatbank_analytics.loan_repayments)
+[0m22:36:59.807364 [debug] [Thread-1 (]: Began compiling node seed.privatbank_analytics.loan_applications
+[0m22:36:59.808638 [debug] [Thread-4 (]: Began compiling node seed.privatbank_analytics.loan_repayments
+[0m22:36:59.805257 [info ] [Thread-3 (]: 7 of 7 START seed file main.transactions ....................................... [RUN]
+[0m22:36:59.810191 [debug] [Thread-1 (]: Began executing node seed.privatbank_analytics.loan_applications
+[0m22:36:59.811346 [debug] [Thread-4 (]: Began executing node seed.privatbank_analytics.loan_repayments
+[0m22:36:59.812450 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly seed.privatbank_analytics.exchange_rates, now seed.privatbank_analytics.transactions)
+[0m22:36:59.825231 [debug] [Thread-3 (]: Began compiling node seed.privatbank_analytics.transactions
+[0m22:36:59.826541 [debug] [Thread-3 (]: Began executing node seed.privatbank_analytics.transactions
+[0m22:36:59.834241 [debug] [Thread-1 (]: Using duckdb connection "seed.privatbank_analytics.loan_applications"
+[0m22:36:59.835402 [debug] [Thread-1 (]: On seed.privatbank_analytics.loan_applications: BEGIN
+[0m22:36:59.836099 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m22:36:59.838430 [debug] [Thread-1 (]: SQL status: OK in 0.002 seconds
+[0m22:36:59.839898 [debug] [Thread-1 (]: Using duckdb connection "seed.privatbank_analytics.loan_applications"
+[0m22:36:59.842514 [debug] [Thread-3 (]: Using duckdb connection "seed.privatbank_analytics.transactions"
+[0m22:36:59.843904 [debug] [Thread-4 (]: Using duckdb connection "seed.privatbank_analytics.loan_repayments"
+[0m22:36:59.845004 [debug] [Thread-1 (]: On seed.privatbank_analytics.loan_applications: /* {"app": "dbt", "dbt_version": "1.11.7", "profile_name": "privatbank_duckdb", "target_name": "dev", "node_id": "seed.privatbank_analytics.loan_applications"} */
+
+    create table "privatbank"."main"."loan_applications" ("application_id,customer_id,application_date,loan_type,requested_amount,approved_amount,interest_rate,term_months,status,rejection_reason,disbursement_date" text)
+  
+[0m22:36:59.846570 [debug] [Thread-3 (]: On seed.privatbank_analytics.transactions: BEGIN
+[0m22:36:59.847809 [debug] [Thread-4 (]: On seed.privatbank_analytics.loan_repayments: BEGIN
+[0m22:36:59.848993 [debug] [Thread-3 (]: Opening a new connection, currently in state closed
+[0m22:36:59.849931 [debug] [Thread-4 (]: Opening a new connection, currently in state closed
+[0m22:36:59.851385 [debug] [Thread-1 (]: SQL status: OK in 0.003 seconds
+[0m22:36:59.854198 [debug] [Thread-1 (]: Using duckdb connection "seed.privatbank_analytics.loan_applications"
+[0m22:36:59.854936 [debug] [Thread-1 (]: On seed.privatbank_analytics.loan_applications: 
+          COPY "privatbank"."main"."loan_applications" FROM 'D:\DE_HW_3\privatbank_analytics\seeds\loan_applications.csv' (FORMAT CSV, HEADER TRUE, DELIMITER ',')
+        ...
+[0m22:36:59.855845 [debug] [Thread-3 (]: SQL status: OK in 0.007 seconds
+[0m22:36:59.858754 [debug] [Thread-4 (]: SQL status: OK in 0.009 seconds
+[0m22:36:59.859922 [debug] [Thread-3 (]: Using duckdb connection "seed.privatbank_analytics.transactions"
+[0m22:36:59.860792 [debug] [Thread-4 (]: Using duckdb connection "seed.privatbank_analytics.loan_repayments"
+[0m22:36:59.861549 [debug] [Thread-1 (]: SQL status: OK in 0.005 seconds
+[0m22:36:59.862385 [debug] [Thread-3 (]: On seed.privatbank_analytics.transactions: /* {"app": "dbt", "dbt_version": "1.11.7", "profile_name": "privatbank_duckdb", "target_name": "dev", "node_id": "seed.privatbank_analytics.transactions"} */
+
+    create table "privatbank"."main"."transactions" ("transaction_id,account_id,transaction_date,transaction_time,amount,currency,transaction_type,merchant_category,merchant_name,city,country,channel,status,is_flagged" text)
+  
+[0m22:36:59.863236 [debug] [Thread-4 (]: On seed.privatbank_analytics.loan_repayments: /* {"app": "dbt", "dbt_version": "1.11.7", "profile_name": "privatbank_duckdb", "target_name": "dev", "node_id": "seed.privatbank_analytics.loan_repayments"} */
+
+    create table "privatbank"."main"."loan_repayments" ("repayment_id,application_id,payment_date,scheduled_date,amount_paid,principal_paid,interest_paid,outstanding_balance,is_overdue,days_overdue" text)
+  
+[0m22:36:59.864371 [debug] [Thread-1 (]: Writing runtime SQL for node "seed.privatbank_analytics.loan_applications"
+[0m22:36:59.866511 [debug] [Thread-3 (]: SQL status: OK in 0.001 seconds
+[0m22:36:59.869292 [debug] [Thread-3 (]: Using duckdb connection "seed.privatbank_analytics.transactions"
+[0m22:36:59.869986 [debug] [Thread-3 (]: On seed.privatbank_analytics.transactions: 
+          COPY "privatbank"."main"."transactions" FROM 'D:\DE_HW_3\privatbank_analytics\seeds\transactions.csv' (FORMAT CSV, HEADER TRUE, DELIMITER ',')
+        ...
+[0m22:36:59.871061 [debug] [Thread-4 (]: SQL status: OK in 0.005 seconds
+[0m22:36:59.874274 [debug] [Thread-4 (]: Using duckdb connection "seed.privatbank_analytics.loan_repayments"
+[0m22:36:59.875077 [debug] [Thread-4 (]: On seed.privatbank_analytics.loan_repayments: 
+          COPY "privatbank"."main"."loan_repayments" FROM 'D:\DE_HW_3\privatbank_analytics\seeds\loan_repayments.csv' (FORMAT CSV, HEADER TRUE, DELIMITER ',')
+        ...
+[0m22:36:59.876347 [debug] [Thread-3 (]: SQL status: OK in 0.004 seconds
+[0m22:36:59.878416 [debug] [Thread-3 (]: Writing runtime SQL for node "seed.privatbank_analytics.transactions"
+[0m22:36:59.881301 [debug] [Thread-1 (]: On seed.privatbank_analytics.loan_applications: COMMIT
+[0m22:36:59.882647 [debug] [Thread-4 (]: SQL status: OK in 0.007 seconds
+[0m22:36:59.883671 [debug] [Thread-1 (]: Using duckdb connection "seed.privatbank_analytics.loan_applications"
+[0m22:36:59.885013 [debug] [Thread-4 (]: Writing runtime SQL for node "seed.privatbank_analytics.loan_repayments"
+[0m22:36:59.887739 [debug] [Thread-3 (]: On seed.privatbank_analytics.transactions: COMMIT
+[0m22:36:59.888622 [debug] [Thread-1 (]: On seed.privatbank_analytics.loan_applications: COMMIT
+[0m22:36:59.890660 [debug] [Thread-3 (]: Using duckdb connection "seed.privatbank_analytics.transactions"
+[0m22:36:59.892811 [debug] [Thread-3 (]: On seed.privatbank_analytics.transactions: COMMIT
+[0m22:36:59.895973 [debug] [Thread-4 (]: On seed.privatbank_analytics.loan_repayments: COMMIT
+[0m22:36:59.896770 [debug] [Thread-4 (]: Using duckdb connection "seed.privatbank_analytics.loan_repayments"
+[0m22:36:59.897396 [debug] [Thread-4 (]: On seed.privatbank_analytics.loan_repayments: COMMIT
+[0m22:36:59.898238 [debug] [Thread-1 (]: SQL status: OK in 0.006 seconds
+[0m22:36:59.899641 [debug] [Thread-1 (]: On seed.privatbank_analytics.loan_applications: Close
+[0m22:36:59.900415 [debug] [Thread-3 (]: SQL status: OK in 0.007 seconds
+[0m22:36:59.903482 [debug] [Thread-3 (]: On seed.privatbank_analytics.transactions: Close
+[0m22:36:59.901889 [info ] [Thread-1 (]: 5 of 7 OK loaded seed file main.loan_applications .............................. [[32mINSERT 23[0m in 0.10s]
+[0m22:36:59.905095 [debug] [Thread-1 (]: Finished running node seed.privatbank_analytics.loan_applications
+[0m22:36:59.906737 [debug] [Thread-4 (]: SQL status: OK in 0.009 seconds
+[0m22:36:59.908411 [debug] [Thread-4 (]: On seed.privatbank_analytics.loan_repayments: Close
+[0m22:36:59.909364 [info ] [Thread-3 (]: 7 of 7 OK loaded seed file main.transactions ................................... [[32mINSERT 100[0m in 0.09s]
+[0m22:36:59.911876 [debug] [Thread-3 (]: Finished running node seed.privatbank_analytics.transactions
+[0m22:36:59.910440 [info ] [Thread-4 (]: 6 of 7 OK loaded seed file main.loan_repayments ................................ [[32mINSERT 30[0m in 0.10s]
+[0m22:36:59.913537 [debug] [Thread-4 (]: Finished running node seed.privatbank_analytics.loan_repayments
+[0m22:36:59.925673 [debug] [Thread-2 (]: Runtime Error in seed customers (seeds\customers.csv)
+  Conversion Error: CSV Error on Line: 2
+  Original Line: C001,Oleksandr,Kovalenko,1985-03-12,M,+380501234567,o.kovalenko@gmail.com,Kyiv,Kyiv,2018-01-15,PREMIUM,780,TRUE
+  Error when converting column "phone". Could not convert string "+380501234567" to 'INTEGER'
+  
+  Column phone is being converted as type INTEGER
+  This type was either manually set or derived from an existing table. Select a different type to correctly parse this column.
+  * Check whether the null string value is set correctly (e.g., nullstr = 'N/A')
+  
+    file = D:\DE_HW_3\privatbank_analytics\seeds\customers.csv
+    delimiter = , (Set By User)
+    quote = (empty) (Auto-Detected)
+    escape = (empty) (Auto-Detected)
+    new_line = \r\n (Auto-Detected)
+    header = true (Set By User)
+    skip_rows = 0 (Auto-Detected)
+    comment = (empty) (Auto-Detected)
+    strict_mode = true (Auto-Detected)
+    date_format =  (Auto-Detected)
+    timestamp_format =  (Auto-Detected)
+    null_padding = 0
+    sample_size = 20480
+    ignore_errors = false
+    all_varchar = 0
+  The Column types set by the user do not match the ones found by the sniffer. 
+  Column at position: 5 Set type: INTEGER Sniffed type: VARCHAR
+  Column at position: 11 Set type: INTEGER Sniffed type: BIGINT
+  
+  
+[0m22:36:59.927711 [error] [Thread-2 (]: 2 of 7 ERROR loading seed file main.customers .................................. [[31mERROR[0m in 0.46s]
+[0m22:36:59.930086 [debug] [Thread-2 (]: Finished running node seed.privatbank_analytics.customers
+[0m22:36:59.931678 [debug] [Thread-7 (]: Marking all children of 'seed.privatbank_analytics.customers' to be skipped because of status 'error'.  Reason: Runtime Error in seed customers (seeds\customers.csv)
+  Conversion Error: CSV Error on Line: 2
+  Original Line: C001,Oleksandr,Kovalenko,1985-03-12,M,+380501234567,o.kovalenko@gmail.com,Kyiv,Kyiv,2018-01-15,PREMIUM,780,TRUE
+  Error when converting column "phone". Could not convert string "+380501234567" to 'INTEGER'
+  
+  Column phone is being converted as type INTEGER
+  This type was either manually set or derived from an existing table. Select a different type to correctly parse this column.
+  * Check whether the null string value is set correctly (e.g., nullstr = 'N/A')
+  
+    file = D:\DE_HW_3\privatbank_analytics\seeds\customers.csv
+    delimiter = , (Set By User)
+    quote = (empty) (Auto-Detected)
+    escape = (empty) (Auto-Detected)
+    new_line = \r\n (Auto-Detected)
+    header = true (Set By User)
+    skip_rows = 0 (Auto-Detected)
+    comment = (empty) (Auto-Detected)
+    strict_mode = true (Auto-Detected)
+    date_format =  (Auto-Detected)
+    timestamp_format =  (Auto-Detected)
+    null_padding = 0
+    sample_size = 20480
+    ignore_errors = false
+    all_varchar = 0
+  The Column types set by the user do not match the ones found by the sniffer. 
+  Column at position: 5 Set type: INTEGER Sniffed type: VARCHAR
+  Column at position: 11 Set type: INTEGER Sniffed type: BIGINT
+  
+  .
+[0m22:36:59.935690 [debug] [MainThread]: Using duckdb connection "master"
+[0m22:36:59.936703 [debug] [MainThread]: On master: BEGIN
+[0m22:36:59.937542 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m22:36:59.939171 [debug] [MainThread]: SQL status: OK in 0.002 seconds
+[0m22:36:59.940099 [debug] [MainThread]: On master: COMMIT
+[0m22:36:59.941126 [debug] [MainThread]: Using duckdb connection "master"
+[0m22:36:59.941989 [debug] [MainThread]: On master: COMMIT
+[0m22:36:59.943480 [debug] [MainThread]: SQL status: OK in 0.001 seconds
+[0m22:36:59.944412 [debug] [MainThread]: On master: Close
+[0m22:36:59.945568 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m22:36:59.946396 [debug] [MainThread]: Connection 'create_privatbank_main' was properly closed.
+[0m22:36:59.947176 [debug] [MainThread]: Connection 'list_privatbank_main' was properly closed.
+[0m22:36:59.947946 [debug] [MainThread]: Connection 'seed.privatbank_analytics.loan_applications' was properly closed.
+[0m22:36:59.948713 [debug] [MainThread]: Connection 'seed.privatbank_analytics.loan_repayments' was properly closed.
+[0m22:36:59.949477 [debug] [MainThread]: Connection 'seed.privatbank_analytics.customers' was properly closed.
+[0m22:36:59.950248 [debug] [MainThread]: Connection 'seed.privatbank_analytics.transactions' was properly closed.
+[0m22:36:59.951158 [info ] [MainThread]: 
+[0m22:36:59.952707 [info ] [MainThread]: Finished running 7 seeds in 0 hours 0 minutes and 1.02 seconds (1.02s).
+[0m22:36:59.958184 [debug] [MainThread]: Command end result
+[0m22:37:00.030626 [debug] [MainThread]: Wrote artifact WritableManifest to D:\DE_HW_3\privatbank_analytics\target\manifest.json
+[0m22:37:00.035983 [debug] [MainThread]: Wrote artifact SemanticManifest to D:\DE_HW_3\privatbank_analytics\target\semantic_manifest.json
+[0m22:37:00.049320 [debug] [MainThread]: Wrote artifact RunExecutionResult to D:\DE_HW_3\privatbank_analytics\target\run_results.json
+[0m22:37:00.049991 [info ] [MainThread]: 
+[0m22:37:00.051179 [info ] [MainThread]: [31mCompleted with 1 error, 0 partial successes, and 0 warnings:[0m
+[0m22:37:00.052079 [info ] [MainThread]: 
+[0m22:37:00.053047 [error] [MainThread]: [31mFailure in seed customers (seeds\customers.csv)[0m
+[0m22:37:00.054032 [error] [MainThread]:   Runtime Error in seed customers (seeds\customers.csv)
+  Conversion Error: CSV Error on Line: 2
+  Original Line: C001,Oleksandr,Kovalenko,1985-03-12,M,+380501234567,o.kovalenko@gmail.com,Kyiv,Kyiv,2018-01-15,PREMIUM,780,TRUE
+  Error when converting column "phone". Could not convert string "+380501234567" to 'INTEGER'
+  
+  Column phone is being converted as type INTEGER
+  This type was either manually set or derived from an existing table. Select a different type to correctly parse this column.
+  * Check whether the null string value is set correctly (e.g., nullstr = 'N/A')
+  
+    file = D:\DE_HW_3\privatbank_analytics\seeds\customers.csv
+    delimiter = , (Set By User)
+    quote = (empty) (Auto-Detected)
+    escape = (empty) (Auto-Detected)
+    new_line = \r\n (Auto-Detected)
+    header = true (Set By User)
+    skip_rows = 0 (Auto-Detected)
+    comment = (empty) (Auto-Detected)
+    strict_mode = true (Auto-Detected)
+    date_format =  (Auto-Detected)
+    timestamp_format =  (Auto-Detected)
+    null_padding = 0
+    sample_size = 20480
+    ignore_errors = false
+    all_varchar = 0
+  The Column types set by the user do not match the ones found by the sniffer. 
+  Column at position: 5 Set type: INTEGER Sniffed type: VARCHAR
+  Column at position: 11 Set type: INTEGER Sniffed type: BIGINT
+  
+  
+[0m22:37:00.056785 [info ] [MainThread]: 
+[0m22:37:00.057712 [info ] [MainThread]: Done. PASS=6 WARN=0 ERROR=1 SKIP=0 NO-OP=0 TOTAL=7
+[0m22:37:00.059553 [debug] [MainThread]: Command `dbt seed` failed at 22:37:00.059333 after 6.03 seconds
+[0m22:37:00.060192 [debug] [MainThread]: Flushing usage events
+[0m22:38:41.486600 [debug] [MainThread]: Got an exception trying to initialize tracking
+
+
+============================== 22:38:41.578425 | b76d9ef7-ef62-4faf-8665-9b64bf8f266f ==============================
+[0m22:38:41.578425 [info ] [MainThread]: Running with dbt=1.11.7
+[0m22:38:41.579723 [debug] [MainThread]: running dbt with arguments {'partial_parse': 'True', 'static_parser': 'True', 'send_anonymous_usage_stats': 'True', 'version_check': 'True', 'cache_selected_only': 'False', 'target_path': 'None', 'use_colors': 'True', 'invocation_command': 'dbt seed', 'log_format': 'default', 'warn_error': 'None', 'introspect': 'True', 'debug': 'False', 'printer_width': '80', 'fail_fast': 'False', 'no_print': 'None', 'quiet': 'False', 'use_experimental_parser': 'False', 'log_cache_events': 'False', 'empty': 'None', 'log_path': 'D:\\DE_HW_3\\privatbank_analytics\\logs', 'indirect_selection': 'eager', 'write_json': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'profiles_dir': 'C:\\Users\\Admin\\.dbt'}
+[0m22:38:42.315843 [info ] [MainThread]: Registered adapter: duckdb=1.10.1
+[0m22:38:42.695175 [debug] [MainThread]: checksum: b80718358155fc17c3559352095564dd56ada1cc1a1c0ef2e62c857e71583775, vars: {}, profile: , target: , version: 1.11.7
+[0m22:38:43.135685 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 1 files added, 0 files changed.
+[0m22:38:43.137332 [debug] [MainThread]: Partial parsing: added file: privatbank_analytics://seeds\schema.yml
+[0m22:38:43.737321 [debug] [MainThread]: Wrote artifact WritableManifest to D:\DE_HW_3\privatbank_analytics\target\manifest.json
+[0m22:38:43.743474 [debug] [MainThread]: Wrote artifact SemanticManifest to D:\DE_HW_3\privatbank_analytics\target\semantic_manifest.json
+[0m22:38:43.796238 [info ] [MainThread]: Found 20 models, 7 seeds, 478 macros
+[0m22:38:43.801305 [info ] [MainThread]: 
+[0m22:38:43.803304 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m22:38:43.805039 [info ] [MainThread]: 
+[0m22:38:43.806709 [debug] [MainThread]: Acquiring new duckdb connection 'master'
+[0m22:38:43.822262 [debug] [ThreadPool]: Acquiring new duckdb connection 'list_privatbank'
+[0m22:38:44.180740 [debug] [ThreadPool]: Using duckdb connection "list_privatbank"
+[0m22:38:44.181423 [debug] [ThreadPool]: On list_privatbank: /* {"app": "dbt", "dbt_version": "1.11.7", "profile_name": "privatbank_duckdb", "target_name": "dev", "connection_name": "list_privatbank"} */
+
+    
+    select schema_name
+    from system.information_schema.schemata
+    
+    where lower(catalog_name) = '"privatbank"'
+    
+  
+  
+[0m22:38:44.181951 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m22:38:44.252946 [debug] [ThreadPool]: SQL status: OK in 0.071 seconds
+[0m22:38:44.255310 [debug] [ThreadPool]: On list_privatbank: Close
+[0m22:38:44.256551 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_privatbank, now create_privatbank_main)
+[0m22:38:44.257336 [debug] [ThreadPool]: Creating schema "database: "privatbank"
+schema: "main"
+"
+[0m22:38:44.269007 [debug] [ThreadPool]: Using duckdb connection "create_privatbank_main"
+[0m22:38:44.269681 [debug] [ThreadPool]: On create_privatbank_main: /* {"app": "dbt", "dbt_version": "1.11.7", "profile_name": "privatbank_duckdb", "target_name": "dev", "connection_name": "create_privatbank_main"} */
+
+    
+        select type from duckdb_databases()
+        where lower(database_name)='privatbank'
+        and type='sqlite'
+    
+  
+[0m22:38:44.270204 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m22:38:44.271863 [debug] [ThreadPool]: SQL status: OK in 0.002 seconds
+[0m22:38:44.274261 [debug] [ThreadPool]: Using duckdb connection "create_privatbank_main"
+[0m22:38:44.274829 [debug] [ThreadPool]: On create_privatbank_main: BEGIN
+[0m22:38:44.275737 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m22:38:44.276273 [debug] [ThreadPool]: Using duckdb connection "create_privatbank_main"
+[0m22:38:44.276780 [debug] [ThreadPool]: On create_privatbank_main: /* {"app": "dbt", "dbt_version": "1.11.7", "profile_name": "privatbank_duckdb", "target_name": "dev", "connection_name": "create_privatbank_main"} */
+
+    
+    
+        create schema if not exists "privatbank"."main"
+    
+[0m22:38:44.277735 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m22:38:44.279289 [debug] [ThreadPool]: On create_privatbank_main: COMMIT
+[0m22:38:44.279838 [debug] [ThreadPool]: Using duckdb connection "create_privatbank_main"
+[0m22:38:44.280342 [debug] [ThreadPool]: On create_privatbank_main: COMMIT
+[0m22:38:44.281212 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m22:38:44.281772 [debug] [ThreadPool]: On create_privatbank_main: Close
+[0m22:38:44.287739 [debug] [ThreadPool]: Acquiring new duckdb connection 'list_privatbank_main'
+[0m22:38:44.305609 [debug] [ThreadPool]: Using duckdb connection "list_privatbank_main"
+[0m22:38:44.306669 [debug] [ThreadPool]: On list_privatbank_main: BEGIN
+[0m22:38:44.307517 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m22:38:44.309147 [debug] [ThreadPool]: SQL status: OK in 0.002 seconds
+[0m22:38:44.310068 [debug] [ThreadPool]: Using duckdb connection "list_privatbank_main"
+[0m22:38:44.310975 [debug] [ThreadPool]: On list_privatbank_main: /* {"app": "dbt", "dbt_version": "1.11.7", "profile_name": "privatbank_duckdb", "target_name": "dev", "connection_name": "list_privatbank_main"} */
+select
+      'privatbank' as database,
+      table_name as name,
+      table_schema as schema,
+      CASE table_type
+        WHEN 'BASE TABLE' THEN 'table'
+        WHEN 'VIEW' THEN 'view'
+        WHEN 'LOCAL TEMPORARY' THEN 'table'
+        END as type
+    from system.information_schema.tables
+    where lower(table_schema) = 'main'
+    and lower(table_catalog) = 'privatbank'
+  
+[0m22:38:44.356845 [debug] [ThreadPool]: SQL status: OK in 0.045 seconds
+[0m22:38:44.363054 [debug] [ThreadPool]: On list_privatbank_main: ROLLBACK
+[0m22:38:44.366381 [debug] [ThreadPool]: Failed to rollback 'list_privatbank_main'
+[0m22:38:44.367412 [debug] [ThreadPool]: On list_privatbank_main: Close
+[0m22:38:44.372335 [debug] [MainThread]: Using duckdb connection "master"
+[0m22:38:44.373308 [debug] [MainThread]: On master: BEGIN
+[0m22:38:44.374161 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m22:38:44.378496 [debug] [MainThread]: SQL status: OK in 0.004 seconds
+[0m22:38:44.379558 [debug] [MainThread]: On master: COMMIT
+[0m22:38:44.380448 [debug] [MainThread]: Using duckdb connection "master"
+[0m22:38:44.381297 [debug] [MainThread]: On master: COMMIT
+[0m22:38:44.382703 [debug] [MainThread]: SQL status: OK in 0.001 seconds
+[0m22:38:44.383617 [debug] [MainThread]: On master: Close
+[0m22:38:44.396525 [debug] [Thread-1 (]: Began running node seed.privatbank_analytics.accounts
+[0m22:38:44.397850 [debug] [Thread-3 (]: Began running node seed.privatbank_analytics.exchange_rates
+[0m22:38:44.399074 [debug] [Thread-4 (]: Began running node seed.privatbank_analytics.fraud_alerts
+[0m22:38:44.400237 [debug] [Thread-2 (]: Began running node seed.privatbank_analytics.customers
+[0m22:38:44.401732 [info ] [Thread-1 (]: 1 of 7 START seed file main.accounts ........................................... [RUN]
+[0m22:38:44.410183 [debug] [Thread-1 (]: Acquiring new duckdb connection 'seed.privatbank_analytics.accounts'
+[0m22:38:44.403196 [info ] [Thread-3 (]: 3 of 7 START seed file main.exchange_rates ..................................... [RUN]
+[0m22:38:44.412277 [debug] [Thread-1 (]: Began compiling node seed.privatbank_analytics.accounts
+[0m22:38:44.415142 [debug] [Thread-3 (]: Acquiring new duckdb connection 'seed.privatbank_analytics.exchange_rates'
+[0m22:38:44.416646 [debug] [Thread-1 (]: Began executing node seed.privatbank_analytics.accounts
+[0m22:38:44.405075 [info ] [Thread-4 (]: 4 of 7 START seed file main.fraud_alerts ....................................... [RUN]
+[0m22:38:44.418210 [debug] [Thread-3 (]: Began compiling node seed.privatbank_analytics.exchange_rates
+[0m22:38:44.434292 [debug] [Thread-4 (]: Acquiring new duckdb connection 'seed.privatbank_analytics.fraud_alerts'
+[0m22:38:44.406589 [info ] [Thread-2 (]: 2 of 7 START seed file main.customers .......................................... [RUN]
+[0m22:38:44.452091 [debug] [Thread-3 (]: Began executing node seed.privatbank_analytics.exchange_rates
+[0m22:38:44.471118 [debug] [Thread-4 (]: Began compiling node seed.privatbank_analytics.fraud_alerts
+[0m22:38:44.478043 [debug] [Thread-2 (]: Acquiring new duckdb connection 'seed.privatbank_analytics.customers'
+[0m22:38:44.487013 [debug] [Thread-4 (]: Began executing node seed.privatbank_analytics.fraud_alerts
+[0m22:38:44.488379 [debug] [Thread-2 (]: Began compiling node seed.privatbank_analytics.customers
+[0m22:38:44.511734 [debug] [Thread-2 (]: Began executing node seed.privatbank_analytics.customers
+[0m22:38:44.531381 [debug] [Thread-1 (]: Using duckdb connection "seed.privatbank_analytics.accounts"
+[0m22:38:44.532273 [debug] [Thread-1 (]: On seed.privatbank_analytics.accounts: BEGIN
+[0m22:38:44.545087 [debug] [Thread-3 (]: Using duckdb connection "seed.privatbank_analytics.exchange_rates"
+[0m22:38:44.546024 [debug] [Thread-1 (]: Opening a new connection, currently in state init
+[0m22:38:44.560529 [debug] [Thread-2 (]: Using duckdb connection "seed.privatbank_analytics.customers"
+[0m22:38:44.562212 [debug] [Thread-3 (]: On seed.privatbank_analytics.exchange_rates: BEGIN
+[0m22:38:44.566244 [debug] [Thread-4 (]: Using duckdb connection "seed.privatbank_analytics.fraud_alerts"
+[0m22:38:44.567962 [debug] [Thread-2 (]: On seed.privatbank_analytics.customers: BEGIN
+[0m22:38:44.568977 [debug] [Thread-3 (]: Opening a new connection, currently in state init
+[0m22:38:44.569735 [debug] [Thread-1 (]: SQL status: OK in 0.024 seconds
+[0m22:38:44.570371 [debug] [Thread-4 (]: On seed.privatbank_analytics.fraud_alerts: BEGIN
+[0m22:38:44.571041 [debug] [Thread-2 (]: Opening a new connection, currently in state init
+[0m22:38:44.572301 [debug] [Thread-1 (]: Using duckdb connection "seed.privatbank_analytics.accounts"
+[0m22:38:44.573111 [debug] [Thread-4 (]: Opening a new connection, currently in state init
+[0m22:38:44.573815 [debug] [Thread-3 (]: SQL status: OK in 0.005 seconds
+[0m22:38:44.574776 [debug] [Thread-1 (]: On seed.privatbank_analytics.accounts: /* {"app": "dbt", "dbt_version": "1.11.7", "profile_name": "privatbank_duckdb", "target_name": "dev", "node_id": "seed.privatbank_analytics.accounts"} */
+truncate table "privatbank"."main"."accounts"
+[0m22:38:44.575931 [debug] [Thread-2 (]: SQL status: OK in 0.005 seconds
+[0m22:38:44.576904 [debug] [Thread-3 (]: Using duckdb connection "seed.privatbank_analytics.exchange_rates"
+[0m22:38:44.577605 [debug] [Thread-4 (]: SQL status: OK in 0.004 seconds
+[0m22:38:44.599223 [debug] [Thread-2 (]: Using duckdb connection "seed.privatbank_analytics.customers"
+[0m22:38:44.600654 [debug] [Thread-3 (]: On seed.privatbank_analytics.exchange_rates: /* {"app": "dbt", "dbt_version": "1.11.7", "profile_name": "privatbank_duckdb", "target_name": "dev", "node_id": "seed.privatbank_analytics.exchange_rates"} */
+truncate table "privatbank"."main"."exchange_rates"
+[0m22:38:44.601793 [debug] [Thread-1 (]: SQL status: OK in 0.024 seconds
+[0m22:38:44.602465 [debug] [Thread-4 (]: Using duckdb connection "seed.privatbank_analytics.fraud_alerts"
+[0m22:38:44.603187 [debug] [Thread-2 (]: On seed.privatbank_analytics.customers: /* {"app": "dbt", "dbt_version": "1.11.7", "profile_name": "privatbank_duckdb", "target_name": "dev", "node_id": "seed.privatbank_analytics.customers"} */
+
+    create table "privatbank"."main"."customers" ("customer_id" text,"first_name" text,"last_name" text,"date_of_birth" date,"gender" text,"phone" varchar,"email" text,"city" text,"region" text,"registration_date" date,"customer_segment" text,"credit_score" varchar,"is_active" boolean)
+  
+[0m22:38:44.606088 [debug] [Thread-4 (]: On seed.privatbank_analytics.fraud_alerts: /* {"app": "dbt", "dbt_version": "1.11.7", "profile_name": "privatbank_duckdb", "target_name": "dev", "node_id": "seed.privatbank_analytics.fraud_alerts"} */
+truncate table "privatbank"."main"."fraud_alerts"
+[0m22:38:44.634182 [debug] [Thread-1 (]: Using duckdb connection "seed.privatbank_analytics.accounts"
+[0m22:38:44.635780 [debug] [Thread-3 (]: SQL status: OK in 0.032 seconds
+[0m22:38:44.637820 [debug] [Thread-1 (]: On seed.privatbank_analytics.accounts: 
+          COPY "privatbank"."main"."accounts" FROM 'D:\DE_HW_3\privatbank_analytics\seeds\accounts.csv' (FORMAT CSV, HEADER TRUE, DELIMITER ',')
+        ...
+[0m22:38:44.639306 [debug] [Thread-4 (]: SQL status: OK in 0.002 seconds
+[0m22:38:44.640635 [debug] [Thread-2 (]: SQL status: OK in 0.004 seconds
+[0m22:38:44.644539 [debug] [Thread-3 (]: Using duckdb connection "seed.privatbank_analytics.exchange_rates"
+[0m22:38:44.648998 [debug] [Thread-4 (]: Using duckdb connection "seed.privatbank_analytics.fraud_alerts"
+[0m22:38:44.651594 [debug] [Thread-2 (]: Using duckdb connection "seed.privatbank_analytics.customers"
+[0m22:38:44.652818 [debug] [Thread-3 (]: On seed.privatbank_analytics.exchange_rates: 
+          COPY "privatbank"."main"."exchange_rates" FROM 'D:\DE_HW_3\privatbank_analytics\seeds\exchange_rates.csv' (FORMAT CSV, HEADER TRUE, DELIMITER ',')
+        ...
+[0m22:38:44.653778 [debug] [Thread-4 (]: On seed.privatbank_analytics.fraud_alerts: 
+          COPY "privatbank"."main"."fraud_alerts" FROM 'D:\DE_HW_3\privatbank_analytics\seeds\fraud_alerts.csv' (FORMAT CSV, HEADER TRUE, DELIMITER ',')
+        ...
+[0m22:38:44.655252 [debug] [Thread-2 (]: On seed.privatbank_analytics.customers: 
+          COPY "privatbank"."main"."customers" FROM 'D:\DE_HW_3\privatbank_analytics\seeds\customers.csv' (FORMAT CSV, HEADER TRUE, DELIMITER ',')
+        ...
+[0m22:38:44.656428 [debug] [Thread-1 (]: SQL status: OK in 0.011 seconds
+[0m22:38:44.675527 [debug] [Thread-1 (]: Writing runtime SQL for node "seed.privatbank_analytics.accounts"
+[0m22:38:44.677207 [debug] [Thread-3 (]: SQL status: OK in 0.020 seconds
+[0m22:38:44.678659 [debug] [Thread-2 (]: SQL status: OK in 0.020 seconds
+[0m22:38:44.679673 [debug] [Thread-4 (]: SQL status: OK in 0.022 seconds
+[0m22:38:44.680703 [debug] [Thread-3 (]: Writing runtime SQL for node "seed.privatbank_analytics.exchange_rates"
+[0m22:38:44.681794 [debug] [Thread-2 (]: Writing runtime SQL for node "seed.privatbank_analytics.customers"
+[0m22:38:44.683133 [debug] [Thread-4 (]: Writing runtime SQL for node "seed.privatbank_analytics.fraud_alerts"
+[0m22:38:44.710367 [debug] [Thread-1 (]: On seed.privatbank_analytics.accounts: COMMIT
+[0m22:38:44.711878 [debug] [Thread-1 (]: Using duckdb connection "seed.privatbank_analytics.accounts"
+[0m22:38:44.721114 [debug] [Thread-1 (]: On seed.privatbank_analytics.accounts: COMMIT
+[0m22:38:44.722858 [debug] [Thread-3 (]: On seed.privatbank_analytics.exchange_rates: COMMIT
+[0m22:38:44.724535 [debug] [Thread-3 (]: Using duckdb connection "seed.privatbank_analytics.exchange_rates"
+[0m22:38:44.725430 [debug] [Thread-3 (]: On seed.privatbank_analytics.exchange_rates: COMMIT
+[0m22:38:44.732070 [debug] [Thread-1 (]: SQL status: OK in 0.008 seconds
+[0m22:38:44.736167 [debug] [Thread-1 (]: On seed.privatbank_analytics.accounts: Close
+[0m22:38:44.744129 [debug] [Thread-2 (]: On seed.privatbank_analytics.customers: COMMIT
+[0m22:38:44.745421 [debug] [Thread-2 (]: Using duckdb connection "seed.privatbank_analytics.customers"
+[0m22:38:44.746729 [debug] [Thread-3 (]: SQL status: OK in 0.020 seconds
+[0m22:38:44.747729 [debug] [Thread-2 (]: On seed.privatbank_analytics.customers: COMMIT
+[0m22:38:44.754578 [debug] [Thread-4 (]: On seed.privatbank_analytics.fraud_alerts: COMMIT
+[0m22:38:44.756853 [debug] [Thread-3 (]: On seed.privatbank_analytics.exchange_rates: Close
+[0m22:38:44.758912 [debug] [Thread-4 (]: Using duckdb connection "seed.privatbank_analytics.fraud_alerts"
+[0m22:38:44.760497 [debug] [Thread-4 (]: On seed.privatbank_analytics.fraud_alerts: COMMIT
+[0m22:38:44.762203 [debug] [Thread-2 (]: SQL status: OK in 0.004 seconds
+[0m22:38:44.763648 [debug] [Thread-2 (]: On seed.privatbank_analytics.customers: Close
+[0m22:38:44.767757 [debug] [Thread-4 (]: SQL status: OK in 0.006 seconds
+[0m22:38:44.764573 [info ] [Thread-1 (]: 1 of 7 OK loaded seed file main.accounts ....................................... [[32mINSERT 38[0m in 0.34s]
+[0m22:38:44.769530 [debug] [Thread-4 (]: On seed.privatbank_analytics.fraud_alerts: Close
+[0m22:38:44.770756 [debug] [Thread-1 (]: Finished running node seed.privatbank_analytics.accounts
+[0m22:38:44.765702 [info ] [Thread-3 (]: 3 of 7 OK loaded seed file main.exchange_rates ................................. [[32mINSERT 16[0m in 0.35s]
+[0m22:38:44.773190 [debug] [Thread-1 (]: Began running node seed.privatbank_analytics.loan_applications
+[0m22:38:44.775487 [debug] [Thread-3 (]: Finished running node seed.privatbank_analytics.exchange_rates
+[0m22:38:44.767099 [info ] [Thread-2 (]: 2 of 7 OK loaded seed file main.customers ...................................... [[32mINSERT 25[0m in 0.29s]
+[0m22:38:44.777420 [debug] [Thread-3 (]: Began running node seed.privatbank_analytics.loan_repayments
+[0m22:38:44.772179 [info ] [Thread-4 (]: 4 of 7 OK loaded seed file main.fraud_alerts ................................... [[32mINSERT 28[0m in 0.34s]
+[0m22:38:44.778939 [debug] [Thread-2 (]: Finished running node seed.privatbank_analytics.customers
+[0m22:38:44.776687 [info ] [Thread-1 (]: 5 of 7 START seed file main.loan_applications .................................. [RUN]
+[0m22:38:44.781195 [debug] [Thread-4 (]: Finished running node seed.privatbank_analytics.fraud_alerts
+[0m22:38:44.782147 [debug] [Thread-2 (]: Began running node seed.privatbank_analytics.transactions
+[0m22:38:44.779911 [info ] [Thread-3 (]: 6 of 7 START seed file main.loan_repayments .................................... [RUN]
+[0m22:38:44.783474 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly seed.privatbank_analytics.accounts, now seed.privatbank_analytics.loan_applications)
+[0m22:38:44.785737 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly seed.privatbank_analytics.exchange_rates, now seed.privatbank_analytics.loan_repayments)
+[0m22:38:44.784797 [info ] [Thread-2 (]: 7 of 7 START seed file main.transactions ....................................... [RUN]
+[0m22:38:44.787487 [debug] [Thread-1 (]: Began compiling node seed.privatbank_analytics.loan_applications
+[0m22:38:44.788836 [debug] [Thread-3 (]: Began compiling node seed.privatbank_analytics.loan_repayments
+[0m22:38:44.789771 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly seed.privatbank_analytics.customers, now seed.privatbank_analytics.transactions)
+[0m22:38:44.790997 [debug] [Thread-1 (]: Began executing node seed.privatbank_analytics.loan_applications
+[0m22:38:44.792962 [debug] [Thread-3 (]: Began executing node seed.privatbank_analytics.loan_repayments
+[0m22:38:44.794178 [debug] [Thread-2 (]: Began compiling node seed.privatbank_analytics.transactions
+[0m22:38:44.804524 [debug] [Thread-1 (]: Using duckdb connection "seed.privatbank_analytics.loan_applications"
+[0m22:38:44.811297 [debug] [Thread-2 (]: Began executing node seed.privatbank_analytics.transactions
+[0m22:38:44.813866 [debug] [Thread-1 (]: On seed.privatbank_analytics.loan_applications: BEGIN
+[0m22:38:44.819440 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m22:38:44.826479 [debug] [Thread-1 (]: SQL status: OK in 0.007 seconds
+[0m22:38:44.827829 [debug] [Thread-1 (]: Using duckdb connection "seed.privatbank_analytics.loan_applications"
+[0m22:38:44.831989 [debug] [Thread-2 (]: Using duckdb connection "seed.privatbank_analytics.transactions"
+[0m22:38:44.834142 [debug] [Thread-3 (]: Using duckdb connection "seed.privatbank_analytics.loan_repayments"
+[0m22:38:44.835020 [debug] [Thread-1 (]: On seed.privatbank_analytics.loan_applications: /* {"app": "dbt", "dbt_version": "1.11.7", "profile_name": "privatbank_duckdb", "target_name": "dev", "node_id": "seed.privatbank_analytics.loan_applications"} */
+truncate table "privatbank"."main"."loan_applications"
+[0m22:38:44.836290 [debug] [Thread-2 (]: On seed.privatbank_analytics.transactions: BEGIN
+[0m22:38:44.837529 [debug] [Thread-3 (]: On seed.privatbank_analytics.loan_repayments: BEGIN
+[0m22:38:44.838929 [debug] [Thread-2 (]: Opening a new connection, currently in state closed
+[0m22:38:44.839750 [debug] [Thread-3 (]: Opening a new connection, currently in state closed
+[0m22:38:44.840494 [debug] [Thread-1 (]: SQL status: OK in 0.002 seconds
+[0m22:38:44.842839 [debug] [Thread-2 (]: SQL status: OK in 0.004 seconds
+[0m22:38:44.845144 [debug] [Thread-1 (]: Using duckdb connection "seed.privatbank_analytics.loan_applications"
+[0m22:38:44.846347 [debug] [Thread-3 (]: SQL status: OK in 0.006 seconds
+[0m22:38:44.847505 [debug] [Thread-2 (]: Using duckdb connection "seed.privatbank_analytics.transactions"
+[0m22:38:44.848444 [debug] [Thread-1 (]: On seed.privatbank_analytics.loan_applications: 
+          COPY "privatbank"."main"."loan_applications" FROM 'D:\DE_HW_3\privatbank_analytics\seeds\loan_applications.csv' (FORMAT CSV, HEADER TRUE, DELIMITER ',')
+        ...
+[0m22:38:44.849239 [debug] [Thread-3 (]: Using duckdb connection "seed.privatbank_analytics.loan_repayments"
+[0m22:38:44.850266 [debug] [Thread-2 (]: On seed.privatbank_analytics.transactions: /* {"app": "dbt", "dbt_version": "1.11.7", "profile_name": "privatbank_duckdb", "target_name": "dev", "node_id": "seed.privatbank_analytics.transactions"} */
+truncate table "privatbank"."main"."transactions"
+[0m22:38:44.851281 [debug] [Thread-3 (]: On seed.privatbank_analytics.loan_repayments: /* {"app": "dbt", "dbt_version": "1.11.7", "profile_name": "privatbank_duckdb", "target_name": "dev", "node_id": "seed.privatbank_analytics.loan_repayments"} */
+truncate table "privatbank"."main"."loan_repayments"
+[0m22:38:44.853461 [debug] [Thread-2 (]: SQL status: OK in 0.001 seconds
+[0m22:38:44.854658 [debug] [Thread-3 (]: SQL status: OK in 0.002 seconds
+[0m22:38:44.858072 [debug] [Thread-1 (]: SQL status: OK in 0.007 seconds
+[0m22:38:44.857265 [debug] [Thread-2 (]: Using duckdb connection "seed.privatbank_analytics.transactions"
+[0m22:38:44.861333 [debug] [Thread-3 (]: Using duckdb connection "seed.privatbank_analytics.loan_repayments"
+[0m22:38:44.862586 [debug] [Thread-1 (]: Writing runtime SQL for node "seed.privatbank_analytics.loan_applications"
+[0m22:38:44.863847 [debug] [Thread-2 (]: On seed.privatbank_analytics.transactions: 
+          COPY "privatbank"."main"."transactions" FROM 'D:\DE_HW_3\privatbank_analytics\seeds\transactions.csv' (FORMAT CSV, HEADER TRUE, DELIMITER ',')
+        ...
+[0m22:38:44.865116 [debug] [Thread-3 (]: On seed.privatbank_analytics.loan_repayments: 
+          COPY "privatbank"."main"."loan_repayments" FROM 'D:\DE_HW_3\privatbank_analytics\seeds\loan_repayments.csv' (FORMAT CSV, HEADER TRUE, DELIMITER ',')
+        ...
+[0m22:38:44.869259 [debug] [Thread-1 (]: On seed.privatbank_analytics.loan_applications: COMMIT
+[0m22:38:44.870057 [debug] [Thread-1 (]: Using duckdb connection "seed.privatbank_analytics.loan_applications"
+[0m22:38:44.870721 [debug] [Thread-1 (]: On seed.privatbank_analytics.loan_applications: COMMIT
+[0m22:38:44.871395 [debug] [Thread-2 (]: SQL status: OK in 0.005 seconds
+[0m22:38:44.872432 [debug] [Thread-3 (]: SQL status: OK in 0.006 seconds
+[0m22:38:44.873758 [debug] [Thread-2 (]: Writing runtime SQL for node "seed.privatbank_analytics.transactions"
+[0m22:38:44.875020 [debug] [Thread-3 (]: Writing runtime SQL for node "seed.privatbank_analytics.loan_repayments"
+[0m22:38:44.878175 [debug] [Thread-2 (]: On seed.privatbank_analytics.transactions: COMMIT
+[0m22:38:44.878960 [debug] [Thread-2 (]: Using duckdb connection "seed.privatbank_analytics.transactions"
+[0m22:38:44.879638 [debug] [Thread-2 (]: On seed.privatbank_analytics.transactions: COMMIT
+[0m22:38:44.881910 [debug] [Thread-3 (]: On seed.privatbank_analytics.loan_repayments: COMMIT
+[0m22:38:44.882874 [debug] [Thread-3 (]: Using duckdb connection "seed.privatbank_analytics.loan_repayments"
+[0m22:38:44.883576 [debug] [Thread-3 (]: On seed.privatbank_analytics.loan_repayments: COMMIT
+[0m22:38:44.914548 [debug] [Thread-1 (]: SQL status: OK in 0.042 seconds
+[0m22:38:44.916001 [debug] [Thread-1 (]: On seed.privatbank_analytics.loan_applications: Close
+[0m22:38:44.917908 [debug] [Thread-2 (]: SQL status: OK in 0.038 seconds
+[0m22:38:44.917104 [info ] [Thread-1 (]: 5 of 7 OK loaded seed file main.loan_applications .............................. [[32mINSERT 23[0m in 0.13s]
+[0m22:38:44.920053 [debug] [Thread-2 (]: On seed.privatbank_analytics.transactions: Close
+[0m22:38:44.921200 [debug] [Thread-1 (]: Finished running node seed.privatbank_analytics.loan_applications
+[0m22:38:44.922220 [debug] [Thread-3 (]: SQL status: OK in 0.038 seconds
+[0m22:38:44.926453 [debug] [Thread-3 (]: On seed.privatbank_analytics.loan_repayments: Close
+[0m22:38:44.923907 [info ] [Thread-2 (]: 7 of 7 OK loaded seed file main.transactions ................................... [[32mINSERT 100[0m in 0.13s]
+[0m22:38:44.930262 [debug] [Thread-2 (]: Finished running node seed.privatbank_analytics.transactions
+[0m22:38:44.928549 [info ] [Thread-3 (]: 6 of 7 OK loaded seed file main.loan_repayments ................................ [[32mINSERT 30[0m in 0.14s]
+[0m22:38:44.932909 [debug] [Thread-3 (]: Finished running node seed.privatbank_analytics.loan_repayments
+[0m22:38:44.944761 [debug] [MainThread]: Using duckdb connection "master"
+[0m22:38:44.945568 [debug] [MainThread]: On master: BEGIN
+[0m22:38:44.946159 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m22:38:44.949206 [debug] [MainThread]: SQL status: OK in 0.003 seconds
+[0m22:38:44.949931 [debug] [MainThread]: On master: COMMIT
+[0m22:38:44.950554 [debug] [MainThread]: Using duckdb connection "master"
+[0m22:38:44.951125 [debug] [MainThread]: On master: COMMIT
+[0m22:38:44.952205 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m22:38:44.952915 [debug] [MainThread]: On master: Close
+[0m22:38:44.953720 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m22:38:44.954303 [debug] [MainThread]: Connection 'create_privatbank_main' was properly closed.
+[0m22:38:44.954825 [debug] [MainThread]: Connection 'list_privatbank_main' was properly closed.
+[0m22:38:44.955320 [debug] [MainThread]: Connection 'seed.privatbank_analytics.loan_applications' was properly closed.
+[0m22:38:44.955795 [debug] [MainThread]: Connection 'seed.privatbank_analytics.loan_repayments' was properly closed.
+[0m22:38:44.956260 [debug] [MainThread]: Connection 'seed.privatbank_analytics.fraud_alerts' was properly closed.
+[0m22:38:44.956739 [debug] [MainThread]: Connection 'seed.privatbank_analytics.transactions' was properly closed.
+[0m22:38:44.957643 [info ] [MainThread]: 
+[0m22:38:44.975921 [info ] [MainThread]: Finished running 7 seeds in 0 hours 0 minutes and 1.15 seconds (1.15s).
+[0m22:38:44.992965 [debug] [MainThread]: Command end result
+[0m22:38:45.060462 [debug] [MainThread]: Wrote artifact WritableManifest to D:\DE_HW_3\privatbank_analytics\target\manifest.json
+[0m22:38:45.066964 [debug] [MainThread]: Wrote artifact SemanticManifest to D:\DE_HW_3\privatbank_analytics\target\semantic_manifest.json
+[0m22:38:45.092699 [debug] [MainThread]: Wrote artifact RunExecutionResult to D:\DE_HW_3\privatbank_analytics\target\run_results.json
+[0m22:38:45.094335 [info ] [MainThread]: 
+[0m22:38:45.095946 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m22:38:45.097125 [info ] [MainThread]: 
+[0m22:38:45.098316 [info ] [MainThread]: Done. PASS=7 WARN=0 ERROR=0 SKIP=0 NO-OP=0 TOTAL=7
+[0m22:38:45.100470 [debug] [MainThread]: Command `dbt seed` succeeded at 22:38:45.100151 after 3.74 seconds
+[0m22:38:45.101513 [debug] [MainThread]: Flushing usage events
+[0m22:39:13.099698 [debug] [MainThread]: Got an exception trying to initialize tracking
+
+
+============================== 22:39:13.185882 | cac5c507-fea7-4caa-a11f-147a39ab8f4f ==============================
+[0m22:39:13.185882 [info ] [MainThread]: Running with dbt=1.11.7
+[0m22:39:13.187277 [debug] [MainThread]: running dbt with arguments {'partial_parse': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'send_anonymous_usage_stats': 'True', 'use_colors': 'True', 'cache_selected_only': 'False', 'target_path': 'None', 'warn_error': 'None', 'invocation_command': 'dbt run', 'log_format': 'default', 'version_check': 'True', 'introspect': 'True', 'debug': 'False', 'log_cache_events': 'False', 'fail_fast': 'False', 'no_print': 'None', 'empty': 'False', 'use_experimental_parser': 'False', 'quiet': 'False', 'printer_width': '80', 'log_path': 'D:\\DE_HW_3\\privatbank_analytics\\logs', 'indirect_selection': 'eager', 'profiles_dir': 'C:\\Users\\Admin\\.dbt', 'static_parser': 'True', 'write_json': 'True'}
+[0m22:39:13.877571 [info ] [MainThread]: Registered adapter: duckdb=1.10.1
+[0m22:39:14.254084 [debug] [MainThread]: checksum: b80718358155fc17c3559352095564dd56ada1cc1a1c0ef2e62c857e71583775, vars: {}, profile: , target: , version: 1.11.7
+[0m22:39:14.607912 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m22:39:14.608959 [debug] [MainThread]: Nothing changed, skipping partial parsing.
+[0m22:39:14.609772 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m22:39:14.852456 [debug] [MainThread]: Wrote artifact WritableManifest to D:\DE_HW_3\privatbank_analytics\target\manifest.json
+[0m22:39:14.858121 [debug] [MainThread]: Wrote artifact SemanticManifest to D:\DE_HW_3\privatbank_analytics\target\semantic_manifest.json
+[0m22:39:14.915758 [info ] [MainThread]: Found 20 models, 7 seeds, 478 macros
+[0m22:39:14.920769 [info ] [MainThread]: 
+[0m22:39:14.921931 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m22:39:14.927834 [info ] [MainThread]: 
+[0m22:39:14.931017 [debug] [MainThread]: Acquiring new duckdb connection 'master'
+[0m22:39:14.947885 [debug] [ThreadPool]: Acquiring new duckdb connection 'list_privatbank'
+[0m22:39:15.492268 [debug] [ThreadPool]: Using duckdb connection "list_privatbank"
+[0m22:39:15.492969 [debug] [ThreadPool]: On list_privatbank: /* {"app": "dbt", "dbt_version": "1.11.7", "profile_name": "privatbank_duckdb", "target_name": "dev", "connection_name": "list_privatbank"} */
+
+    
+    select schema_name
+    from system.information_schema.schemata
+    
+    where lower(catalog_name) = '"privatbank"'
+    
+  
+  
+[0m22:39:15.493526 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m22:39:15.531476 [debug] [ThreadPool]: SQL status: OK in 0.038 seconds
+[0m22:39:15.534752 [debug] [ThreadPool]: On list_privatbank: Close
+[0m22:39:15.536062 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_privatbank, now create_privatbank_main)
+[0m22:39:15.536922 [debug] [ThreadPool]: Creating schema "database: "privatbank"
+schema: "main"
+"
+[0m22:39:15.549280 [debug] [ThreadPool]: Using duckdb connection "create_privatbank_main"
+[0m22:39:15.549991 [debug] [ThreadPool]: On create_privatbank_main: /* {"app": "dbt", "dbt_version": "1.11.7", "profile_name": "privatbank_duckdb", "target_name": "dev", "connection_name": "create_privatbank_main"} */
+
+    
+        select type from duckdb_databases()
+        where lower(database_name)='privatbank'
+        and type='sqlite'
+    
+  
+[0m22:39:15.550531 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m22:39:15.552252 [debug] [ThreadPool]: SQL status: OK in 0.002 seconds
+[0m22:39:15.554788 [debug] [ThreadPool]: Using duckdb connection "create_privatbank_main"
+[0m22:39:15.555462 [debug] [ThreadPool]: On create_privatbank_main: BEGIN
+[0m22:39:15.556556 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m22:39:15.557201 [debug] [ThreadPool]: Using duckdb connection "create_privatbank_main"
+[0m22:39:15.557747 [debug] [ThreadPool]: On create_privatbank_main: /* {"app": "dbt", "dbt_version": "1.11.7", "profile_name": "privatbank_duckdb", "target_name": "dev", "connection_name": "create_privatbank_main"} */
+
+    
+    
+        create schema if not exists "privatbank"."main"
+    
+[0m22:39:15.558798 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m22:39:15.560461 [debug] [ThreadPool]: On create_privatbank_main: COMMIT
+[0m22:39:15.561128 [debug] [ThreadPool]: Using duckdb connection "create_privatbank_main"
+[0m22:39:15.561712 [debug] [ThreadPool]: On create_privatbank_main: COMMIT
+[0m22:39:15.562721 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m22:39:15.563324 [debug] [ThreadPool]: On create_privatbank_main: Close
+[0m22:39:15.569629 [debug] [ThreadPool]: Acquiring new duckdb connection 'list_privatbank_main'
+[0m22:39:15.581740 [debug] [ThreadPool]: Using duckdb connection "list_privatbank_main"
+[0m22:39:15.582915 [debug] [ThreadPool]: On list_privatbank_main: BEGIN
+[0m22:39:15.584333 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m22:39:15.586467 [debug] [ThreadPool]: SQL status: OK in 0.002 seconds
+[0m22:39:15.587301 [debug] [ThreadPool]: Using duckdb connection "list_privatbank_main"
+[0m22:39:15.588095 [debug] [ThreadPool]: On list_privatbank_main: /* {"app": "dbt", "dbt_version": "1.11.7", "profile_name": "privatbank_duckdb", "target_name": "dev", "connection_name": "list_privatbank_main"} */
+select
+      'privatbank' as database,
+      table_name as name,
+      table_schema as schema,
+      CASE table_type
+        WHEN 'BASE TABLE' THEN 'table'
+        WHEN 'VIEW' THEN 'view'
+        WHEN 'LOCAL TEMPORARY' THEN 'table'
+        END as type
+    from system.information_schema.tables
+    where lower(table_schema) = 'main'
+    and lower(table_catalog) = 'privatbank'
+  
+[0m22:39:15.614176 [debug] [ThreadPool]: SQL status: OK in 0.025 seconds
+[0m22:39:15.616706 [debug] [ThreadPool]: On list_privatbank_main: ROLLBACK
+[0m22:39:15.619143 [debug] [ThreadPool]: Failed to rollback 'list_privatbank_main'
+[0m22:39:15.619765 [debug] [ThreadPool]: On list_privatbank_main: Close
+[0m22:39:15.623572 [debug] [MainThread]: Using duckdb connection "master"
+[0m22:39:15.624158 [debug] [MainThread]: On master: BEGIN
+[0m22:39:15.624664 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m22:39:15.625691 [debug] [MainThread]: SQL status: OK in 0.001 seconds
+[0m22:39:15.626247 [debug] [MainThread]: On master: COMMIT
+[0m22:39:15.626754 [debug] [MainThread]: Using duckdb connection "master"
+[0m22:39:15.627248 [debug] [MainThread]: On master: COMMIT
+[0m22:39:15.628072 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m22:39:15.628620 [debug] [MainThread]: On master: Close
+[0m22:39:15.635658 [debug] [Thread-4 (]: Began running node model.privatbank_analytics.raw_fraud_alerts
+[0m22:39:15.636546 [debug] [Thread-1 (]: Began running node model.privatbank_analytics.raw_accounts
+[0m22:39:15.637545 [debug] [Thread-2 (]: Began running node model.privatbank_analytics.raw_customers
+[0m22:39:15.638866 [debug] [Thread-3 (]: Began running node model.privatbank_analytics.raw_exchange_rates
+[0m22:39:15.639817 [info ] [Thread-4 (]: 4 of 20 START sql view model main.raw_fraud_alerts ............................. [RUN]
+[0m22:39:15.641134 [info ] [Thread-1 (]: 1 of 20 START sql view model main.raw_accounts ................................. [RUN]
+[0m22:39:15.645056 [debug] [Thread-4 (]: Acquiring new duckdb connection 'model.privatbank_analytics.raw_fraud_alerts'
+[0m22:39:15.646095 [debug] [Thread-1 (]: Acquiring new duckdb connection 'model.privatbank_analytics.raw_accounts'
+[0m22:39:15.642300 [info ] [Thread-2 (]: 2 of 20 START sql view model main.raw_customers ................................ [RUN]
+[0m22:39:15.647137 [debug] [Thread-4 (]: Began compiling node model.privatbank_analytics.raw_fraud_alerts
+[0m22:39:15.643552 [info ] [Thread-3 (]: 3 of 20 START sql view model main.raw_exchange_rates ........................... [RUN]
+[0m22:39:15.664106 [debug] [Thread-3 (]: Acquiring new duckdb connection 'model.privatbank_analytics.raw_exchange_rates'
+[0m22:39:15.649389 [debug] [Thread-2 (]: Acquiring new duckdb connection 'model.privatbank_analytics.raw_customers'
+[0m22:39:15.648385 [debug] [Thread-1 (]: Began compiling node model.privatbank_analytics.raw_accounts
+[0m22:39:15.665423 [debug] [Thread-3 (]: Began compiling node model.privatbank_analytics.raw_exchange_rates
+[0m22:39:15.668738 [debug] [Thread-4 (]: Writing injected SQL for node "model.privatbank_analytics.raw_fraud_alerts"
+[0m22:39:15.669696 [debug] [Thread-2 (]: Began compiling node model.privatbank_analytics.raw_customers
+[0m22:39:15.675526 [debug] [Thread-1 (]: Writing injected SQL for node "model.privatbank_analytics.raw_accounts"
+[0m22:39:15.681736 [debug] [Thread-3 (]: Writing injected SQL for node "model.privatbank_analytics.raw_exchange_rates"
+[0m22:39:15.686881 [debug] [Thread-2 (]: Writing injected SQL for node "model.privatbank_analytics.raw_customers"
+[0m22:39:15.723305 [debug] [Thread-2 (]: Began executing node model.privatbank_analytics.raw_customers
+[0m22:39:15.769488 [debug] [Thread-3 (]: Began executing node model.privatbank_analytics.raw_exchange_rates
+[0m22:39:15.813352 [debug] [Thread-3 (]: Writing runtime sql for node "model.privatbank_analytics.raw_exchange_rates"
+[0m22:39:15.814792 [debug] [Thread-2 (]: Writing runtime sql for node "model.privatbank_analytics.raw_customers"
+[0m22:39:15.815693 [debug] [Thread-4 (]: Began executing node model.privatbank_analytics.raw_fraud_alerts
+[0m22:39:15.816867 [debug] [Thread-1 (]: Began executing node model.privatbank_analytics.raw_accounts
+[0m22:39:15.822416 [debug] [Thread-4 (]: Writing runtime sql for node "model.privatbank_analytics.raw_fraud_alerts"
+[0m22:39:15.828674 [debug] [Thread-1 (]: Writing runtime sql for node "model.privatbank_analytics.raw_accounts"
+[0m22:39:15.831513 [debug] [Thread-3 (]: Using duckdb connection "model.privatbank_analytics.raw_exchange_rates"
+[0m22:39:15.832636 [debug] [Thread-3 (]: On model.privatbank_analytics.raw_exchange_rates: BEGIN
+[0m22:39:15.833463 [debug] [Thread-3 (]: Opening a new connection, currently in state init
+[0m22:39:15.835411 [debug] [Thread-2 (]: Using duckdb connection "model.privatbank_analytics.raw_customers"
+[0m22:39:15.836230 [debug] [Thread-2 (]: On model.privatbank_analytics.raw_customers: BEGIN
+[0m22:39:15.837206 [debug] [Thread-2 (]: Opening a new connection, currently in state init
+[0m22:39:15.838167 [debug] [Thread-4 (]: Using duckdb connection "model.privatbank_analytics.raw_fraud_alerts"
+[0m22:39:15.838913 [debug] [Thread-3 (]: SQL status: OK in 0.005 seconds
+[0m22:39:15.840017 [debug] [Thread-4 (]: On model.privatbank_analytics.raw_fraud_alerts: BEGIN
+[0m22:39:15.840956 [debug] [Thread-3 (]: Using duckdb connection "model.privatbank_analytics.raw_exchange_rates"
+[0m22:39:15.841811 [debug] [Thread-4 (]: Opening a new connection, currently in state init
+[0m22:39:15.842601 [debug] [Thread-2 (]: SQL status: OK in 0.005 seconds
+[0m22:39:15.843412 [debug] [Thread-1 (]: Using duckdb connection "model.privatbank_analytics.raw_accounts"
+[0m22:39:15.844144 [debug] [Thread-3 (]: On model.privatbank_analytics.raw_exchange_rates: /* {"app": "dbt", "dbt_version": "1.11.7", "profile_name": "privatbank_duckdb", "target_name": "dev", "node_id": "model.privatbank_analytics.raw_exchange_rates"} */
+
+  
+  create view "privatbank"."main"."raw_exchange_rates__dbt_tmp" as (
+    select * from "privatbank"."main"."exchange_rates"
+  );
+
+[0m22:39:15.845467 [debug] [Thread-2 (]: Using duckdb connection "model.privatbank_analytics.raw_customers"
+[0m22:39:15.846539 [debug] [Thread-4 (]: SQL status: OK in 0.005 seconds
+[0m22:39:15.847418 [debug] [Thread-1 (]: On model.privatbank_analytics.raw_accounts: BEGIN
+[0m22:39:15.849032 [debug] [Thread-2 (]: On model.privatbank_analytics.raw_customers: /* {"app": "dbt", "dbt_version": "1.11.7", "profile_name": "privatbank_duckdb", "target_name": "dev", "node_id": "model.privatbank_analytics.raw_customers"} */
+
+  
+  create view "privatbank"."main"."raw_customers__dbt_tmp" as (
+    select * from "privatbank"."main"."customers"
+  );
+
+[0m22:39:15.850060 [debug] [Thread-4 (]: Using duckdb connection "model.privatbank_analytics.raw_fraud_alerts"
+[0m22:39:15.850910 [debug] [Thread-3 (]: SQL status: OK in 0.002 seconds
+[0m22:39:15.851605 [debug] [Thread-1 (]: Opening a new connection, currently in state init
+[0m22:39:15.852705 [debug] [Thread-4 (]: On model.privatbank_analytics.raw_fraud_alerts: /* {"app": "dbt", "dbt_version": "1.11.7", "profile_name": "privatbank_duckdb", "target_name": "dev", "node_id": "model.privatbank_analytics.raw_fraud_alerts"} */
+
+  
+  create view "privatbank"."main"."raw_fraud_alerts__dbt_tmp" as (
+    select * from "privatbank"."main"."fraud_alerts"
+  );
+
+[0m22:39:15.865266 [debug] [Thread-3 (]: Using duckdb connection "model.privatbank_analytics.raw_exchange_rates"
+[0m22:39:15.866272 [debug] [Thread-2 (]: SQL status: OK in 0.014 seconds
+[0m22:39:15.868224 [debug] [Thread-3 (]: On model.privatbank_analytics.raw_exchange_rates: /* {"app": "dbt", "dbt_version": "1.11.7", "profile_name": "privatbank_duckdb", "target_name": "dev", "node_id": "model.privatbank_analytics.raw_exchange_rates"} */
+alter view "privatbank"."main"."raw_exchange_rates__dbt_tmp" rename to "raw_exchange_rates"
+[0m22:39:15.870411 [debug] [Thread-1 (]: SQL status: OK in 0.019 seconds
+[0m22:39:15.871179 [debug] [Thread-4 (]: SQL status: OK in 0.003 seconds
+[0m22:39:15.875756 [debug] [Thread-2 (]: Using duckdb connection "model.privatbank_analytics.raw_customers"
+[0m22:39:15.877043 [debug] [Thread-1 (]: Using duckdb connection "model.privatbank_analytics.raw_accounts"
+[0m22:39:15.882212 [debug] [Thread-4 (]: Using duckdb connection "model.privatbank_analytics.raw_fraud_alerts"
+[0m22:39:15.883222 [debug] [Thread-3 (]: SQL status: OK in 0.007 seconds
+[0m22:39:15.884283 [debug] [Thread-2 (]: On model.privatbank_analytics.raw_customers: /* {"app": "dbt", "dbt_version": "1.11.7", "profile_name": "privatbank_duckdb", "target_name": "dev", "node_id": "model.privatbank_analytics.raw_customers"} */
+alter view "privatbank"."main"."raw_customers__dbt_tmp" rename to "raw_customers"
+[0m22:39:15.885535 [debug] [Thread-1 (]: On model.privatbank_analytics.raw_accounts: /* {"app": "dbt", "dbt_version": "1.11.7", "profile_name": "privatbank_duckdb", "target_name": "dev", "node_id": "model.privatbank_analytics.raw_accounts"} */
+
+  
+  create view "privatbank"."main"."raw_accounts__dbt_tmp" as (
+    select * from "privatbank"."main"."accounts"
+  );
+
+[0m22:39:15.886615 [debug] [Thread-4 (]: On model.privatbank_analytics.raw_fraud_alerts: /* {"app": "dbt", "dbt_version": "1.11.7", "profile_name": "privatbank_duckdb", "target_name": "dev", "node_id": "model.privatbank_analytics.raw_fraud_alerts"} */
+alter view "privatbank"."main"."raw_fraud_alerts__dbt_tmp" rename to "raw_fraud_alerts"
+[0m22:39:15.906856 [debug] [Thread-3 (]: On model.privatbank_analytics.raw_exchange_rates: COMMIT
+[0m22:39:15.909140 [debug] [Thread-3 (]: Using duckdb connection "model.privatbank_analytics.raw_exchange_rates"
+[0m22:39:15.910310 [debug] [Thread-1 (]: SQL status: OK in 0.002 seconds
+[0m22:39:15.911263 [debug] [Thread-2 (]: SQL status: OK in 0.003 seconds
+[0m22:39:15.912074 [debug] [Thread-3 (]: On model.privatbank_analytics.raw_exchange_rates: COMMIT
+[0m22:39:15.912897 [debug] [Thread-4 (]: SQL status: OK in 0.004 seconds
+[0m22:39:15.920513 [debug] [Thread-2 (]: On model.privatbank_analytics.raw_customers: COMMIT
+[0m22:39:15.922891 [debug] [Thread-1 (]: Using duckdb connection "model.privatbank_analytics.raw_accounts"
+[0m22:39:15.926102 [debug] [Thread-4 (]: On model.privatbank_analytics.raw_fraud_alerts: COMMIT
+[0m22:39:15.927266 [debug] [Thread-2 (]: Using duckdb connection "model.privatbank_analytics.raw_customers"
+[0m22:39:15.928439 [debug] [Thread-1 (]: On model.privatbank_analytics.raw_accounts: /* {"app": "dbt", "dbt_version": "1.11.7", "profile_name": "privatbank_duckdb", "target_name": "dev", "node_id": "model.privatbank_analytics.raw_accounts"} */
+alter view "privatbank"."main"."raw_accounts__dbt_tmp" rename to "raw_accounts"
+[0m22:39:15.929644 [debug] [Thread-4 (]: Using duckdb connection "model.privatbank_analytics.raw_fraud_alerts"
+[0m22:39:15.930419 [debug] [Thread-2 (]: On model.privatbank_analytics.raw_customers: COMMIT
+[0m22:39:15.931274 [debug] [Thread-3 (]: SQL status: OK in 0.007 seconds
+[0m22:39:15.932428 [debug] [Thread-4 (]: On model.privatbank_analytics.raw_fraud_alerts: COMMIT
+[0m22:39:15.933456 [debug] [Thread-1 (]: SQL status: OK in 0.002 seconds
+[0m22:39:15.943831 [debug] [Thread-3 (]: Using duckdb connection "model.privatbank_analytics.raw_exchange_rates"
+[0m22:39:15.945396 [debug] [Thread-2 (]: SQL status: OK in 0.012 seconds
+[0m22:39:15.948526 [debug] [Thread-1 (]: On model.privatbank_analytics.raw_accounts: COMMIT
+[0m22:39:15.949369 [debug] [Thread-4 (]: SQL status: OK in 0.005 seconds
+[0m22:39:15.950329 [debug] [Thread-3 (]: On model.privatbank_analytics.raw_exchange_rates: /* {"app": "dbt", "dbt_version": "1.11.7", "profile_name": "privatbank_duckdb", "target_name": "dev", "node_id": "model.privatbank_analytics.raw_exchange_rates"} */
+
+      drop view if exists "privatbank"."main"."raw_exchange_rates__dbt_backup" cascade
+    
+[0m22:39:15.955115 [debug] [Thread-2 (]: Using duckdb connection "model.privatbank_analytics.raw_customers"
+[0m22:39:15.956119 [debug] [Thread-1 (]: Using duckdb connection "model.privatbank_analytics.raw_accounts"
+[0m22:39:15.960639 [debug] [Thread-4 (]: Using duckdb connection "model.privatbank_analytics.raw_fraud_alerts"
+[0m22:39:15.961935 [debug] [Thread-2 (]: On model.privatbank_analytics.raw_customers: /* {"app": "dbt", "dbt_version": "1.11.7", "profile_name": "privatbank_duckdb", "target_name": "dev", "node_id": "model.privatbank_analytics.raw_customers"} */
+
+      drop view if exists "privatbank"."main"."raw_customers__dbt_backup" cascade
+    
+[0m22:39:15.962893 [debug] [Thread-1 (]: On model.privatbank_analytics.raw_accounts: COMMIT
+[0m22:39:15.964163 [debug] [Thread-4 (]: On model.privatbank_analytics.raw_fraud_alerts: /* {"app": "dbt", "dbt_version": "1.11.7", "profile_name": "privatbank_duckdb", "target_name": "dev", "node_id": "model.privatbank_analytics.raw_fraud_alerts"} */
+
+      drop view if exists "privatbank"."main"."raw_fraud_alerts__dbt_backup" cascade
+    
+[0m22:39:15.965369 [debug] [Thread-3 (]: SQL status: OK in 0.004 seconds
+[0m22:39:15.970709 [debug] [Thread-3 (]: On model.privatbank_analytics.raw_exchange_rates: Close
+[0m22:39:15.971586 [debug] [Thread-2 (]: SQL status: OK in 0.005 seconds
+[0m22:39:15.972957 [debug] [Thread-4 (]: SQL status: OK in 0.006 seconds
+[0m22:39:15.973948 [debug] [Thread-1 (]: SQL status: OK in 0.008 seconds
+[0m22:39:15.979959 [debug] [Thread-2 (]: On model.privatbank_analytics.raw_customers: Close
+[0m22:39:15.983972 [debug] [Thread-4 (]: On model.privatbank_analytics.raw_fraud_alerts: Close
+[0m22:39:15.988283 [debug] [Thread-1 (]: Using duckdb connection "model.privatbank_analytics.raw_accounts"
+[0m22:39:15.990340 [debug] [Thread-1 (]: On model.privatbank_analytics.raw_accounts: /* {"app": "dbt", "dbt_version": "1.11.7", "profile_name": "privatbank_duckdb", "target_name": "dev", "node_id": "model.privatbank_analytics.raw_accounts"} */
+
+      drop view if exists "privatbank"."main"."raw_accounts__dbt_backup" cascade
+    
+[0m22:39:15.991785 [info ] [Thread-3 (]: 3 of 20 OK created sql view model main.raw_exchange_rates ...................... [[32mOK[0m in 0.31s]
+[0m22:39:15.995447 [debug] [Thread-1 (]: SQL status: OK in 0.004 seconds
+[0m22:39:15.996635 [debug] [Thread-3 (]: Finished running node model.privatbank_analytics.raw_exchange_rates
+[0m22:39:15.992799 [info ] [Thread-2 (]: 2 of 20 OK created sql view model main.raw_customers ........................... [[32mOK[0m in 0.34s]
+[0m22:39:15.999538 [debug] [Thread-1 (]: On model.privatbank_analytics.raw_accounts: Close
+[0m22:39:16.000796 [debug] [Thread-3 (]: Began running node model.privatbank_analytics.raw_loan_applications
+[0m22:39:15.994189 [info ] [Thread-4 (]: 4 of 20 OK created sql view model main.raw_fraud_alerts ........................ [[32mOK[0m in 0.35s]
+[0m22:39:16.002241 [debug] [Thread-2 (]: Finished running node model.privatbank_analytics.raw_customers
+[0m22:39:16.003748 [info ] [Thread-1 (]: 1 of 20 OK created sql view model main.raw_accounts ............................ [[32mOK[0m in 0.36s]
+[0m22:39:16.006402 [debug] [Thread-4 (]: Finished running node model.privatbank_analytics.raw_fraud_alerts
+[0m22:39:16.007784 [debug] [Thread-2 (]: Began running node model.privatbank_analytics.raw_loan_repayments
+[0m22:39:16.004556 [info ] [Thread-3 (]: 5 of 20 START sql view model main.raw_loan_applications ........................ [RUN]
+[0m22:39:16.009971 [debug] [Thread-1 (]: Finished running node model.privatbank_analytics.raw_accounts
+[0m22:39:16.010944 [debug] [Thread-4 (]: Began running node model.privatbank_analytics.raw_transactions
+[0m22:39:16.013250 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly model.privatbank_analytics.raw_exchange_rates, now model.privatbank_analytics.raw_loan_applications)
+[0m22:39:16.012158 [info ] [Thread-2 (]: 6 of 20 START sql view model main.raw_loan_repayments .......................... [RUN]
+[0m22:39:16.014545 [debug] [Thread-1 (]: Began running node model.privatbank_analytics.stg_exchange_rates
+[0m22:39:16.016680 [debug] [Thread-3 (]: Began compiling node model.privatbank_analytics.raw_loan_applications
+[0m22:39:16.015749 [info ] [Thread-4 (]: 7 of 20 START sql view model main.raw_transactions ............................. [RUN]
+[0m22:39:16.018091 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly model.privatbank_analytics.raw_customers, now model.privatbank_analytics.raw_loan_repayments)
+[0m22:39:16.024791 [debug] [Thread-3 (]: Writing injected SQL for node "model.privatbank_analytics.raw_loan_applications"
+[0m22:39:16.019098 [info ] [Thread-1 (]: 8 of 20 START sql view model main.stg_exchange_rates ........................... [RUN]
+[0m22:39:16.026207 [debug] [Thread-4 (]: Re-using an available connection from the pool (formerly model.privatbank_analytics.raw_fraud_alerts, now model.privatbank_analytics.raw_transactions)
+[0m22:39:16.027220 [debug] [Thread-2 (]: Began compiling node model.privatbank_analytics.raw_loan_repayments
+[0m22:39:16.028893 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.privatbank_analytics.raw_accounts, now model.privatbank_analytics.stg_exchange_rates)
+[0m22:39:16.030601 [debug] [Thread-4 (]: Began compiling node model.privatbank_analytics.raw_transactions
+[0m22:39:16.035759 [debug] [Thread-2 (]: Writing injected SQL for node "model.privatbank_analytics.raw_loan_repayments"
+[0m22:39:16.036946 [debug] [Thread-1 (]: Began compiling node model.privatbank_analytics.stg_exchange_rates
+[0m22:39:16.041703 [debug] [Thread-4 (]: Writing injected SQL for node "model.privatbank_analytics.raw_transactions"
+[0m22:39:16.042771 [debug] [Thread-3 (]: Began executing node model.privatbank_analytics.raw_loan_applications
+[0m22:39:16.051467 [debug] [Thread-1 (]: Writing injected SQL for node "model.privatbank_analytics.stg_exchange_rates"
+[0m22:39:16.059390 [debug] [Thread-3 (]: Writing runtime sql for node "model.privatbank_analytics.raw_loan_applications"
+[0m22:39:16.060962 [debug] [Thread-2 (]: Began executing node model.privatbank_analytics.raw_loan_repayments
+[0m22:39:16.062388 [debug] [Thread-4 (]: Began executing node model.privatbank_analytics.raw_transactions
+[0m22:39:16.074475 [debug] [Thread-2 (]: Writing runtime sql for node "model.privatbank_analytics.raw_loan_repayments"
+[0m22:39:16.081407 [debug] [Thread-4 (]: Writing runtime sql for node "model.privatbank_analytics.raw_transactions"
+[0m22:39:16.082394 [debug] [Thread-3 (]: Using duckdb connection "model.privatbank_analytics.raw_loan_applications"
+[0m22:39:16.083547 [debug] [Thread-3 (]: On model.privatbank_analytics.raw_loan_applications: BEGIN
+[0m22:39:16.084401 [debug] [Thread-1 (]: Began executing node model.privatbank_analytics.stg_exchange_rates
+[0m22:39:16.085170 [debug] [Thread-3 (]: Opening a new connection, currently in state closed
+[0m22:39:16.090840 [debug] [Thread-1 (]: Writing runtime sql for node "model.privatbank_analytics.stg_exchange_rates"
+[0m22:39:16.091868 [debug] [Thread-2 (]: Using duckdb connection "model.privatbank_analytics.raw_loan_repayments"
+[0m22:39:16.093137 [debug] [Thread-4 (]: Using duckdb connection "model.privatbank_analytics.raw_transactions"
+[0m22:39:16.094196 [debug] [Thread-3 (]: SQL status: OK in 0.009 seconds
+[0m22:39:16.094962 [debug] [Thread-2 (]: On model.privatbank_analytics.raw_loan_repayments: BEGIN
+[0m22:39:16.096039 [debug] [Thread-4 (]: On model.privatbank_analytics.raw_transactions: BEGIN
+[0m22:39:16.096911 [debug] [Thread-3 (]: Using duckdb connection "model.privatbank_analytics.raw_loan_applications"
+[0m22:39:16.097775 [debug] [Thread-2 (]: Opening a new connection, currently in state closed
+[0m22:39:16.098641 [debug] [Thread-4 (]: Opening a new connection, currently in state closed
+[0m22:39:16.099417 [debug] [Thread-3 (]: On model.privatbank_analytics.raw_loan_applications: /* {"app": "dbt", "dbt_version": "1.11.7", "profile_name": "privatbank_duckdb", "target_name": "dev", "node_id": "model.privatbank_analytics.raw_loan_applications"} */
+
+  
+  create view "privatbank"."main"."raw_loan_applications__dbt_tmp" as (
+    select * from "privatbank"."main"."loan_applications"
+  );
+
+[0m22:39:16.100286 [debug] [Thread-1 (]: Using duckdb connection "model.privatbank_analytics.stg_exchange_rates"
+[0m22:39:16.101777 [debug] [Thread-2 (]: SQL status: OK in 0.004 seconds
+[0m22:39:16.103775 [debug] [Thread-2 (]: Using duckdb connection "model.privatbank_analytics.raw_loan_repayments"
+[0m22:39:16.104577 [debug] [Thread-4 (]: SQL status: OK in 0.006 seconds
+[0m22:39:16.102828 [debug] [Thread-1 (]: On model.privatbank_analytics.stg_exchange_rates: BEGIN
+[0m22:39:16.105734 [debug] [Thread-2 (]: On model.privatbank_analytics.raw_loan_repayments: /* {"app": "dbt", "dbt_version": "1.11.7", "profile_name": "privatbank_duckdb", "target_name": "dev", "node_id": "model.privatbank_analytics.raw_loan_repayments"} */
+
+  
+  create view "privatbank"."main"."raw_loan_repayments__dbt_tmp" as (
+    select * from "privatbank"."main"."loan_repayments"
+  );
+
+[0m22:39:16.106687 [debug] [Thread-3 (]: SQL status: OK in 0.005 seconds
+[0m22:39:16.107753 [debug] [Thread-4 (]: Using duckdb connection "model.privatbank_analytics.raw_transactions"
+[0m22:39:16.108491 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m22:39:16.115278 [debug] [Thread-3 (]: Using duckdb connection "model.privatbank_analytics.raw_loan_applications"
+[0m22:39:16.116155 [debug] [Thread-4 (]: On model.privatbank_analytics.raw_transactions: /* {"app": "dbt", "dbt_version": "1.11.7", "profile_name": "privatbank_duckdb", "target_name": "dev", "node_id": "model.privatbank_analytics.raw_transactions"} */
+
+  
+  create view "privatbank"."main"."raw_transactions__dbt_tmp" as (
+    select * from "privatbank"."main"."transactions"
+  );
+
+[0m22:39:16.117337 [debug] [Thread-2 (]: SQL status: OK in 0.008 seconds
+[0m22:39:16.118241 [debug] [Thread-3 (]: On model.privatbank_analytics.raw_loan_applications: /* {"app": "dbt", "dbt_version": "1.11.7", "profile_name": "privatbank_duckdb", "target_name": "dev", "node_id": "model.privatbank_analytics.raw_loan_applications"} */
+alter view "privatbank"."main"."raw_loan_applications__dbt_tmp" rename to "raw_loan_applications"
+[0m22:39:16.119101 [debug] [Thread-1 (]: SQL status: OK in 0.011 seconds
+[0m22:39:16.124643 [debug] [Thread-2 (]: Using duckdb connection "model.privatbank_analytics.raw_loan_repayments"
+[0m22:39:16.125855 [debug] [Thread-4 (]: SQL status: OK in 0.006 seconds
+[0m22:39:16.127015 [debug] [Thread-1 (]: Using duckdb connection "model.privatbank_analytics.stg_exchange_rates"
+[0m22:39:16.128240 [debug] [Thread-3 (]: SQL status: OK in 0.003 seconds
+[0m22:39:16.133772 [debug] [Thread-4 (]: Using duckdb connection "model.privatbank_analytics.raw_transactions"
+[0m22:39:16.134353 [debug] [Thread-2 (]: On model.privatbank_analytics.raw_loan_repayments: /* {"app": "dbt", "dbt_version": "1.11.7", "profile_name": "privatbank_duckdb", "target_name": "dev", "node_id": "model.privatbank_analytics.raw_loan_repayments"} */
+alter view "privatbank"."main"."raw_loan_repayments__dbt_tmp" rename to "raw_loan_repayments"
+[0m22:39:16.135491 [debug] [Thread-1 (]: On model.privatbank_analytics.stg_exchange_rates: /* {"app": "dbt", "dbt_version": "1.11.7", "profile_name": "privatbank_duckdb", "target_name": "dev", "node_id": "model.privatbank_analytics.stg_exchange_rates"} */
+
+  
+  create view "privatbank"."main"."stg_exchange_rates__dbt_tmp" as (
+    with source as (
+    select * from "privatbank"."main"."raw_exchange_rates"
+),
+
+cleaned as (
+    select
+        rate_id,
+        cast(rate_date as date)                   as rate_date,
+        upper(currency_from)                      as currency_from,
+        upper(currency_to)                        as currency_to,
+        cast(rate as numeric(18,6))               as rate
+    from source
+)
+
+select * from cleaned
+  );
+
+[0m22:39:16.138196 [debug] [Thread-3 (]: On model.privatbank_analytics.raw_loan_applications: COMMIT
+[0m22:39:16.139017 [debug] [Thread-4 (]: On model.privatbank_analytics.raw_transactions: /* {"app": "dbt", "dbt_version": "1.11.7", "profile_name": "privatbank_duckdb", "target_name": "dev", "node_id": "model.privatbank_analytics.raw_transactions"} */
+alter view "privatbank"."main"."raw_transactions__dbt_tmp" rename to "raw_transactions"
+[0m22:39:16.140554 [debug] [Thread-3 (]: Using duckdb connection "model.privatbank_analytics.raw_loan_applications"
+[0m22:39:16.141420 [debug] [Thread-2 (]: SQL status: OK in 0.002 seconds
+[0m22:39:16.142403 [debug] [Thread-3 (]: On model.privatbank_analytics.raw_loan_applications: COMMIT
+[0m22:39:16.144680 [debug] [Thread-2 (]: On model.privatbank_analytics.raw_loan_repayments: COMMIT
+[0m22:39:16.145669 [debug] [Thread-1 (]: DuckDB adapter: duckdb error: Binder Error: Referenced column "rate_id" not found in FROM clause!
+Candidate bindings: "rate_id", "rate", "rate_date", "currency_to", "currency_from"
+
+LINE 11:         rate_id,
+                 ^
+[0m22:39:16.146339 [debug] [Thread-4 (]: SQL status: OK in 0.004 seconds
+[0m22:39:16.147215 [debug] [Thread-2 (]: Using duckdb connection "model.privatbank_analytics.raw_loan_repayments"
+[0m22:39:16.148340 [debug] [Thread-1 (]: DuckDB adapter: Error running SQL: /* {"app": "dbt", "dbt_version": "1.11.7", "profile_name": "privatbank_duckdb", "target_name": "dev", "node_id": "model.privatbank_analytics.stg_exchange_rates"} */
+
+  
+  create view "privatbank"."main"."stg_exchange_rates__dbt_tmp" as (
+    with source as (
+    select * from "privatbank"."main"."raw_exchange_rates"
+),
+
+cleaned as (
+    select
+        rate_id,
+        cast(rate_date as date)                   as rate_date,
+        upper(currency_from)                      as currency_from,
+        upper(currency_to)                        as currency_to,
+        cast(rate as numeric(18,6))               as rate
+    from source
+)
+
+select * from cleaned
+  );
+
+[0m22:39:16.150853 [debug] [Thread-4 (]: On model.privatbank_analytics.raw_transactions: COMMIT
+[0m22:39:16.151851 [debug] [Thread-3 (]: SQL status: OK in 0.005 seconds
+[0m22:39:16.152728 [debug] [Thread-2 (]: On model.privatbank_analytics.raw_loan_repayments: COMMIT
+[0m22:39:16.153816 [debug] [Thread-1 (]: DuckDB adapter: Rolling back transaction.
+[0m22:39:16.154539 [debug] [Thread-4 (]: Using duckdb connection "model.privatbank_analytics.raw_transactions"
+[0m22:39:16.158426 [debug] [Thread-3 (]: Using duckdb connection "model.privatbank_analytics.raw_loan_applications"
+[0m22:39:16.159608 [debug] [Thread-1 (]: On model.privatbank_analytics.stg_exchange_rates: ROLLBACK
+[0m22:39:16.160786 [debug] [Thread-4 (]: On model.privatbank_analytics.raw_transactions: COMMIT
+[0m22:39:16.162031 [debug] [Thread-3 (]: On model.privatbank_analytics.raw_loan_applications: /* {"app": "dbt", "dbt_version": "1.11.7", "profile_name": "privatbank_duckdb", "target_name": "dev", "node_id": "model.privatbank_analytics.raw_loan_applications"} */
+
+      drop view if exists "privatbank"."main"."raw_loan_applications__dbt_backup" cascade
+    
+[0m22:39:16.163173 [debug] [Thread-2 (]: SQL status: OK in 0.004 seconds
+[0m22:39:16.168534 [debug] [Thread-2 (]: Using duckdb connection "model.privatbank_analytics.raw_loan_repayments"
+[0m22:39:16.169589 [debug] [Thread-2 (]: On model.privatbank_analytics.raw_loan_repayments: /* {"app": "dbt", "dbt_version": "1.11.7", "profile_name": "privatbank_duckdb", "target_name": "dev", "node_id": "model.privatbank_analytics.raw_loan_repayments"} */
+
+      drop view if exists "privatbank"."main"."raw_loan_repayments__dbt_backup" cascade
+    
+[0m22:39:16.170561 [debug] [Thread-4 (]: SQL status: OK in 0.006 seconds
+[0m22:39:16.172081 [debug] [Thread-3 (]: SQL status: OK in 0.007 seconds
+[0m22:39:16.176751 [debug] [Thread-4 (]: Using duckdb connection "model.privatbank_analytics.raw_transactions"
+[0m22:39:16.177688 [debug] [Thread-2 (]: SQL status: OK in 0.006 seconds
+[0m22:39:16.180723 [debug] [Thread-3 (]: On model.privatbank_analytics.raw_loan_applications: Close
+[0m22:39:16.181542 [debug] [Thread-4 (]: On model.privatbank_analytics.raw_transactions: /* {"app": "dbt", "dbt_version": "1.11.7", "profile_name": "privatbank_duckdb", "target_name": "dev", "node_id": "model.privatbank_analytics.raw_transactions"} */
+
+      drop view if exists "privatbank"."main"."raw_transactions__dbt_backup" cascade
+    
+[0m22:39:16.184232 [debug] [Thread-2 (]: On model.privatbank_analytics.raw_loan_repayments: Close
+[0m22:39:16.186353 [info ] [Thread-3 (]: 5 of 20 OK created sql view model main.raw_loan_applications ................... [[32mOK[0m in 0.17s]
+[0m22:39:16.188589 [debug] [Thread-3 (]: Finished running node model.privatbank_analytics.raw_loan_applications
+[0m22:39:16.190784 [debug] [Thread-3 (]: Began running node model.privatbank_analytics.stg_customers
+[0m22:39:16.191828 [debug] [Thread-4 (]: SQL status: OK in 0.005 seconds
+[0m22:39:16.189998 [info ] [Thread-2 (]: 6 of 20 OK created sql view model main.raw_loan_repayments ..................... [[32mOK[0m in 0.17s]
+[0m22:39:16.195864 [debug] [Thread-4 (]: On model.privatbank_analytics.raw_transactions: Close
+[0m22:39:16.193130 [info ] [Thread-3 (]: 9 of 20 START sql view model main.stg_customers ................................ [RUN]
+[0m22:39:16.197157 [debug] [Thread-2 (]: Finished running node model.privatbank_analytics.raw_loan_repayments
+[0m22:39:16.199291 [debug] [Thread-1 (]: Failed to rollback 'model.privatbank_analytics.stg_exchange_rates'
+[0m22:39:16.201523 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly model.privatbank_analytics.raw_loan_applications, now model.privatbank_analytics.stg_customers)
+[0m22:39:16.200608 [info ] [Thread-4 (]: 7 of 20 OK created sql view model main.raw_transactions ........................ [[32mOK[0m in 0.17s]
+[0m22:39:16.202933 [debug] [Thread-2 (]: Began running node model.privatbank_analytics.stg_fraud_alerts
+[0m22:39:16.204163 [debug] [Thread-1 (]: On model.privatbank_analytics.stg_exchange_rates: Close
+[0m22:39:16.204891 [debug] [Thread-3 (]: Began compiling node model.privatbank_analytics.stg_customers
+[0m22:39:16.205871 [debug] [Thread-4 (]: Finished running node model.privatbank_analytics.raw_transactions
+[0m22:39:16.206726 [info ] [Thread-2 (]: 10 of 20 START sql view model main.stg_fraud_alerts ............................ [RUN]
+[0m22:39:16.217162 [debug] [Thread-3 (]: Writing injected SQL for node "model.privatbank_analytics.stg_customers"
+[0m22:39:16.218011 [debug] [Thread-4 (]: Began running node model.privatbank_analytics.stg_accounts
+[0m22:39:16.219316 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly model.privatbank_analytics.raw_loan_repayments, now model.privatbank_analytics.stg_fraud_alerts)
+[0m22:39:16.221736 [debug] [Thread-2 (]: Began compiling node model.privatbank_analytics.stg_fraud_alerts
+[0m22:39:16.228699 [debug] [Thread-2 (]: Writing injected SQL for node "model.privatbank_analytics.stg_fraud_alerts"
+[0m22:39:16.230637 [debug] [Thread-3 (]: Began executing node model.privatbank_analytics.stg_customers
+[0m22:39:16.236665 [debug] [Thread-3 (]: Writing runtime sql for node "model.privatbank_analytics.stg_customers"
+[0m22:39:16.237787 [debug] [Thread-2 (]: Began executing node model.privatbank_analytics.stg_fraud_alerts
+[0m22:39:16.220961 [info ] [Thread-4 (]: 11 of 20 START sql view model main.stg_accounts ................................ [RUN]
+[0m22:39:16.245490 [debug] [Thread-4 (]: Re-using an available connection from the pool (formerly model.privatbank_analytics.raw_transactions, now model.privatbank_analytics.stg_accounts)
+[0m22:39:16.246403 [debug] [Thread-4 (]: Began compiling node model.privatbank_analytics.stg_accounts
+[0m22:39:16.252241 [debug] [Thread-4 (]: Writing injected SQL for node "model.privatbank_analytics.stg_accounts"
+[0m22:39:16.244518 [debug] [Thread-2 (]: Writing runtime sql for node "model.privatbank_analytics.stg_fraud_alerts"
+[0m22:39:16.255149 [debug] [Thread-3 (]: Using duckdb connection "model.privatbank_analytics.stg_customers"
+[0m22:39:16.256034 [debug] [Thread-4 (]: Began executing node model.privatbank_analytics.stg_accounts
+[0m22:39:16.256826 [debug] [Thread-3 (]: On model.privatbank_analytics.stg_customers: BEGIN
+[0m22:39:16.257656 [debug] [Thread-2 (]: Using duckdb connection "model.privatbank_analytics.stg_fraud_alerts"
+[0m22:39:16.262650 [debug] [Thread-3 (]: Opening a new connection, currently in state closed
+[0m22:39:16.266509 [debug] [Thread-4 (]: Writing runtime sql for node "model.privatbank_analytics.stg_accounts"
+[0m22:39:16.267955 [debug] [Thread-2 (]: On model.privatbank_analytics.stg_fraud_alerts: BEGIN
+[0m22:39:16.269689 [debug] [Thread-2 (]: Opening a new connection, currently in state closed
+[0m22:39:16.270926 [debug] [Thread-3 (]: SQL status: OK in 0.008 seconds
+[0m22:39:16.271647 [debug] [Thread-3 (]: Using duckdb connection "model.privatbank_analytics.stg_customers"
+[0m22:39:16.272445 [debug] [Thread-3 (]: On model.privatbank_analytics.stg_customers: /* {"app": "dbt", "dbt_version": "1.11.7", "profile_name": "privatbank_duckdb", "target_name": "dev", "node_id": "model.privatbank_analytics.stg_customers"} */
+
+  
+  create view "privatbank"."main"."stg_customers__dbt_tmp" as (
+    with source as (
+    select * from "privatbank"."main"."raw_customers"
+),
+ 
+cleaned as (
+    select
+        customer_id,
+        
+    initcap(trim(lower(first_name)))
+             as first_name,
+        
+    initcap(trim(lower(last_name)))
+              as last_name,
+        cast(date_of_birth as date)                      as date_of_birth,
+        
+    initcap(trim(lower(gender)))
+                 as gender,
+        phone,
+        lower(email)                                     as email,
+        
+    initcap(trim(lower(city)))
+                   as city,
+        
+    initcap(trim(lower(region)))
+                 as region,
+        cast(registration_date as date)                  as registration_date,
+        
+    initcap(trim(lower(customer_segment)))
+       as customer_segment,
+        cast(credit_score as integer)                    as credit_score,
+        cast(is_active as boolean)                       as is_active,
+ 
+        date_diff('year', cast(date_of_birth as date), current_date) as age_years,
+ 
+
+        date_diff('day', cast(registration_date as date), current_date) as days_since_registration
+ 
+    from source
+)
+ 
+select * from cleaned
+  );
+
+[0m22:39:16.274045 [debug] [Thread-2 (]: SQL status: OK in 0.004 seconds
+[0m22:39:16.274939 [debug] [Thread-2 (]: Using duckdb connection "model.privatbank_analytics.stg_fraud_alerts"
+[0m22:39:16.275687 [debug] [Thread-2 (]: On model.privatbank_analytics.stg_fraud_alerts: /* {"app": "dbt", "dbt_version": "1.11.7", "profile_name": "privatbank_duckdb", "target_name": "dev", "node_id": "model.privatbank_analytics.stg_fraud_alerts"} */
+
+  
+  create view "privatbank"."main"."stg_fraud_alerts__dbt_tmp" as (
+    with source as (
+    select * from "privatbank"."main"."raw_fraud_alerts"
+),
+
+cleaned as (
+    select
+        alert_id,
+        transaction_id,
+        account_id,
+        cast(alert_date as date)                             as alert_date,
+        
+    initcap(trim(lower(alert_type)))
+                 as alert_type,
+        cast(risk_score as numeric(5,2))                     as risk_score,
+        
+    initcap(trim(lower(investigation_status)))
+       as investigation_status,
+
+
+        cast(is_confirmed_fraud as boolean)                  as is_confirmed_fraud,
+        
+    initcap(trim(lower(fraud_type)))
+                 as fraud_type,
+
+        cast(loss_amount as numeric(18,2))                   as loss_amount
+
+    from source
+)
+
+select * from cleaned
+  );
+
+[0m22:39:16.277879 [debug] [Thread-4 (]: Using duckdb connection "model.privatbank_analytics.stg_accounts"
+[0m22:39:16.279108 [debug] [Thread-4 (]: On model.privatbank_analytics.stg_accounts: BEGIN
+[0m22:39:16.280202 [debug] [Thread-2 (]: DuckDB adapter: duckdb error: Binder Error: Referenced column "alert_id" not found in FROM clause!
+Candidate bindings: "alert_id", "alert_date", "alert_type", "account_id", "transaction_id"
+
+LINE 11:         alert_id,
+                 ^
+[0m22:39:16.281433 [debug] [Thread-3 (]: DuckDB adapter: duckdb error: Catalog Error: Scalar Function with name initcap does not exist!
+Did you mean "ilike_escape"?
+
+LINE 13:     initcap(trim(lower(first_name)))
+             ^
+[0m22:39:16.282699 [debug] [Thread-4 (]: Opening a new connection, currently in state closed
+[0m22:39:16.284117 [debug] [Thread-2 (]: DuckDB adapter: Error running SQL: /* {"app": "dbt", "dbt_version": "1.11.7", "profile_name": "privatbank_duckdb", "target_name": "dev", "node_id": "model.privatbank_analytics.stg_fraud_alerts"} */
+
+  
+  create view "privatbank"."main"."stg_fraud_alerts__dbt_tmp" as (
+    with source as (
+    select * from "privatbank"."main"."raw_fraud_alerts"
+),
+
+cleaned as (
+    select
+        alert_id,
+        transaction_id,
+        account_id,
+        cast(alert_date as date)                             as alert_date,
+        
+    initcap(trim(lower(alert_type)))
+                 as alert_type,
+        cast(risk_score as numeric(5,2))                     as risk_score,
+        
+    initcap(trim(lower(investigation_status)))
+       as investigation_status,
+
+
+        cast(is_confirmed_fraud as boolean)                  as is_confirmed_fraud,
+        
+    initcap(trim(lower(fraud_type)))
+                 as fraud_type,
+
+        cast(loss_amount as numeric(18,2))                   as loss_amount
+
+    from source
+)
+
+select * from cleaned
+  );
+
+[0m22:39:16.285853 [debug] [Thread-3 (]: DuckDB adapter: Error running SQL: /* {"app": "dbt", "dbt_version": "1.11.7", "profile_name": "privatbank_duckdb", "target_name": "dev", "node_id": "model.privatbank_analytics.stg_customers"} */
+
+  
+  create view "privatbank"."main"."stg_customers__dbt_tmp" as (
+    with source as (
+    select * from "privatbank"."main"."raw_customers"
+),
+ 
+cleaned as (
+    select
+        customer_id,
+        
+    initcap(trim(lower(first_name)))
+             as first_name,
+        
+    initcap(trim(lower(last_name)))
+              as last_name,
+        cast(date_of_birth as date)                      as date_of_birth,
+        
+    initcap(trim(lower(gender)))
+                 as gender,
+        phone,
+        lower(email)                                     as email,
+        
+    initcap(trim(lower(city)))
+                   as city,
+        
+    initcap(trim(lower(region)))
+                 as region,
+        cast(registration_date as date)                  as registration_date,
+        
+    initcap(trim(lower(customer_segment)))
+       as customer_segment,
+        cast(credit_score as integer)                    as credit_score,
+        cast(is_active as boolean)                       as is_active,
+ 
+        date_diff('year', cast(date_of_birth as date), current_date) as age_years,
+ 
+
+        date_diff('day', cast(registration_date as date), current_date) as days_since_registration
+ 
+    from source
+)
+ 
+select * from cleaned
+  );
+
+[0m22:39:16.287726 [debug] [Thread-2 (]: DuckDB adapter: Rolling back transaction.
+[0m22:39:16.289251 [debug] [Thread-3 (]: DuckDB adapter: Rolling back transaction.
+[0m22:39:16.290237 [debug] [Thread-4 (]: SQL status: OK in 0.008 seconds
+[0m22:39:16.291435 [debug] [Thread-2 (]: On model.privatbank_analytics.stg_fraud_alerts: ROLLBACK
+[0m22:39:16.293033 [debug] [Thread-3 (]: On model.privatbank_analytics.stg_customers: ROLLBACK
+[0m22:39:16.294290 [debug] [Thread-4 (]: Using duckdb connection "model.privatbank_analytics.stg_accounts"
+[0m22:39:16.297018 [debug] [Thread-4 (]: On model.privatbank_analytics.stg_accounts: /* {"app": "dbt", "dbt_version": "1.11.7", "profile_name": "privatbank_duckdb", "target_name": "dev", "node_id": "model.privatbank_analytics.stg_accounts"} */
+
+  
+  create view "privatbank"."main"."stg_accounts__dbt_tmp" as (
+    with source as (
+    select * from "privatbank"."main"."raw_accounts"
+),
+ 
+cleaned as (
+    select
+        account_id,
+        customer_id,
+        
+    initcap(trim(lower(account_type)))
+   as account_type,
+        
+    initcap(trim(lower(currency)))
+        as currency,
+        cast(opened_date as date)                 as opened_date,
+        
+    initcap(trim(lower(status)))
+          as account_status,
+        cast(credit_limit as decimal(18, 2))      as credit_limit,
+        cast(current_balance as decimal(18, 2))   as current_balance,
+        cast(overdraft_limit as decimal(18, 2))   as overdraft_limit,
+ 
+        case
+            when account_type = 'CURRENT'
+            then cast(current_balance as decimal(18,2)) + cast(overdraft_limit as decimal(18,2))
+            else cast(current_balance as decimal(18,2))
+        end                                       as available_balance
+ 
+    from source
+)
+ 
+select * from cleaned
+  );
+
+[0m22:39:16.300538 [debug] [Thread-2 (]: Failed to rollback 'model.privatbank_analytics.stg_fraud_alerts'
+[0m22:39:16.301943 [debug] [Thread-4 (]: DuckDB adapter: duckdb error: Binder Error: Referenced column "account_id" not found in FROM clause!
+Candidate bindings: "account_id", "account_type", "customer_id", "current_balance", "opened_date"
+
+LINE 11:         account_id,
+                 ^
+[0m22:39:16.304872 [debug] [Thread-3 (]: Failed to rollback 'model.privatbank_analytics.stg_customers'
+[0m22:39:16.306314 [debug] [Thread-2 (]: On model.privatbank_analytics.stg_fraud_alerts: Close
+[0m22:39:16.307583 [debug] [Thread-4 (]: DuckDB adapter: Error running SQL: /* {"app": "dbt", "dbt_version": "1.11.7", "profile_name": "privatbank_duckdb", "target_name": "dev", "node_id": "model.privatbank_analytics.stg_accounts"} */
+
+  
+  create view "privatbank"."main"."stg_accounts__dbt_tmp" as (
+    with source as (
+    select * from "privatbank"."main"."raw_accounts"
+),
+ 
+cleaned as (
+    select
+        account_id,
+        customer_id,
+        
+    initcap(trim(lower(account_type)))
+   as account_type,
+        
+    initcap(trim(lower(currency)))
+        as currency,
+        cast(opened_date as date)                 as opened_date,
+        
+    initcap(trim(lower(status)))
+          as account_status,
+        cast(credit_limit as decimal(18, 2))      as credit_limit,
+        cast(current_balance as decimal(18, 2))   as current_balance,
+        cast(overdraft_limit as decimal(18, 2))   as overdraft_limit,
+ 
+        case
+            when account_type = 'CURRENT'
+            then cast(current_balance as decimal(18,2)) + cast(overdraft_limit as decimal(18,2))
+            else cast(current_balance as decimal(18,2))
+        end                                       as available_balance
+ 
+    from source
+)
+ 
+select * from cleaned
+  );
+
+[0m22:39:16.309697 [debug] [Thread-3 (]: On model.privatbank_analytics.stg_customers: Close
+[0m22:39:16.312767 [debug] [Thread-4 (]: DuckDB adapter: Rolling back transaction.
+[0m22:39:16.320572 [debug] [Thread-1 (]: Runtime Error in model stg_exchange_rates (models\staging\stg_exchange_rates.sql)
+  Binder Error: Referenced column "rate_id" not found in FROM clause!
+  Candidate bindings: "rate_id", "rate", "rate_date", "currency_to", "currency_from"
+  
+  LINE 11:         rate_id,
+                   ^
+[0m22:39:16.324085 [debug] [Thread-4 (]: On model.privatbank_analytics.stg_accounts: ROLLBACK
+[0m22:39:16.325352 [error] [Thread-1 (]: 8 of 20 ERROR creating sql view model main.stg_exchange_rates .................. [[31mERROR[0m in 0.30s]
+[0m22:39:16.327964 [debug] [Thread-1 (]: Finished running node model.privatbank_analytics.stg_exchange_rates
+[0m22:39:16.329474 [debug] [Thread-1 (]: Began running node model.privatbank_analytics.stg_loan_applications
+[0m22:39:16.332290 [debug] [Thread-4 (]: Failed to rollback 'model.privatbank_analytics.stg_accounts'
+[0m22:39:16.333864 [debug] [Thread-7 (]: Marking all children of 'model.privatbank_analytics.stg_exchange_rates' to be skipped because of status 'error'.  Reason: Runtime Error in model stg_exchange_rates (models\staging\stg_exchange_rates.sql)
+  Binder Error: Referenced column "rate_id" not found in FROM clause!
+  Candidate bindings: "rate_id", "rate", "rate_date", "currency_to", "currency_from"
+  
+  LINE 11:         rate_id,
+                   ^.
+[0m22:39:16.336393 [debug] [Thread-4 (]: On model.privatbank_analytics.stg_accounts: Close
+[0m22:39:16.335353 [info ] [Thread-1 (]: 12 of 20 START sql view model main.stg_loan_applications ....................... [RUN]
+[0m22:39:16.347541 [debug] [Thread-2 (]: Runtime Error in model stg_fraud_alerts (models\staging\stg_fraud_alerts.sql)
+  Binder Error: Referenced column "alert_id" not found in FROM clause!
+  Candidate bindings: "alert_id", "alert_date", "alert_type", "account_id", "transaction_id"
+  
+  LINE 11:         alert_id,
+                   ^
+[0m22:39:16.352078 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.privatbank_analytics.stg_exchange_rates, now model.privatbank_analytics.stg_loan_applications)
+[0m22:39:16.355258 [debug] [Thread-3 (]: Runtime Error in model stg_customers (models\staging\stg_customers.sql)
+  Catalog Error: Scalar Function with name initcap does not exist!
+  Did you mean "ilike_escape"?
+  
+  LINE 13:     initcap(trim(lower(first_name)))
+               ^
+[0m22:39:16.353904 [error] [Thread-2 (]: 10 of 20 ERROR creating sql view model main.stg_fraud_alerts ................... [[31mERROR[0m in 0.13s]
+[0m22:39:16.356393 [debug] [Thread-1 (]: Began compiling node model.privatbank_analytics.stg_loan_applications
+[0m22:39:16.358988 [debug] [Thread-2 (]: Finished running node model.privatbank_analytics.stg_fraud_alerts
+[0m22:39:16.357827 [error] [Thread-3 (]: 9 of 20 ERROR creating sql view model main.stg_customers ....................... [[31mERROR[0m in 0.16s]
+[0m22:39:16.363194 [debug] [Thread-2 (]: Began running node model.privatbank_analytics.stg_loan_repayments
+[0m22:39:16.369549 [debug] [Thread-1 (]: Writing injected SQL for node "model.privatbank_analytics.stg_loan_applications"
+[0m22:39:16.371048 [debug] [Thread-3 (]: Finished running node model.privatbank_analytics.stg_customers
+[0m22:39:16.376301 [debug] [Thread-7 (]: Marking all children of 'model.privatbank_analytics.stg_fraud_alerts' to be skipped because of status 'error'.  Reason: Runtime Error in model stg_fraud_alerts (models\staging\stg_fraud_alerts.sql)
+  Binder Error: Referenced column "alert_id" not found in FROM clause!
+  Candidate bindings: "alert_id", "alert_date", "alert_type", "account_id", "transaction_id"
+  
+  LINE 11:         alert_id,
+                   ^.
+[0m22:39:16.380528 [debug] [Thread-4 (]: Runtime Error in model stg_accounts (models\staging\stg_accounts.sql)
+  Binder Error: Referenced column "account_id" not found in FROM clause!
+  Candidate bindings: "account_id", "account_type", "customer_id", "current_balance", "opened_date"
+  
+  LINE 11:         account_id,
+                   ^
+[0m22:39:16.381453 [debug] [Thread-3 (]: Began running node model.privatbank_analytics.stg_transactions
+[0m22:39:16.377628 [info ] [Thread-2 (]: 13 of 20 START sql view model main.stg_loan_repayments ......................... [RUN]
+[0m22:39:16.382991 [debug] [Thread-7 (]: Marking all children of 'model.privatbank_analytics.stg_customers' to be skipped because of status 'error'.  Reason: Runtime Error in model stg_customers (models\staging\stg_customers.sql)
+  Catalog Error: Scalar Function with name initcap does not exist!
+  Did you mean "ilike_escape"?
+  
+  LINE 13:     initcap(trim(lower(first_name)))
+               ^.
+[0m22:39:16.385123 [debug] [Thread-1 (]: Began executing node model.privatbank_analytics.stg_loan_applications
+[0m22:39:16.384319 [error] [Thread-4 (]: 11 of 20 ERROR creating sql view model main.stg_accounts ....................... [[31mERROR[0m in 0.14s]
+[0m22:39:16.387322 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly model.privatbank_analytics.stg_fraud_alerts, now model.privatbank_analytics.stg_loan_repayments)
+[0m22:39:16.386232 [info ] [Thread-3 (]: 14 of 20 START sql view model main.stg_transactions ............................ [RUN]
+[0m22:39:16.393367 [debug] [Thread-1 (]: Writing runtime sql for node "model.privatbank_analytics.stg_loan_applications"
+[0m22:39:16.394995 [debug] [Thread-2 (]: Began compiling node model.privatbank_analytics.stg_loan_repayments
+[0m22:39:16.396074 [debug] [Thread-4 (]: Finished running node model.privatbank_analytics.stg_accounts
+[0m22:39:16.397123 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly model.privatbank_analytics.stg_customers, now model.privatbank_analytics.stg_transactions)
+[0m22:39:16.403666 [debug] [Thread-2 (]: Writing injected SQL for node "model.privatbank_analytics.stg_loan_repayments"
+[0m22:39:16.404899 [debug] [Thread-7 (]: Marking all children of 'model.privatbank_analytics.stg_accounts' to be skipped because of status 'error'.  Reason: Runtime Error in model stg_accounts (models\staging\stg_accounts.sql)
+  Binder Error: Referenced column "account_id" not found in FROM clause!
+  Candidate bindings: "account_id", "account_type", "customer_id", "current_balance", "opened_date"
+  
+  LINE 11:         account_id,
+                   ^.
+[0m22:39:16.405801 [debug] [Thread-3 (]: Began compiling node model.privatbank_analytics.stg_transactions
+[0m22:39:16.411875 [debug] [Thread-1 (]: Using duckdb connection "model.privatbank_analytics.stg_loan_applications"
+[0m22:39:16.416180 [debug] [Thread-3 (]: Writing injected SQL for node "model.privatbank_analytics.stg_transactions"
+[0m22:39:16.417206 [debug] [Thread-1 (]: On model.privatbank_analytics.stg_loan_applications: BEGIN
+[0m22:39:16.418175 [debug] [Thread-2 (]: Began executing node model.privatbank_analytics.stg_loan_repayments
+[0m22:39:16.419209 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m22:39:16.425452 [debug] [Thread-2 (]: Writing runtime sql for node "model.privatbank_analytics.stg_loan_repayments"
+[0m22:39:16.427107 [debug] [Thread-1 (]: SQL status: OK in 0.008 seconds
+[0m22:39:16.428028 [debug] [Thread-1 (]: Using duckdb connection "model.privatbank_analytics.stg_loan_applications"
+[0m22:39:16.429018 [debug] [Thread-1 (]: On model.privatbank_analytics.stg_loan_applications: /* {"app": "dbt", "dbt_version": "1.11.7", "profile_name": "privatbank_duckdb", "target_name": "dev", "node_id": "model.privatbank_analytics.stg_loan_applications"} */
+
+  
+  create view "privatbank"."main"."stg_loan_applications__dbt_tmp" as (
+    with source as (
+    select * from "privatbank"."main"."raw_loan_applications"
+),
+
+cleaned as (
+    select
+        application_id,
+        customer_id,
+        cast(application_date as date)             as application_date,
+        
+    initcap(trim(lower(loan_type)))
+        as loan_type,
+        cast(requested_amount as numeric(18,2))    as requested_amount,
+        cast(approved_amount as numeric(18,2))     as approved_amount,
+        cast(interest_rate as numeric(5,2))        as interest_rate,
+        cast(term_months as integer)               as term_months,
+        
+    initcap(trim(lower(status)))
+           as status,
+        
+    initcap(trim(lower(rejection_reason)))
+ as rejection_reason,
+        cast(disbursement_date as date)            as disbursement_date
+    from source
+)
+
+select * from cleaned
+  );
+
+[0m22:39:16.430389 [debug] [Thread-3 (]: Began executing node model.privatbank_analytics.stg_transactions
+[0m22:39:16.436060 [debug] [Thread-3 (]: Writing runtime sql for node "model.privatbank_analytics.stg_transactions"
+[0m22:39:16.437264 [debug] [Thread-1 (]: DuckDB adapter: duckdb error: Binder Error: Referenced column "application_id" not found in FROM clause!
+Candidate bindings: "application_id", "application_date", "approved_amount", "customer_id", "rejection_reason"
+
+LINE 11:         application_id,
+                 ^
+[0m22:39:16.438746 [debug] [Thread-1 (]: DuckDB adapter: Error running SQL: /* {"app": "dbt", "dbt_version": "1.11.7", "profile_name": "privatbank_duckdb", "target_name": "dev", "node_id": "model.privatbank_analytics.stg_loan_applications"} */
+
+  
+  create view "privatbank"."main"."stg_loan_applications__dbt_tmp" as (
+    with source as (
+    select * from "privatbank"."main"."raw_loan_applications"
+),
+
+cleaned as (
+    select
+        application_id,
+        customer_id,
+        cast(application_date as date)             as application_date,
+        
+    initcap(trim(lower(loan_type)))
+        as loan_type,
+        cast(requested_amount as numeric(18,2))    as requested_amount,
+        cast(approved_amount as numeric(18,2))     as approved_amount,
+        cast(interest_rate as numeric(5,2))        as interest_rate,
+        cast(term_months as integer)               as term_months,
+        
+    initcap(trim(lower(status)))
+           as status,
+        
+    initcap(trim(lower(rejection_reason)))
+ as rejection_reason,
+        cast(disbursement_date as date)            as disbursement_date
+    from source
+)
+
+select * from cleaned
+  );
+
+[0m22:39:16.439780 [debug] [Thread-1 (]: DuckDB adapter: Rolling back transaction.
+[0m22:39:16.440810 [debug] [Thread-2 (]: Using duckdb connection "model.privatbank_analytics.stg_loan_repayments"
+[0m22:39:16.441640 [debug] [Thread-1 (]: On model.privatbank_analytics.stg_loan_applications: ROLLBACK
+[0m22:39:16.442470 [debug] [Thread-2 (]: On model.privatbank_analytics.stg_loan_repayments: BEGIN
+[0m22:39:16.443487 [debug] [Thread-3 (]: Using duckdb connection "model.privatbank_analytics.stg_transactions"
+[0m22:39:16.444224 [debug] [Thread-2 (]: Opening a new connection, currently in state closed
+[0m22:39:16.445662 [debug] [Thread-3 (]: On model.privatbank_analytics.stg_transactions: BEGIN
+[0m22:39:16.447167 [debug] [Thread-3 (]: Opening a new connection, currently in state closed
+[0m22:39:16.448188 [debug] [Thread-2 (]: SQL status: OK in 0.004 seconds
+[0m22:39:16.449972 [debug] [Thread-1 (]: Failed to rollback 'model.privatbank_analytics.stg_loan_applications'
+[0m22:39:16.450703 [debug] [Thread-2 (]: Using duckdb connection "model.privatbank_analytics.stg_loan_repayments"
+[0m22:39:16.451378 [debug] [Thread-3 (]: SQL status: OK in 0.004 seconds
+[0m22:39:16.452282 [debug] [Thread-1 (]: On model.privatbank_analytics.stg_loan_applications: Close
+[0m22:39:16.453073 [debug] [Thread-2 (]: On model.privatbank_analytics.stg_loan_repayments: /* {"app": "dbt", "dbt_version": "1.11.7", "profile_name": "privatbank_duckdb", "target_name": "dev", "node_id": "model.privatbank_analytics.stg_loan_repayments"} */
+
+  
+  create view "privatbank"."main"."stg_loan_repayments__dbt_tmp" as (
+    with source as (
+    select * from "privatbank"."main"."raw_loan_repayments"
+),
+
+cleaned as (
+    select
+        repayment_id,
+        application_id,
+        cast(payment_date as date)                as payment_date,
+        cast(scheduled_date as date)              as scheduled_date,
+        cast(amount_paid as numeric(18,2))        as amount_paid,
+        cast(principal_paid as numeric(18,2))     as principal_paid,
+        cast(interest_paid as numeric(18,2))      as interest_paid,
+        cast(outstanding_balance as numeric(18,2)) as outstanding_balance,
+        cast(is_overdue as boolean)               as is_overdue,
+        cast(days_overdue as integer)             as days_overdue
+    from source
+)
+
+select * from cleaned
+  );
+
+[0m22:39:16.453855 [debug] [Thread-3 (]: Using duckdb connection "model.privatbank_analytics.stg_transactions"
+[0m22:39:16.456695 [debug] [Thread-3 (]: On model.privatbank_analytics.stg_transactions: /* {"app": "dbt", "dbt_version": "1.11.7", "profile_name": "privatbank_duckdb", "target_name": "dev", "node_id": "model.privatbank_analytics.stg_transactions"} */
+
+  
+  create view "privatbank"."main"."stg_transactions__dbt_tmp" as (
+    with source as (
+    select * from "privatbank"."main"."raw_transactions"
+),
+
+cleaned as (
+    select
+        transaction_id,
+        account_id,
+
+        -- Dates & time
+        cast(transaction_date as date)                       as transaction_date,
+        cast(transaction_time as time)                       as transaction_time,
+
+        -- Amount & currency
+        cast(amount as numeric(18,2))                        as amount,
+        upper(currency)                                      as currency,
+
+        -- Transaction details
+        
+    initcap(trim(lower(transaction_type)))
+           as transaction_type,
+        
+    initcap(trim(lower(merchant_category)))
+          as merchant_category,
+        
+    initcap(trim(lower(merchant_name)))
+              as merchant_name,
+
+        -- Location
+        
+    initcap(trim(lower(city)))
+                       as city,
+        upper(country)                                       as country,
+
+        -- Channel & status
+        
+    initcap(trim(lower(channel)))
+                    as channel,
+        
+    initcap(trim(lower(status)))
+                     as status,
+
+        -- Flags
+        cast(is_flagged as boolean)                          as is_flagged,
+
+        -- ======================
+        -- Derived fields
+        -- ======================
+
+        -- Combine date + time into timestamp
+        cast(
+            concat(transaction_date, ' ', transaction_time) 
+            as timestamp
+        )                                                    as transaction_timestamp,
+
+        -- Absolute value for analysis
+        abs(cast(amount as numeric(18,2)))                   as amount_abs,
+
+        -- Transaction direction
+        case
+            when amount < 0 then 'debit'
+            when amount > 0 then 'credit'
+            else 'zero'
+        end                                                  as transaction_direction,
+
+        -- Weekend indicator
+        case
+            when extract(dow from cast(transaction_date as date)) in (0,6)
+            then true else false
+        end                                                  as is_weekend,
+
+     
+        case
+            when abs(amount) > 1000 then true
+            else false
+        end                                                  as is_high_value
+
+    from source
+)
+
+select * from cleaned
+  );
+
+[0m22:39:16.457879 [debug] [Thread-2 (]: DuckDB adapter: duckdb error: Binder Error: Referenced column "repayment_id" not found in FROM clause!
+Candidate bindings: "repayment_id", "payment_date", "amount_paid", "interest_paid", "application_id"
+
+LINE 11:         repayment_id,
+                 ^
+[0m22:39:16.459365 [debug] [Thread-2 (]: DuckDB adapter: Error running SQL: /* {"app": "dbt", "dbt_version": "1.11.7", "profile_name": "privatbank_duckdb", "target_name": "dev", "node_id": "model.privatbank_analytics.stg_loan_repayments"} */
+
+  
+  create view "privatbank"."main"."stg_loan_repayments__dbt_tmp" as (
+    with source as (
+    select * from "privatbank"."main"."raw_loan_repayments"
+),
+
+cleaned as (
+    select
+        repayment_id,
+        application_id,
+        cast(payment_date as date)                as payment_date,
+        cast(scheduled_date as date)              as scheduled_date,
+        cast(amount_paid as numeric(18,2))        as amount_paid,
+        cast(principal_paid as numeric(18,2))     as principal_paid,
+        cast(interest_paid as numeric(18,2))      as interest_paid,
+        cast(outstanding_balance as numeric(18,2)) as outstanding_balance,
+        cast(is_overdue as boolean)               as is_overdue,
+        cast(days_overdue as integer)             as days_overdue
+    from source
+)
+
+select * from cleaned
+  );
+
+[0m22:39:16.460205 [debug] [Thread-2 (]: DuckDB adapter: Rolling back transaction.
+[0m22:39:16.460913 [debug] [Thread-2 (]: On model.privatbank_analytics.stg_loan_repayments: ROLLBACK
+[0m22:39:16.462234 [debug] [Thread-3 (]: DuckDB adapter: duckdb error: Binder Error: Referenced column "transaction_id" not found in FROM clause!
+Candidate bindings: "transaction_id", "transaction_date", "transaction_time", "transaction_type", "account_id"
+
+LINE 11:         transaction_id,
+                 ^
+[0m22:39:16.463573 [debug] [Thread-3 (]: DuckDB adapter: Error running SQL: /* {"app": "dbt", "dbt_version": "1.11.7", "profile_name": "privatbank_duckdb", "target_name": "dev", "node_id": "model.privatbank_analytics.stg_transactions"} */
+
+  
+  create view "privatbank"."main"."stg_transactions__dbt_tmp" as (
+    with source as (
+    select * from "privatbank"."main"."raw_transactions"
+),
+
+cleaned as (
+    select
+        transaction_id,
+        account_id,
+
+        -- Dates & time
+        cast(transaction_date as date)                       as transaction_date,
+        cast(transaction_time as time)                       as transaction_time,
+
+        -- Amount & currency
+        cast(amount as numeric(18,2))                        as amount,
+        upper(currency)                                      as currency,
+
+        -- Transaction details
+        
+    initcap(trim(lower(transaction_type)))
+           as transaction_type,
+        
+    initcap(trim(lower(merchant_category)))
+          as merchant_category,
+        
+    initcap(trim(lower(merchant_name)))
+              as merchant_name,
+
+        -- Location
+        
+    initcap(trim(lower(city)))
+                       as city,
+        upper(country)                                       as country,
+
+        -- Channel & status
+        
+    initcap(trim(lower(channel)))
+                    as channel,
+        
+    initcap(trim(lower(status)))
+                     as status,
+
+        -- Flags
+        cast(is_flagged as boolean)                          as is_flagged,
+
+        -- ======================
+        -- Derived fields
+        -- ======================
+
+        -- Combine date + time into timestamp
+        cast(
+            concat(transaction_date, ' ', transaction_time) 
+            as timestamp
+        )                                                    as transaction_timestamp,
+
+        -- Absolute value for analysis
+        abs(cast(amount as numeric(18,2)))                   as amount_abs,
+
+        -- Transaction direction
+        case
+            when amount < 0 then 'debit'
+            when amount > 0 then 'credit'
+            else 'zero'
+        end                                                  as transaction_direction,
+
+        -- Weekend indicator
+        case
+            when extract(dow from cast(transaction_date as date)) in (0,6)
+            then true else false
+        end                                                  as is_weekend,
+
+     
+        case
+            when abs(amount) > 1000 then true
+            else false
+        end                                                  as is_high_value
+
+    from source
+)
+
+select * from cleaned
+  );
+
+[0m22:39:16.464634 [debug] [Thread-3 (]: DuckDB adapter: Rolling back transaction.
+[0m22:39:16.465382 [debug] [Thread-3 (]: On model.privatbank_analytics.stg_transactions: ROLLBACK
+[0m22:39:16.467160 [debug] [Thread-2 (]: Failed to rollback 'model.privatbank_analytics.stg_loan_repayments'
+[0m22:39:16.468505 [debug] [Thread-2 (]: On model.privatbank_analytics.stg_loan_repayments: Close
+[0m22:39:16.477857 [debug] [Thread-3 (]: Failed to rollback 'model.privatbank_analytics.stg_transactions'
+[0m22:39:16.479616 [debug] [Thread-1 (]: Runtime Error in model stg_loan_applications (models\staging\stg_loan_applications.sql)
+  Binder Error: Referenced column "application_id" not found in FROM clause!
+  Candidate bindings: "application_id", "application_date", "approved_amount", "customer_id", "rejection_reason"
+  
+  LINE 11:         application_id,
+                   ^
+[0m22:39:16.480601 [debug] [Thread-3 (]: On model.privatbank_analytics.stg_transactions: Close
+[0m22:39:16.481903 [error] [Thread-1 (]: 12 of 20 ERROR creating sql view model main.stg_loan_applications .............. [[31mERROR[0m in 0.13s]
+[0m22:39:16.485056 [debug] [Thread-1 (]: Finished running node model.privatbank_analytics.stg_loan_applications
+[0m22:39:16.486210 [debug] [Thread-7 (]: Marking all children of 'model.privatbank_analytics.stg_loan_applications' to be skipped because of status 'error'.  Reason: Runtime Error in model stg_loan_applications (models\staging\stg_loan_applications.sql)
+  Binder Error: Referenced column "application_id" not found in FROM clause!
+  Candidate bindings: "application_id", "application_date", "approved_amount", "customer_id", "rejection_reason"
+  
+  LINE 11:         application_id,
+                   ^.
+[0m22:39:16.492710 [debug] [Thread-2 (]: Runtime Error in model stg_loan_repayments (models\staging\stg_loan_repayments.sql)
+  Binder Error: Referenced column "repayment_id" not found in FROM clause!
+  Candidate bindings: "repayment_id", "payment_date", "amount_paid", "interest_paid", "application_id"
+  
+  LINE 11:         repayment_id,
+                   ^
+[0m22:39:16.493930 [error] [Thread-2 (]: 13 of 20 ERROR creating sql view model main.stg_loan_repayments ................ [[31mERROR[0m in 0.11s]
+[0m22:39:16.495753 [debug] [Thread-2 (]: Finished running node model.privatbank_analytics.stg_loan_repayments
+[0m22:39:16.497101 [debug] [Thread-7 (]: Marking all children of 'model.privatbank_analytics.stg_loan_repayments' to be skipped because of status 'error'.  Reason: Runtime Error in model stg_loan_repayments (models\staging\stg_loan_repayments.sql)
+  Binder Error: Referenced column "repayment_id" not found in FROM clause!
+  Candidate bindings: "repayment_id", "payment_date", "amount_paid", "interest_paid", "application_id"
+  
+  LINE 11:         repayment_id,
+                   ^.
+[0m22:39:16.503299 [debug] [Thread-3 (]: Runtime Error in model stg_transactions (models\staging\stg_transactions.sql)
+  Binder Error: Referenced column "transaction_id" not found in FROM clause!
+  Candidate bindings: "transaction_id", "transaction_date", "transaction_time", "transaction_type", "account_id"
+  
+  LINE 11:         transaction_id,
+                   ^
+[0m22:39:16.505112 [debug] [Thread-4 (]: Began running node model.privatbank_analytics.fact_loan_repayments
+[0m22:39:16.504499 [error] [Thread-3 (]: 14 of 20 ERROR creating sql view model main.stg_transactions ................... [[31mERROR[0m in 0.11s]
+[0m22:39:16.507115 [debug] [Thread-3 (]: Finished running node model.privatbank_analytics.stg_transactions
+[0m22:39:16.506168 [info ] [Thread-4 (]: 15 of 20 SKIP relation main.fact_loan_repayments ............................... [[33mSKIP[0m]
+[0m22:39:16.508223 [debug] [Thread-7 (]: Marking all children of 'model.privatbank_analytics.stg_transactions' to be skipped because of status 'error'.  Reason: Runtime Error in model stg_transactions (models\staging\stg_transactions.sql)
+  Binder Error: Referenced column "transaction_id" not found in FROM clause!
+  Candidate bindings: "transaction_id", "transaction_date", "transaction_time", "transaction_type", "account_id"
+  
+  LINE 11:         transaction_id,
+                   ^.
+[0m22:39:16.509212 [debug] [Thread-4 (]: Finished running node model.privatbank_analytics.fact_loan_repayments
+[0m22:39:16.511406 [debug] [Thread-2 (]: Began running node model.privatbank_analytics.mart_loan_portfolio
+[0m22:39:16.510767 [debug] [Thread-1 (]: Began running node model.privatbank_analytics.fact_transactions
+[0m22:39:16.512572 [info ] [Thread-2 (]: 17 of 20 SKIP relation main.mart_loan_portfolio ................................ [[33mSKIP[0m]
+[0m22:39:16.514448 [debug] [Thread-2 (]: Finished running node model.privatbank_analytics.mart_loan_portfolio
+[0m22:39:16.513424 [info ] [Thread-1 (]: 16 of 20 SKIP relation main.fact_transactions .................................. [[33mSKIP[0m]
+[0m22:39:16.515591 [debug] [Thread-1 (]: Finished running node model.privatbank_analytics.fact_transactions
+[0m22:39:16.516644 [debug] [Thread-3 (]: Began running node model.privatbank_analytics.fact_fraud_events
+[0m22:39:16.517412 [debug] [Thread-4 (]: Began running node model.privatbank_analytics.mart_monthly_revenue
+[0m22:39:16.518115 [info ] [Thread-3 (]: 18 of 20 SKIP relation main.fact_fraud_events .................................. [[33mSKIP[0m]
+[0m22:39:16.519844 [debug] [Thread-3 (]: Finished running node model.privatbank_analytics.fact_fraud_events
+[0m22:39:16.518883 [info ] [Thread-4 (]: 19 of 20 SKIP relation main.mart_monthly_revenue ............................... [[33mSKIP[0m]
+[0m22:39:16.521227 [debug] [Thread-4 (]: Finished running node model.privatbank_analytics.mart_monthly_revenue
+[0m22:39:16.522044 [debug] [Thread-2 (]: Began running node model.privatbank_analytics.mart_customer_360
+[0m22:39:16.522736 [info ] [Thread-2 (]: 20 of 20 SKIP relation main.mart_customer_360 .................................. [[33mSKIP[0m]
+[0m22:39:16.523807 [debug] [Thread-2 (]: Finished running node model.privatbank_analytics.mart_customer_360
+[0m22:39:16.526158 [debug] [MainThread]: Using duckdb connection "master"
+[0m22:39:16.526769 [debug] [MainThread]: On master: BEGIN
+[0m22:39:16.527260 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m22:39:16.528316 [debug] [MainThread]: SQL status: OK in 0.001 seconds
+[0m22:39:16.528995 [debug] [MainThread]: On master: COMMIT
+[0m22:39:16.529588 [debug] [MainThread]: Using duckdb connection "master"
+[0m22:39:16.530188 [debug] [MainThread]: On master: COMMIT
+[0m22:39:16.531253 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m22:39:16.531902 [debug] [MainThread]: On master: Close
+[0m22:39:16.532680 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m22:39:16.533315 [debug] [MainThread]: Connection 'create_privatbank_main' was properly closed.
+[0m22:39:16.533798 [debug] [MainThread]: Connection 'list_privatbank_main' was properly closed.
+[0m22:39:16.534249 [debug] [MainThread]: Connection 'model.privatbank_analytics.stg_accounts' was properly closed.
+[0m22:39:16.534700 [debug] [MainThread]: Connection 'model.privatbank_analytics.stg_loan_applications' was properly closed.
+[0m22:39:16.535148 [debug] [MainThread]: Connection 'model.privatbank_analytics.stg_loan_repayments' was properly closed.
+[0m22:39:16.535593 [debug] [MainThread]: Connection 'model.privatbank_analytics.stg_transactions' was properly closed.
+[0m22:39:16.536278 [info ] [MainThread]: 
+[0m22:39:16.537136 [info ] [MainThread]: Finished running 3 incremental models, 3 table models, 14 view models in 0 hours 0 minutes and 1.61 seconds (1.61s).
+[0m22:39:16.542992 [debug] [MainThread]: Command end result
+[0m22:39:16.606856 [debug] [MainThread]: Wrote artifact WritableManifest to D:\DE_HW_3\privatbank_analytics\target\manifest.json
+[0m22:39:16.617462 [debug] [MainThread]: Wrote artifact SemanticManifest to D:\DE_HW_3\privatbank_analytics\target\semantic_manifest.json
+[0m22:39:16.631163 [debug] [MainThread]: Wrote artifact RunExecutionResult to D:\DE_HW_3\privatbank_analytics\target\run_results.json
+[0m22:39:16.631813 [info ] [MainThread]: 
+[0m22:39:16.632750 [info ] [MainThread]: [31mCompleted with 7 errors, 0 partial successes, and 0 warnings:[0m
+[0m22:39:16.633627 [info ] [MainThread]: 
+[0m22:39:16.634578 [error] [MainThread]: [31mFailure in model stg_exchange_rates (models\staging\stg_exchange_rates.sql)[0m
+[0m22:39:16.635568 [error] [MainThread]:   Runtime Error in model stg_exchange_rates (models\staging\stg_exchange_rates.sql)
+  Binder Error: Referenced column "rate_id" not found in FROM clause!
+  Candidate bindings: "rate_id", "rate", "rate_date", "currency_to", "currency_from"
+  
+  LINE 11:         rate_id,
+                   ^
+[0m22:39:16.636594 [info ] [MainThread]: 
+[0m22:39:16.637483 [info ] [MainThread]:   compiled code at target\compiled\privatbank_analytics\models\staging\stg_exchange_rates.sql
+[0m22:39:16.638276 [info ] [MainThread]: 
+[0m22:39:16.639229 [error] [MainThread]: [31mFailure in model stg_fraud_alerts (models\staging\stg_fraud_alerts.sql)[0m
+[0m22:39:16.640873 [error] [MainThread]:   Runtime Error in model stg_fraud_alerts (models\staging\stg_fraud_alerts.sql)
+  Binder Error: Referenced column "alert_id" not found in FROM clause!
+  Candidate bindings: "alert_id", "alert_date", "alert_type", "account_id", "transaction_id"
+  
+  LINE 11:         alert_id,
+                   ^
+[0m22:39:16.642248 [info ] [MainThread]: 
+[0m22:39:16.643383 [info ] [MainThread]:   compiled code at target\compiled\privatbank_analytics\models\staging\stg_fraud_alerts.sql
+[0m22:39:16.644249 [info ] [MainThread]: 
+[0m22:39:16.645146 [error] [MainThread]: [31mFailure in model stg_customers (models\staging\stg_customers.sql)[0m
+[0m22:39:16.646143 [error] [MainThread]:   Runtime Error in model stg_customers (models\staging\stg_customers.sql)
+  Catalog Error: Scalar Function with name initcap does not exist!
+  Did you mean "ilike_escape"?
+  
+  LINE 13:     initcap(trim(lower(first_name)))
+               ^
+[0m22:39:16.647312 [info ] [MainThread]: 
+[0m22:39:16.648221 [info ] [MainThread]:   compiled code at target\compiled\privatbank_analytics\models\staging\stg_customers.sql
+[0m22:39:16.649162 [info ] [MainThread]: 
+[0m22:39:16.651211 [error] [MainThread]: [31mFailure in model stg_accounts (models\staging\stg_accounts.sql)[0m
+[0m22:39:16.652587 [error] [MainThread]:   Runtime Error in model stg_accounts (models\staging\stg_accounts.sql)
+  Binder Error: Referenced column "account_id" not found in FROM clause!
+  Candidate bindings: "account_id", "account_type", "customer_id", "current_balance", "opened_date"
+  
+  LINE 11:         account_id,
+                   ^
+[0m22:39:16.653632 [info ] [MainThread]: 
+[0m22:39:16.654520 [info ] [MainThread]:   compiled code at target\compiled\privatbank_analytics\models\staging\stg_accounts.sql
+[0m22:39:16.655304 [info ] [MainThread]: 
+[0m22:39:16.656204 [error] [MainThread]: [31mFailure in model stg_loan_applications (models\staging\stg_loan_applications.sql)[0m
+[0m22:39:16.657195 [error] [MainThread]:   Runtime Error in model stg_loan_applications (models\staging\stg_loan_applications.sql)
+  Binder Error: Referenced column "application_id" not found in FROM clause!
+  Candidate bindings: "application_id", "application_date", "approved_amount", "customer_id", "rejection_reason"
+  
+  LINE 11:         application_id,
+                   ^
+[0m22:39:16.658424 [info ] [MainThread]: 
+[0m22:39:16.659457 [info ] [MainThread]:   compiled code at target\compiled\privatbank_analytics\models\staging\stg_loan_applications.sql
+[0m22:39:16.660286 [info ] [MainThread]: 
+[0m22:39:16.661332 [error] [MainThread]: [31mFailure in model stg_loan_repayments (models\staging\stg_loan_repayments.sql)[0m
+[0m22:39:16.662412 [error] [MainThread]:   Runtime Error in model stg_loan_repayments (models\staging\stg_loan_repayments.sql)
+  Binder Error: Referenced column "repayment_id" not found in FROM clause!
+  Candidate bindings: "repayment_id", "payment_date", "amount_paid", "interest_paid", "application_id"
+  
+  LINE 11:         repayment_id,
+                   ^
+[0m22:39:16.663676 [info ] [MainThread]: 
+[0m22:39:16.664758 [info ] [MainThread]:   compiled code at target\compiled\privatbank_analytics\models\staging\stg_loan_repayments.sql
+[0m22:39:16.665726 [info ] [MainThread]: 
+[0m22:39:16.666785 [error] [MainThread]: [31mFailure in model stg_transactions (models\staging\stg_transactions.sql)[0m
+[0m22:39:16.667857 [error] [MainThread]:   Runtime Error in model stg_transactions (models\staging\stg_transactions.sql)
+  Binder Error: Referenced column "transaction_id" not found in FROM clause!
+  Candidate bindings: "transaction_id", "transaction_date", "transaction_time", "transaction_type", "account_id"
+  
+  LINE 11:         transaction_id,
+                   ^
+[0m22:39:16.668980 [info ] [MainThread]: 
+[0m22:39:16.669909 [info ] [MainThread]:   compiled code at target\compiled\privatbank_analytics\models\staging\stg_transactions.sql
+[0m22:39:16.670713 [info ] [MainThread]: 
+[0m22:39:16.671530 [info ] [MainThread]: Done. PASS=7 WARN=0 ERROR=7 SKIP=6 NO-OP=0 TOTAL=20
+[0m22:39:16.673363 [debug] [MainThread]: Command `dbt run` failed at 22:39:16.673160 after 3.68 seconds
+[0m22:39:16.673973 [debug] [MainThread]: Flushing usage events

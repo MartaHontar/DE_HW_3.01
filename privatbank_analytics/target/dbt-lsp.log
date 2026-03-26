@@ -1,0 +1,1682 @@
+==================== 2026-03-26T09:17:11.867670Z | 94a816d7-8f49-4aaa-838a-d66246336310 ====================
+09:17:11.870772 [info ]: Starting dbt LSP server
+09:17:11.871750 [info ]: Connecting to LSP client on port 8000
+09:17:11.874880 [info ]: Successfully connected to LSP client
+09:17:11.874909 [info ]: Creating LSP service...
+09:17:12.012499 [info ]: Creating LSP server...
+09:17:12.012528 [info ]: Starting LSP server...
+09:17:12.153644 [info ]: Started loading project
+09:17:12.154740 [info ]: Finished loading project [  0.00s]
+09:47:26.504052 [info ]: Loading profiles.yml
+09:47:26.619565 [info ]: Waiting for lease on 'target' directory
+09:47:27.160986 [info ]: Loading profiles.yml
+09:47:27.246337 [info ]: Waiting for lease on 'target' directory
+09:47:27.807931 [info ]: Started loading project
+09:47:27.809163 [info ]: Loading profiles.yml
+09:47:27.863583 [debug]:    Started loading packages
+09:47:27.877617 [debug]:     Loaded [  0.01s] packages
+09:47:27.901595 [info ]: Started parsing
+09:47:28.075135 [info ]: Finished loading project [  0.27s]
+09:47:28.278130 [debug]: Finished parsing models\raw\raw_accounts.sql [  0.01s]
+09:47:28.297577 [debug]: Finished parsing models\raw\raw_customers.sql [  0.02s]
+09:47:28.317572 [debug]: Finished parsing models\raw\raw_exchange_rates.sql [  0.02s]
+09:47:28.319014 [debug]: Finished parsing models\raw\raw_fraud_alerts.sql [  0.00s]
+09:47:28.334025 [debug]: Finished parsing models\raw\raw_loan_applications.sql [  0.02s]
+09:47:28.352161 [debug]: Finished parsing models\raw\raw_loan_repayments.sql [  0.02s]
+09:47:28.366929 [debug]: Finished parsing models\raw\raw_transactions.sql [  0.01s]
+09:47:28.383007 [debug]: Finished parsing models\staging\stg_accounts.sql [  0.02s]
+09:47:28.401639 [debug]: Finished parsing models\staging\stg_customers.sql [  0.02s]
+09:47:28.418149 [debug]: Finished parsing models\staging\stg_exchange_rates.sql [  0.02s]
+09:47:28.420002 [debug]: Finished parsing models\staging\stg_fraud_alerts.sql [  0.00s]
+09:47:28.436716 [debug]: Finished parsing models\staging\stg_loan_applications.sql [  0.02s]
+09:47:28.437916 [debug]: Finished parsing models\staging\stg_loan_repayments.sql [  0.00s]
+09:47:28.468378 [debug]: Finished parsing models\staging\stg_transactions.sql [  0.03s]
+09:47:28.474220 [error]: dbt1005: Ref 'raw_loan_applications.sql' not found in project. Searched for 'privatbank_analytics.raw_loan_applications.sql, raw_loan_applications.sql'
+  --> models\staging\stg_loan_applications.sql:3:19
+09:47:28.481395 [info ]: Cached model count updated: 14 models (estimate)
+09:47:28.481433 [info ]: Cached model count updated: 14 models (accurate)
+09:47:28.484022 [info ]: Started scheduling
+09:47:28.490144 [info ]: Finished scheduling [  0.01s]
+09:47:28.490575 [debug]: Compilation - 21 nodes selected: {"model.privatbank_analytics.raw_accounts", "model.privatbank_analytics.raw_customers", "model.privatbank_analytics.raw_exchange_rates", "model.privatbank_analytics.raw_fraud_alerts", "model.privatbank_analytics.raw_loan_applications", "model.privatbank_analytics.raw_loan_repayments", "model.privatbank_analytics.raw_transactions", "model.privatbank_analytics.stg_accounts", "model.privatbank_analytics.stg_customers", "model.privatbank_analytics.stg_exchange_rates", "model.privatbank_analytics.stg_fraud_alerts", "model.privatbank_analytics.stg_loan_applications", "model.privatbank_analytics.stg_loan_repayments", "model.privatbank_analytics.stg_transactions", "seed.privatbank_analytics.accounts", "seed.privatbank_analytics.customers", "seed.privatbank_analytics.exchange_rates", "seed.privatbank_analytics.fraud_alerts", "seed.privatbank_analytics.loan_applications", "seed.privatbank_analytics.loan_repayments", "seed.privatbank_analytics.transactions"}
+09:47:28.490830 [info ]: Started scheduling
+09:47:28.491162 [info ]: Finished scheduling [  0.00s]
+09:47:29.062619 [info ]: Started building task graph
+09:47:29.068895 [info ]: Finished building task graph [  0.01s]
+09:47:29.080968 [info ]: Started rendering (21 nodes)
+09:47:29.082934 [info ]: Started model main_staging.stg_loan_applications
+09:47:29.085103 [debug]: Started rendering model main_staging.stg_loan_applications
+09:47:29.086198 [info ]: Started seed main_seeds.transactions
+09:47:29.086241 [debug]: Started rendering seed main_seeds.transactions
+09:47:29.086275 [info ]: Started seed main_seeds.loan_repayments
+09:47:29.086277 [info ]: Finished parsing [  1.18s]
+09:47:29.086291 [debug]: Started rendering seed main_seeds.loan_repayments
+09:47:29.086320 [info ]: Started seed main_seeds.loan_applications
+09:47:29.086337 [debug]: Started rendering seed main_seeds.loan_applications
+09:47:29.086372 [info ]: Started seed main_seeds.fraud_alerts
+09:47:29.086393 [debug]: Started rendering seed main_seeds.fraud_alerts
+09:47:29.086426 [info ]: Started seed main_seeds.exchange_rates
+09:47:29.086448 [debug]: Started rendering seed main_seeds.exchange_rates
+09:47:29.086470 [info ]: Started seed main_seeds.customers
+09:47:29.086486 [debug]: Started rendering seed main_seeds.customers
+09:47:29.086509 [info ]: Started seed main_seeds.accounts
+09:47:29.086530 [debug]: Started rendering seed main_seeds.accounts
+09:47:29.169660 [debug]: Finished rendering [  0.08s] seed main_seeds.exchange_rates [success]
+09:47:29.169757 [info ]: Started analyzing (21 nodes)
+09:47:29.169778 [debug]: Started analyzing seed main_seeds.exchange_rates
+09:47:29.171349 [debug]: Finished rendering [  0.08s] seed main_seeds.customers [success]
+09:47:29.171391 [debug]: Started analyzing seed main_seeds.customers
+09:47:29.171413 [debug]: Finished rendering [  0.09s] seed main_seeds.loan_repayments [success]
+09:47:29.171430 [debug]: Started analyzing seed main_seeds.loan_repayments
+09:47:29.171449 [debug]: Finished rendering [  0.09s] seed main_seeds.loan_applications [success]
+09:47:29.171460 [debug]: Started analyzing seed main_seeds.loan_applications
+09:47:29.171475 [debug]: Finished rendering [  0.09s] seed main_seeds.transactions [success]
+09:47:29.171488 [debug]: Started analyzing seed main_seeds.transactions
+09:47:29.171504 [debug]: Finished rendering [  0.09s] seed main_seeds.fraud_alerts [success]
+09:47:29.171515 [debug]: Started analyzing seed main_seeds.fraud_alerts
+09:47:29.174405 [info ]:  Succeeded [  0.09s] seed  main_seeds.loan_repayments (table)
+09:47:29.174702 [debug]: Finished analyzing [  0.00s] seed main_seeds.loan_repayments [success]
+09:47:29.174751 [info ]: Started model main_raw.raw_loan_repayments
+09:47:29.174773 [debug]: Started rendering model main_raw.raw_loan_repayments
+09:47:29.174817 [info ]:  Succeeded [  0.09s] seed  main_seeds.customers (table)
+09:47:29.174834 [debug]: Finished analyzing [  0.00s] seed main_seeds.customers [success]
+09:47:29.174848 [info ]: Started model main_raw.raw_customers
+09:47:29.174857 [debug]: Started rendering model main_raw.raw_customers
+09:47:29.174875 [info ]:  Succeeded [  0.09s] seed  main_seeds.loan_applications (table)
+09:47:29.174888 [debug]: Finished analyzing [  0.00s] seed main_seeds.loan_applications [success]
+09:47:29.174901 [info ]: Started model main_raw.raw_loan_applications
+09:47:29.174910 [debug]: Started rendering model main_raw.raw_loan_applications
+09:47:29.174928 [info ]:  Succeeded [  0.09s] seed  main_seeds.fraud_alerts (table)
+09:47:29.174942 [debug]: Finished analyzing [  0.00s] seed main_seeds.fraud_alerts [success]
+09:47:29.174955 [info ]: Started model main_raw.raw_fraud_alerts
+09:47:29.174964 [debug]: Started rendering model main_raw.raw_fraud_alerts
+09:47:29.176624 [info ]:  Succeeded [  0.09s] seed  main_seeds.transactions (table)
+09:47:29.176677 [debug]: Finished analyzing [  0.01s] seed main_seeds.transactions [success]
+09:47:29.176744 [info ]: Started model main_raw.raw_transactions
+09:47:29.176764 [debug]: Started rendering model main_raw.raw_transactions
+09:47:29.177316 [info ]:  Succeeded [  0.09s] seed  main_seeds.exchange_rates (table)
+09:47:29.177407 [debug]: Finished analyzing [  0.01s] seed main_seeds.exchange_rates [success]
+09:47:29.178510 [info ]: Started model main_raw.raw_exchange_rates
+09:47:29.178548 [debug]: Started rendering model main_raw.raw_exchange_rates
+09:47:29.178598 [debug]: Finished rendering [  0.09s] seed main_seeds.accounts [success]
+09:47:29.178621 [debug]: Started analyzing seed main_seeds.accounts
+09:47:29.178713 [info ]:  Succeeded [  0.09s] seed  main_seeds.accounts (table)
+09:47:29.178733 [debug]: Finished analyzing [  0.00s] seed main_seeds.accounts [success]
+09:47:29.178753 [info ]: Started model main_raw.raw_accounts
+09:47:29.178764 [debug]: Started rendering model main_raw.raw_accounts
+09:47:29.180973 [error]: dbt1501: Failed to render SQL not a key type: ref not found for package: privatbank_analytics, model: raw_loan_applications.sql, version: None
+(in models\staging\stg_loan_applications.sql:3:19)
+  --> models\staging\stg_loan_applications.sql:3:19
+09:47:29.181061 [debug]: Started analyzing model main_staging.stg_loan_applications
+09:47:29.181094 [info ]:     Failed [  0.10s] model main_staging.stg_loan_applications (view)
+09:47:29.181124 [debug]: Finished analyzing [  0.00s] model main_staging.stg_loan_applications [skipped]
+09:47:29.181173 [debug]: Finished rendering [  0.10s] model main_staging.stg_loan_applications [error]
+09:47:29.185316 [debug]: Compiled SQL for node model.privatbank_analytics.raw_transactions at target\.lsp\compiled\models\raw\raw_transactions.sql
+09:47:29.185616 [debug]: Compiled SQL for node model.privatbank_analytics.raw_fraud_alerts at target\.lsp\compiled\models\raw\raw_fraud_alerts.sql
+09:47:29.185740 [debug]: Started analyzing model main_raw.raw_transactions
+09:47:29.185774 [debug]: Started analyzing model main_raw.raw_fraud_alerts
+09:47:29.186467 [debug]: Finished rendering [  0.01s] model main_raw.raw_fraud_alerts [success]
+09:47:29.186542 [debug]: Finished rendering [  0.01s] model main_raw.raw_transactions [success]
+09:47:29.187205 [debug]: Compiled SQL for node model.privatbank_analytics.raw_loan_applications at target\.lsp\compiled\models\raw\raw_loan_applications.sql
+09:47:29.187353 [debug]: Started analyzing model main_raw.raw_loan_applications
+09:47:29.189377 [debug]: Compiled SQL for node model.privatbank_analytics.raw_customers at target\.lsp\compiled\models\raw\raw_customers.sql
+09:47:29.189572 [debug]: Started analyzing model main_raw.raw_customers
+09:47:29.190820 [debug]: Finished rendering [  0.02s] model main_raw.raw_loan_applications [success]
+09:47:29.198569 [debug]: Finished rendering [  0.02s] model main_raw.raw_customers [success]
+09:47:29.204452 [debug]: Compiled SQL for node model.privatbank_analytics.raw_exchange_rates at target\.lsp\compiled\models\raw\raw_exchange_rates.sql
+09:47:29.204573 [debug]: Started analyzing model main_raw.raw_exchange_rates
+09:47:29.204623 [debug]: Finished rendering [  0.03s] model main_raw.raw_exchange_rates [success]
+09:47:29.208773 [debug]: Compiled SQL for node model.privatbank_analytics.raw_loan_repayments at target\.lsp\compiled\models\raw\raw_loan_repayments.sql
+09:47:29.209048 [debug]: Started analyzing model main_raw.raw_loan_repayments
+09:47:29.209135 [debug]: Compiled SQL for node model.privatbank_analytics.raw_accounts at target\.lsp\compiled\models\raw\raw_accounts.sql
+09:47:29.209213 [debug]: Started analyzing model main_raw.raw_accounts
+09:47:29.209701 [debug]: Finished rendering [  0.03s] model main_raw.raw_loan_repayments [success]
+09:47:29.341107 [info ]:  Succeeded [  0.17s] model main_raw.raw_loan_repayments (view)
+09:47:29.341153 [debug]: Finished analyzing [  0.13s] model main_raw.raw_loan_repayments [success]
+09:47:29.341187 [info ]: Started model main_staging.stg_loan_repayments
+09:47:29.341203 [debug]: Started rendering model main_staging.stg_loan_repayments
+09:47:29.341215 [debug]: Finished rendering [  0.16s] model main_raw.raw_accounts [success]
+09:47:29.341232 [info ]:  Succeeded [  0.17s] model main_raw.raw_loan_applications (view)
+09:47:29.341249 [debug]: Finished analyzing [  0.15s] model main_raw.raw_loan_applications [success]
+09:47:29.341266 [info ]:  Succeeded [  0.17s] model main_raw.raw_fraud_alerts (view)
+09:47:29.341279 [debug]: Finished analyzing [  0.16s] model main_raw.raw_fraud_alerts [success]
+09:47:29.341296 [info ]: Started model main_staging.stg_fraud_alerts
+09:47:29.341305 [debug]: Started rendering model main_staging.stg_fraud_alerts
+09:47:29.342260 [info ]:  Succeeded [  0.16s] model main_raw.raw_exchange_rates (view)
+09:47:29.342315 [debug]: Finished analyzing [  0.14s] model main_raw.raw_exchange_rates [success]
+09:47:29.342352 [info ]: Started model main_staging.stg_exchange_rates
+09:47:29.342370 [debug]: Started rendering model main_staging.stg_exchange_rates
+09:47:29.342613 [info ]:  Succeeded [  0.17s] model main_raw.raw_customers (view)
+09:47:29.342673 [debug]: Finished analyzing [  0.15s] model main_raw.raw_customers [success]
+09:47:29.342707 [info ]: Started model main_staging.stg_customers
+09:47:29.342724 [debug]: Started rendering model main_staging.stg_customers
+09:47:29.346101 [info ]:  Succeeded [  0.17s] model main_raw.raw_accounts (view)
+09:47:29.346149 [debug]: Finished analyzing [  0.14s] model main_raw.raw_accounts [success]
+09:47:29.346196 [info ]: Started model main_staging.stg_accounts
+09:47:29.346214 [debug]: Started rendering model main_staging.stg_accounts
+09:47:29.351053 [info ]:  Succeeded [  0.17s] model main_raw.raw_transactions (view)
+09:47:29.351097 [debug]: Finished analyzing [  0.17s] model main_raw.raw_transactions [success]
+09:47:29.351142 [info ]: Started model main_staging.stg_transactions
+09:47:29.351169 [debug]: Started rendering model main_staging.stg_transactions
+09:47:29.357062 [debug]: Compiled SQL for node model.privatbank_analytics.stg_transactions at target\.lsp\compiled\models\staging\stg_transactions.sql
+09:47:29.357237 [debug]: Started analyzing model main_staging.stg_transactions
+09:47:29.357294 [debug]: Finished rendering [  0.01s] model main_staging.stg_transactions [success]
+09:47:29.367780 [debug]: Compiled SQL for node model.privatbank_analytics.stg_fraud_alerts at target\.lsp\compiled\models\staging\stg_fraud_alerts.sql
+09:47:29.367878 [debug]: Started analyzing model main_staging.stg_fraud_alerts
+09:47:29.367926 [debug]: Finished rendering [  0.03s] model main_staging.stg_fraud_alerts [success]
+09:47:29.367954 [debug]: Compiled SQL for node model.privatbank_analytics.stg_exchange_rates at target\.lsp\compiled\models\staging\stg_exchange_rates.sql
+09:47:29.367988 [debug]: Started analyzing model main_staging.stg_exchange_rates
+09:47:29.368227 [debug]: Finished rendering [  0.03s] model main_staging.stg_exchange_rates [success]
+09:47:29.376384 [debug]: Compiled SQL for node model.privatbank_analytics.stg_customers at target\.lsp\compiled\models\staging\stg_customers.sql
+09:47:29.376500 [debug]: Started analyzing model main_staging.stg_customers
+09:47:29.376556 [debug]: Finished rendering [  0.03s] model main_staging.stg_customers [success]
+09:47:29.381351 [debug]: Compiled SQL for node model.privatbank_analytics.stg_loan_repayments at target\.lsp\compiled\models\staging\stg_loan_repayments.sql
+09:47:29.381464 [debug]: Started analyzing model main_staging.stg_loan_repayments
+09:47:29.381517 [debug]: Finished rendering [  0.04s] model main_staging.stg_loan_repayments [success]
+09:47:29.383403 [debug]: Compiled SQL for node model.privatbank_analytics.stg_accounts at target\.lsp\compiled\models\staging\stg_accounts.sql
+09:47:29.384203 [debug]: Started analyzing model main_staging.stg_accounts
+09:47:29.384278 [debug]: Finished rendering [  0.04s] model main_staging.stg_accounts [success]
+09:47:29.384300 [info ]: Finished rendering [  0.30s] (21 nodes, 0 skipped, 1 errors)
+09:47:29.456340 [error]: dbt0227: No column repayment_id found. Available are source."repayment_id,application_id,payment_date,scheduled_date,amount_paid,principal_paid,interest_paid,outstanding_balance,is_overdue,days_overdue"
+  --> models\staging\stg_loan_repayments.sql:8:9
+09:47:29.456731 [info ]:     Failed [  0.12s] model main_staging.stg_loan_repayments (view)
+09:47:29.457150 [debug]: Finished analyzing [  0.08s] model main_staging.stg_loan_repayments [error]
+09:47:29.459181 [error]: dbt0227: No column rate_id found. Available are source."rate_id,rate_date,currency_from,currency_to,rate"
+  --> models\staging\stg_exchange_rates.sql:7:9
+09:47:29.459336 [info ]:     Failed [  0.12s] model main_staging.stg_exchange_rates (view)
+09:47:29.459417 [debug]: Finished analyzing [  0.09s] model main_staging.stg_exchange_rates [error]
+09:47:29.479924 [error]: dbt0227: No column alert_id found. Available are source."alert_id,transaction_id,account_id,alert_date,alert_type,risk_score,investigation_status,is_confirmed_fraud,fraud_type,loss_amount"
+  --> models\staging\stg_fraud_alerts.sql:7:9
+09:47:29.480226 [info ]:     Failed [  0.14s] model main_staging.stg_fraud_alerts (view)
+09:47:29.480288 [debug]: Finished analyzing [  0.11s] model main_staging.stg_fraud_alerts [error]
+09:47:29.513677 [error]: dbt0227: No column account_id found. Available are source."account_id,customer_id,account_type,currency,opened_date,status,credit_limit,current_balance,overdraft_limit"
+  --> models\staging\stg_accounts.sql:7:9
+09:47:29.513821 [info ]:     Failed [  0.17s] model main_staging.stg_accounts (view)
+09:47:29.513862 [debug]: Finished analyzing [  0.13s] model main_staging.stg_accounts [error]
+09:47:29.541603 [info ]:  Succeeded [  0.20s] model main_staging.stg_customers (view)
+09:47:29.541653 [debug]: Finished analyzing [  0.17s] model main_staging.stg_customers [success]
+09:47:29.572950 [error]: dbt0227: No column transaction_id found. Available are source."transaction_id,account_id,transaction_date,transaction_time,amount,currency,transaction_type,merchant_category,merchant_name,city,country,channel,status,is_flagged"
+  --> models\staging\stg_transactions.sql:7:9
+09:47:29.573110 [info ]:     Failed [  0.22s] model main_staging.stg_transactions (view)
+09:47:29.573152 [debug]: Finished analyzing [  0.22s] model main_staging.stg_transactions [error]
+09:47:29.573164 [info ]: Finished analyzing [  0.40s] (21 nodes, 1 skipped, 5 errors)
+09:47:29.582683 [info ]: Cached model count updated: 14 models (accurate)
+09:53:26.206927 [info ]: Loading profiles.yml
+09:53:26.254832 [info ]: Started loading project
+09:53:26.255851 [info ]: Loading profiles.yml
+09:53:26.267976 [info ]: Started loading project
+09:53:26.268938 [info ]: Loading profiles.yml
+09:53:26.269035 [info ]: Finished loading project [  0.01s]
+09:53:26.277475 [debug]:    Started loading packages
+09:53:26.282565 [debug]:     Loaded [  0.01s] packages
+09:53:26.284049 [info ]: Started parsing
+09:53:26.337843 [info ]: Finished loading project [  0.07s]
+09:53:26.348460 [debug]: Finished parsing models\raw\raw_accounts.sql [  0.00s]
+09:53:26.349606 [debug]: Finished parsing models\raw\raw_customers.sql [  0.00s]
+09:53:26.350909 [debug]: Finished parsing models\raw\raw_exchange_rates.sql [  0.00s]
+09:53:26.352025 [debug]: Finished parsing models\raw\raw_fraud_alerts.sql [  0.00s]
+09:53:26.353191 [debug]: Finished parsing models\raw\raw_loan_applications.sql [  0.00s]
+09:53:26.354373 [debug]: Finished parsing models\raw\raw_loan_repayments.sql [  0.00s]
+09:53:26.355648 [debug]: Finished parsing models\raw\raw_transactions.sql [  0.00s]
+09:53:26.357022 [debug]: Finished parsing models\staging\stg_accounts.sql [  0.00s]
+09:53:26.358731 [debug]: Finished parsing models\staging\stg_customers.sql [  0.00s]
+09:53:26.359924 [debug]: Finished parsing models\staging\stg_exchange_rates.sql [  0.00s]
+09:53:26.361333 [debug]: Finished parsing models\staging\stg_fraud_alerts.sql [  0.00s]
+09:53:26.362912 [debug]: Finished parsing models\staging\stg_loan_applications.sql [  0.00s]
+09:53:26.364127 [debug]: Finished parsing models\staging\stg_loan_repayments.sql [  0.00s]
+09:53:26.374979 [debug]: Finished parsing models\staging\stg_transactions.sql [  0.01s]
+09:53:26.375879 [error]: dbt1005: Ref 'raw_loan_applications.sql' not found in project. Searched for 'privatbank_analytics.raw_loan_applications.sql, raw_loan_applications.sql'
+  --> models\staging\stg_loan_applications.sql:3:19
+09:53:26.377149 [info ]: Cached model count updated: 14 models (estimate)
+09:53:26.377167 [info ]: Cached model count updated: 14 models (accurate)
+09:53:26.377247 [info ]: Started scheduling
+09:53:26.377590 [info ]: Finished scheduling [  0.00s]
+09:53:26.377619 [debug]: Compilation - 21 nodes selected: {"model.privatbank_analytics.raw_accounts", "model.privatbank_analytics.raw_customers", "model.privatbank_analytics.raw_exchange_rates", "model.privatbank_analytics.raw_fraud_alerts", "model.privatbank_analytics.raw_loan_applications", "model.privatbank_analytics.raw_loan_repayments", "model.privatbank_analytics.raw_transactions", "model.privatbank_analytics.stg_accounts", "model.privatbank_analytics.stg_customers", "model.privatbank_analytics.stg_exchange_rates", "model.privatbank_analytics.stg_fraud_alerts", "model.privatbank_analytics.stg_loan_applications", "model.privatbank_analytics.stg_loan_repayments", "model.privatbank_analytics.stg_transactions", "seed.privatbank_analytics.accounts", "seed.privatbank_analytics.customers", "seed.privatbank_analytics.exchange_rates", "seed.privatbank_analytics.fraud_alerts", "seed.privatbank_analytics.loan_applications", "seed.privatbank_analytics.loan_repayments", "seed.privatbank_analytics.transactions"}
+09:53:26.377644 [info ]: Started scheduling
+09:53:26.377833 [info ]: Finished scheduling [  0.00s]
+09:53:26.709659 [info ]: Started building task graph
+09:53:26.710141 [info ]: Finished building task graph [  0.00s]
+09:53:26.751484 [info ]: Finished parsing [  0.47s]
+09:53:26.758339 [info ]: Waiting for lease on 'target' directory
+09:53:27.137183 [info ]: Loading profiles.yml
+09:53:27.328297 [info ]: Started loading project
+09:53:27.329702 [info ]: Loading profiles.yml
+09:53:27.343891 [debug]:    Started loading packages
+09:53:27.351707 [debug]:     Loaded [  0.01s] packages
+09:53:27.354116 [info ]: Started parsing
+09:53:27.415414 [info ]: Finished loading project [  0.09s]
+09:53:27.428910 [debug]: Finished parsing models\raw\raw_accounts.sql [  0.00s]
+09:53:27.429930 [debug]: Finished parsing models\raw\raw_customers.sql [  0.00s]
+09:53:27.430988 [debug]: Finished parsing models\raw\raw_exchange_rates.sql [  0.00s]
+09:53:27.432250 [debug]: Finished parsing models\raw\raw_fraud_alerts.sql [  0.00s]
+09:53:27.433594 [debug]: Finished parsing models\raw\raw_loan_applications.sql [  0.00s]
+09:53:27.434916 [debug]: Finished parsing models\raw\raw_loan_repayments.sql [  0.00s]
+09:53:27.436291 [debug]: Finished parsing models\raw\raw_transactions.sql [  0.00s]
+09:53:27.439266 [debug]: Finished parsing models\staging\stg_accounts.sql [  0.00s]
+09:53:27.441185 [debug]: Finished parsing models\staging\stg_customers.sql [  0.00s]
+09:53:27.442509 [debug]: Finished parsing models\staging\stg_exchange_rates.sql [  0.00s]
+09:53:27.443835 [debug]: Finished parsing models\staging\stg_fraud_alerts.sql [  0.00s]
+09:53:27.445263 [debug]: Finished parsing models\staging\stg_loan_applications.sql [  0.00s]
+09:53:27.446469 [debug]: Finished parsing models\staging\stg_loan_repayments.sql [  0.00s]
+09:53:27.462784 [debug]: Finished parsing models\staging\stg_transactions.sql [  0.02s]
+09:53:27.464010 [error]: dbt1005: Ref 'raw_loan_applications.sql' not found in project. Searched for 'privatbank_analytics.raw_loan_applications.sql, raw_loan_applications.sql'
+  --> models\staging\stg_loan_applications.sql:3:19
+09:53:27.465884 [info ]: Cached model count updated: 14 models (estimate)
+09:53:27.465932 [info ]: Cached model count updated: 14 models (accurate)
+09:53:27.466060 [info ]: Started scheduling
+09:53:27.466491 [info ]: Finished scheduling [  0.00s]
+09:53:27.466538 [debug]: Compilation - 21 nodes selected: {"model.privatbank_analytics.raw_accounts", "model.privatbank_analytics.raw_customers", "model.privatbank_analytics.raw_exchange_rates", "model.privatbank_analytics.raw_fraud_alerts", "model.privatbank_analytics.raw_loan_applications", "model.privatbank_analytics.raw_loan_repayments", "model.privatbank_analytics.raw_transactions", "model.privatbank_analytics.stg_accounts", "model.privatbank_analytics.stg_customers", "model.privatbank_analytics.stg_exchange_rates", "model.privatbank_analytics.stg_fraud_alerts", "model.privatbank_analytics.stg_loan_applications", "model.privatbank_analytics.stg_loan_repayments", "model.privatbank_analytics.stg_transactions", "seed.privatbank_analytics.accounts", "seed.privatbank_analytics.customers", "seed.privatbank_analytics.exchange_rates", "seed.privatbank_analytics.fraud_alerts", "seed.privatbank_analytics.loan_applications", "seed.privatbank_analytics.loan_repayments", "seed.privatbank_analytics.transactions"}
+09:53:27.466568 [info ]: Started scheduling
+09:53:27.466875 [info ]: Finished scheduling [  0.00s]
+09:53:27.803098 [info ]: Started building task graph
+09:53:27.803851 [info ]: Finished building task graph [  0.00s]
+09:53:27.804772 [info ]: Started rendering (21 nodes)
+09:53:27.804861 [info ]: Started model main_staging.stg_loan_applications
+09:53:27.804895 [debug]: Started rendering model main_staging.stg_loan_applications
+09:53:27.804962 [info ]: Started seed main_seeds.transactions
+09:53:27.805071 [info ]: Finished parsing [  0.45s]
+09:53:27.806362 [debug]: Started rendering seed main_seeds.transactions
+09:53:27.806530 [info ]: Started seed main_seeds.loan_repayments
+09:53:27.806583 [debug]: Started rendering seed main_seeds.loan_repayments
+09:53:27.806610 [info ]: Started seed main_seeds.loan_applications
+09:53:27.806635 [debug]: Started rendering seed main_seeds.loan_applications
+09:53:27.806654 [info ]: Started seed main_seeds.fraud_alerts
+09:53:27.806664 [debug]: Started rendering seed main_seeds.fraud_alerts
+09:53:27.806683 [info ]: Started seed main_seeds.exchange_rates
+09:53:27.806694 [debug]: Started rendering seed main_seeds.exchange_rates
+09:53:27.806711 [info ]: Started seed main_seeds.customers
+09:53:27.806721 [debug]: Started rendering seed main_seeds.customers
+09:53:27.806739 [info ]: Started seed main_seeds.accounts
+09:53:27.806748 [debug]: Started rendering seed main_seeds.accounts
+09:53:27.807573 [error]: dbt1501: Failed to render SQL not a key type: ref not found for package: privatbank_analytics, model: raw_loan_applications.sql, version: None
+(in models\staging\stg_loan_applications.sql:3:19)
+  --> models\staging\stg_loan_applications.sql:3:19
+09:53:27.807668 [info ]: Started analyzing (21 nodes)
+09:53:27.807684 [debug]: Started analyzing model main_staging.stg_loan_applications
+09:53:27.807716 [info ]:     Failed [  0.00s] model main_staging.stg_loan_applications (view)
+09:53:27.807749 [debug]: Finished analyzing [  0.00s] model main_staging.stg_loan_applications [skipped]
+09:53:27.807816 [debug]: Finished rendering [  0.00s] model main_staging.stg_loan_applications [error]
+09:53:27.808530 [debug]: Finished rendering [  0.00s] seed main_seeds.transactions [success]
+09:53:27.808597 [debug]: Started analyzing seed main_seeds.transactions
+09:53:27.808663 [info ]:  Succeeded [  0.00s] seed  main_seeds.transactions (table)
+09:53:27.808689 [debug]: Finished analyzing [  0.00s] seed main_seeds.transactions [success]
+09:53:27.808712 [info ]: Started model main_raw.raw_transactions
+09:53:27.808725 [debug]: Started rendering model main_raw.raw_transactions
+09:53:27.809802 [debug]: Finished rendering [  0.00s] seed main_seeds.exchange_rates [success]
+09:53:27.809877 [debug]: Started analyzing seed main_seeds.exchange_rates
+09:53:27.809942 [info ]:  Succeeded [  0.00s] seed  main_seeds.exchange_rates (table)
+09:53:27.809966 [debug]: Finished analyzing [  0.00s] seed main_seeds.exchange_rates [success]
+09:53:27.809989 [info ]: Started model main_raw.raw_exchange_rates
+09:53:27.810008 [debug]: Started rendering model main_raw.raw_exchange_rates
+09:53:27.817861 [debug]: Finished rendering [  0.01s] seed main_seeds.loan_repayments [success]
+09:53:27.817941 [debug]: Started analyzing seed main_seeds.loan_repayments
+09:53:27.818006 [info ]:  Succeeded [  0.01s] seed  main_seeds.loan_repayments (table)
+09:53:27.818028 [debug]: Finished analyzing [  0.00s] seed main_seeds.loan_repayments [success]
+09:53:27.818053 [info ]: Started model main_raw.raw_loan_repayments
+09:53:27.818067 [debug]: Started rendering model main_raw.raw_loan_repayments
+09:53:27.820594 [debug]: Finished rendering [  0.01s] seed main_seeds.loan_applications [success]
+09:53:27.820673 [debug]: Started analyzing seed main_seeds.loan_applications
+09:53:27.820756 [info ]:  Succeeded [  0.01s] seed  main_seeds.loan_applications (table)
+09:53:27.820781 [debug]: Finished analyzing [  0.00s] seed main_seeds.loan_applications [success]
+09:53:27.820803 [info ]: Started model main_raw.raw_loan_applications
+09:53:27.820818 [debug]: Started rendering model main_raw.raw_loan_applications
+09:53:27.823001 [debug]: Finished rendering [  0.02s] seed main_seeds.accounts [success]
+09:53:27.823070 [debug]: Started analyzing seed main_seeds.accounts
+09:53:27.823128 [info ]:  Succeeded [  0.02s] seed  main_seeds.accounts (table)
+09:53:27.823149 [debug]: Finished analyzing [  0.00s] seed main_seeds.accounts [success]
+09:53:27.823171 [info ]: Started model main_raw.raw_accounts
+09:53:27.823184 [debug]: Started rendering model main_raw.raw_accounts
+09:53:27.823306 [debug]: Finished rendering [  0.02s] seed main_seeds.customers [success]
+09:53:27.823340 [debug]: Started analyzing seed main_seeds.customers
+09:53:27.823375 [info ]:  Succeeded [  0.02s] seed  main_seeds.customers (table)
+09:53:27.823391 [debug]: Finished analyzing [  0.00s] seed main_seeds.customers [success]
+09:53:27.823410 [info ]: Started model main_raw.raw_customers
+09:53:27.823422 [debug]: Started rendering model main_raw.raw_customers
+09:53:27.824187 [debug]: Finished rendering [  0.02s] seed main_seeds.fraud_alerts [success]
+09:53:27.824252 [debug]: Started analyzing seed main_seeds.fraud_alerts
+09:53:27.824337 [info ]:  Succeeded [  0.02s] seed  main_seeds.fraud_alerts (table)
+09:53:27.824361 [debug]: Finished analyzing [  0.00s] seed main_seeds.fraud_alerts [success]
+09:53:27.824381 [info ]: Started model main_raw.raw_fraud_alerts
+09:53:27.824395 [debug]: Started rendering model main_raw.raw_fraud_alerts
+09:53:27.824824 [debug]: Compiled SQL for node model.privatbank_analytics.raw_exchange_rates at target\.lsp\compiled\models\raw\raw_exchange_rates.sql
+09:53:27.824916 [debug]: Started analyzing model main_raw.raw_exchange_rates
+09:53:27.825033 [debug]: Finished rendering [  0.02s] model main_raw.raw_exchange_rates [success]
+09:53:27.827359 [info ]:  Succeeded [  0.02s] model main_raw.raw_exchange_rates (view)
+09:53:27.827431 [debug]: Finished analyzing [  0.00s] model main_raw.raw_exchange_rates [success]
+09:53:27.827480 [info ]: Started model main_staging.stg_exchange_rates
+09:53:27.827505 [debug]: Started rendering model main_staging.stg_exchange_rates
+09:53:27.830769 [debug]: Compiled SQL for node model.privatbank_analytics.raw_customers at target\.lsp\compiled\models\raw\raw_customers.sql
+09:53:27.831334 [debug]: Compiled SQL for node model.privatbank_analytics.raw_transactions at target\.lsp\compiled\models\raw\raw_transactions.sql
+09:53:27.833261 [debug]: Finished rendering [  0.01s] model main_raw.raw_customers [success]
+09:53:27.833386 [debug]: Compiled SQL for node model.privatbank_analytics.raw_loan_applications at target\.lsp\compiled\models\raw\raw_loan_applications.sql
+09:53:27.833826 [debug]: Started analyzing model main_raw.raw_customers
+09:53:27.834593 [debug]: Finished rendering [  0.03s] model main_raw.raw_transactions [success]
+09:53:27.835096 [debug]: Started analyzing model main_raw.raw_transactions
+09:53:27.835191 [debug]: Finished rendering [  0.01s] model main_raw.raw_loan_applications [success]
+09:53:27.835241 [debug]: Started analyzing model main_raw.raw_loan_applications
+09:53:27.838850 [info ]:  Succeeded [  0.01s] model main_raw.raw_customers (view)
+09:53:27.838953 [debug]: Finished analyzing [  0.01s] model main_raw.raw_customers [success]
+09:53:27.839029 [info ]: Started model main_staging.stg_customers
+09:53:27.839077 [debug]: Started rendering model main_staging.stg_customers
+09:53:27.840080 [debug]: Compiled SQL for node model.privatbank_analytics.stg_exchange_rates at target\.lsp\compiled\models\staging\stg_exchange_rates.sql
+09:53:27.840320 [debug]: Started analyzing model main_staging.stg_exchange_rates
+09:53:27.840575 [info ]:  Succeeded [  0.03s] model main_raw.raw_transactions (view)
+09:53:27.840668 [debug]: Compiled SQL for node model.privatbank_analytics.raw_loan_repayments at target\.lsp\compiled\models\raw\raw_loan_repayments.sql
+09:53:27.840780 [debug]: Finished analyzing [  0.01s] model main_raw.raw_transactions [success]
+09:53:27.840849 [info ]: Started model main_staging.stg_transactions
+09:53:27.840898 [debug]: Started rendering model main_staging.stg_transactions
+09:53:27.840973 [debug]: Started analyzing model main_raw.raw_loan_repayments
+09:53:27.841462 [debug]: Finished rendering [  0.02s] model main_raw.raw_loan_repayments [success]
+09:53:27.841806 [debug]: Finished rendering [  0.01s] model main_staging.stg_exchange_rates [success]
+09:53:27.842043 [info ]:  Succeeded [  0.02s] model main_raw.raw_loan_applications (view)
+09:53:27.842118 [debug]: Finished analyzing [  0.01s] model main_raw.raw_loan_applications [success]
+09:53:27.844736 [error]: dbt0227: No column rate_id found. Available are source."rate_id,rate_date,currency_from,currency_to,rate"
+  --> models\staging\stg_exchange_rates.sql:7:9
+09:53:27.844952 [info ]:     Failed [  0.02s] model main_staging.stg_exchange_rates (view)
+09:53:27.845199 [debug]: Finished analyzing [  0.00s] model main_staging.stg_exchange_rates [error]
+09:53:27.845922 [debug]: Compiled SQL for node model.privatbank_analytics.raw_fraud_alerts at target\.lsp\compiled\models\raw\raw_fraud_alerts.sql
+09:53:27.846109 [debug]: Started analyzing model main_raw.raw_fraud_alerts
+09:53:27.846195 [debug]: Finished rendering [  0.02s] model main_raw.raw_fraud_alerts [success]
+09:53:27.846251 [debug]: Compiled SQL for node model.privatbank_analytics.stg_customers at target\.lsp\compiled\models\staging\stg_customers.sql
+09:53:27.846306 [debug]: Started analyzing model main_staging.stg_customers
+09:53:27.847394 [info ]:  Succeeded [  0.03s] model main_raw.raw_loan_repayments (view)
+09:53:27.847591 [debug]: Finished analyzing [  0.01s] model main_raw.raw_loan_repayments [success]
+09:53:27.847940 [info ]: Started model main_staging.stg_loan_repayments
+09:53:27.847995 [debug]: Started rendering model main_staging.stg_loan_repayments
+09:53:27.849506 [info ]:  Succeeded [  0.02s] model main_raw.raw_fraud_alerts (view)
+09:53:27.849584 [debug]: Finished analyzing [  0.00s] model main_raw.raw_fraud_alerts [success]
+09:53:27.849654 [info ]: Started model main_staging.stg_fraud_alerts
+09:53:27.849686 [debug]: Started rendering model main_staging.stg_fraud_alerts
+09:53:27.849781 [debug]: Finished rendering [  0.01s] model main_staging.stg_customers [success]
+09:53:27.856021 [debug]: Compiled SQL for node model.privatbank_analytics.stg_transactions at target\.lsp\compiled\models\staging\stg_transactions.sql
+09:53:27.856155 [debug]: Finished rendering [  0.02s] model main_staging.stg_transactions [success]
+09:53:27.856206 [debug]: Started analyzing model main_staging.stg_transactions
+09:53:27.856595 [debug]: Compiled SQL for node model.privatbank_analytics.raw_accounts at target\.lsp\compiled\models\raw\raw_accounts.sql
+09:53:27.856670 [debug]: Started analyzing model main_raw.raw_accounts
+09:53:27.856731 [debug]: Finished rendering [  0.03s] model main_raw.raw_accounts [success]
+09:53:27.858439 [info ]:  Succeeded [  0.03s] model main_raw.raw_accounts (view)
+09:53:27.858499 [debug]: Finished analyzing [  0.00s] model main_raw.raw_accounts [success]
+09:53:27.858547 [info ]: Started model main_staging.stg_accounts
+09:53:27.858568 [debug]: Started rendering model main_staging.stg_accounts
+09:53:27.860915 [debug]: Compiled SQL for node model.privatbank_analytics.stg_accounts at target\.lsp\compiled\models\staging\stg_accounts.sql
+09:53:27.861036 [debug]: Finished rendering [  0.00s] model main_staging.stg_accounts [success]
+09:53:27.861085 [debug]: Started analyzing model main_staging.stg_accounts
+09:53:27.878873 [debug]: Compiled SQL for node model.privatbank_analytics.stg_fraud_alerts at target\.lsp\compiled\models\staging\stg_fraud_alerts.sql
+09:53:27.879009 [debug]: Finished rendering [  0.03s] model main_staging.stg_fraud_alerts [success]
+09:53:27.879062 [debug]: Started analyzing model main_staging.stg_fraud_alerts
+09:53:27.883550 [error]: dbt0227: No column account_id found. Available are source."account_id,customer_id,account_type,currency,opened_date,status,credit_limit,current_balance,overdraft_limit"
+  --> models\staging\stg_accounts.sql:7:9
+09:53:27.883775 [info ]:     Failed [  0.02s] model main_staging.stg_accounts (view)
+09:53:27.883831 [debug]: Finished analyzing [  0.02s] model main_staging.stg_accounts [error]
+09:53:27.895641 [debug]: Compiled SQL for node model.privatbank_analytics.stg_loan_repayments at target\.lsp\compiled\models\staging\stg_loan_repayments.sql
+09:53:27.896221 [debug]: Finished rendering [  0.05s] model main_staging.stg_loan_repayments [success]
+09:53:27.896305 [info ]: Finished rendering [  0.09s] (21 nodes, 0 skipped, 1 errors)
+09:53:27.896383 [debug]: Started analyzing model main_staging.stg_loan_repayments
+09:53:27.898517 [error]: dbt0227: No column repayment_id found. Available are source."repayment_id,application_id,payment_date,scheduled_date,amount_paid,principal_paid,interest_paid,outstanding_balance,is_overdue,days_overdue"
+  --> models\staging\stg_loan_repayments.sql:8:9
+09:53:27.898696 [info ]:     Failed [  0.05s] model main_staging.stg_loan_repayments (view)
+09:53:27.898789 [debug]: Finished analyzing [  0.00s] model main_staging.stg_loan_repayments [error]
+09:53:27.900274 [error]: dbt0227: No column alert_id found. Available are source."alert_id,transaction_id,account_id,alert_date,alert_type,risk_score,investigation_status,is_confirmed_fraud,fraud_type,loss_amount"
+  --> models\staging\stg_fraud_alerts.sql:7:9
+09:53:27.900516 [info ]:     Failed [  0.05s] model main_staging.stg_fraud_alerts (view)
+09:53:27.900566 [debug]: Finished analyzing [  0.02s] model main_staging.stg_fraud_alerts [error]
+09:53:27.935708 [info ]:  Succeeded [  0.10s] model main_staging.stg_customers (view)
+09:53:27.937174 [debug]: Finished analyzing [  0.09s] model main_staging.stg_customers [success]
+09:53:27.938868 [error]: dbt0227: No column transaction_id found. Available are source."transaction_id,account_id,transaction_date,transaction_time,amount,currency,transaction_type,merchant_category,merchant_name,city,country,channel,status,is_flagged"
+  --> models\staging\stg_transactions.sql:7:9
+09:53:27.939294 [info ]:     Failed [  0.10s] model main_staging.stg_transactions (view)
+09:53:27.939472 [debug]: Finished analyzing [  0.08s] model main_staging.stg_transactions [error]
+09:53:27.939526 [info ]: Finished analyzing [  0.13s] (21 nodes, 1 skipped, 5 errors)
+09:53:27.951694 [info ]: Cached model count updated: 14 models (accurate)
+10:27:17.871917 [info ]: Started loading project
+10:27:17.872628 [info ]: Loading profiles.yml
+10:27:17.888379 [info ]: Started parsing
+10:27:17.908900 [info ]: Finished loading project [  0.04s]
+10:27:17.920107 [debug]: Finished parsing models\staging\stg_loan_applications.sql [  0.01s]
+10:27:17.921321 [info ]: Finished parsing [  0.03s]
+10:27:17.923419 [info ]: Cached model count updated: 14 models (estimate)
+10:27:17.923438 [info ]: Cached model count updated: 14 models (accurate)
+10:27:17.923503 [info ]: Started scheduling
+10:27:17.925019 [info ]: Finished scheduling [  0.00s]
+10:27:17.925049 [debug]: Compilation - 1 nodes selected: {"model.privatbank_analytics.stg_loan_applications"}
+10:27:18.111969 [info ]: Started building task graph
+10:27:18.112053 [info ]: Finished building task graph [  0.00s]
+10:27:18.112216 [info ]: Started rendering (1 nodes)
+10:27:18.112236 [info ]: Started model main_staging.stg_loan_applications
+10:27:18.112247 [debug]: Started rendering model main_staging.stg_loan_applications
+10:27:18.114419 [debug]: Compiled SQL for node model.privatbank_analytics.stg_loan_applications at target\.lsp\compiled\models\staging\stg_loan_applications.sql
+10:27:18.114527 [info ]: Started analyzing (1 nodes)
+10:27:18.114520 [debug]: Finished rendering [  0.00s] model main_staging.stg_loan_applications [success]
+10:27:18.114543 [info ]: Finished rendering [  0.00s] (1 nodes, 0 skipped, 0 errors)
+10:27:18.114544 [debug]: Started analyzing model main_staging.stg_loan_applications
+10:27:18.126763 [error]: dbt0227: No column application_id found. Available are source."application_id,customer_id,application_date,loan_type,requested_amount,approved_amount,interest_rate,term_months,status,rejection_reason,disbursement_date"
+  --> models\staging\stg_loan_applications.sql:8:9
+10:27:18.126877 [info ]:     Failed [  0.01s] model main_staging.stg_loan_applications (view)
+10:27:18.126914 [debug]: Finished analyzing [  0.01s] model main_staging.stg_loan_applications [error]
+10:27:18.126942 [info ]: Finished analyzing [  0.01s] (1 nodes, 0 skipped, 1 errors)
+10:27:18.132720 [info ]: Cached model count updated: 14 models (accurate)
+10:27:18.250537 [info ]: Waiting for lease on 'target' directory
+10:27:18.486355 [info ]: Started loading project
+10:27:18.486990 [info ]: Loading profiles.yml
+10:27:18.493926 [info ]: Started parsing
+10:27:18.514585 [info ]: Finished loading project [  0.03s]
+10:27:18.518407 [info ]: Finished parsing [  0.02s]
+10:27:18.520138 [info ]: Cached model count updated: 14 models (estimate)
+10:27:18.520158 [info ]: Cached model count updated: 14 models (accurate)
+10:27:18.520205 [info ]: Started scheduling
+10:27:18.520267 [info ]: Finished scheduling [  0.00s]
+10:27:18.520280 [debug]: Compilation - 0 nodes selected: {}
+10:27:18.521034 [warn ]: dbt1600: The selection criterion '' does not match any enabled nodes
+10:27:18.521049 [warn ]: dbt1601: Nothing to do. Try checking your model configs and model specification args
+10:27:18.708931 [info ]: Started building task graph
+10:27:18.708982 [info ]: Finished building task graph [  0.00s]
+10:27:18.750023 [info ]: Cached model count updated: 14 models (accurate)
+10:30:40.386933 [info ]: Loading profiles.yml
+10:30:40.399340 [info ]: Started loading project
+10:30:40.400047 [info ]: Loading profiles.yml
+10:30:40.405896 [info ]: Started loading project
+10:30:40.406426 [info ]: Loading profiles.yml
+10:30:40.406489 [info ]: Finished loading project [  0.01s]
+10:30:40.410742 [debug]:    Started loading packages
+10:30:40.413684 [debug]:     Loaded [  0.00s] packages
+10:30:40.414515 [info ]: Started parsing
+10:30:40.446930 [info ]: Finished loading project [  0.04s]
+10:30:40.454086 [debug]: Finished parsing models\raw\raw_accounts.sql [  0.00s]
+10:30:40.455034 [debug]: Finished parsing models\raw\raw_customers.sql [  0.00s]
+10:30:40.455731 [debug]: Finished parsing models\raw\raw_exchange_rates.sql [  0.00s]
+10:30:40.456330 [debug]: Finished parsing models\raw\raw_fraud_alerts.sql [  0.00s]
+10:30:40.456854 [debug]: Finished parsing models\raw\raw_loan_applications.sql [  0.00s]
+10:30:40.457353 [debug]: Finished parsing models\raw\raw_loan_repayments.sql [  0.00s]
+10:30:40.457935 [debug]: Finished parsing models\raw\raw_transactions.sql [  0.00s]
+10:30:40.458593 [debug]: Finished parsing models\staging\stg_accounts.sql [  0.00s]
+10:30:40.459385 [debug]: Finished parsing models\staging\stg_customers.sql [  0.00s]
+10:30:40.459934 [debug]: Finished parsing models\staging\stg_exchange_rates.sql [  0.00s]
+10:30:40.460793 [debug]: Finished parsing models\staging\stg_fraud_alerts.sql [  0.00s]
+10:30:40.461500 [debug]: Finished parsing models\staging\stg_loan_applications.sql [  0.00s]
+10:30:40.462523 [debug]: Finished parsing models\staging\stg_loan_repayments.sql [  0.00s]
+10:30:40.468355 [debug]: Finished parsing models\staging\stg_transactions.sql [  0.01s]
+10:30:40.468961 [info ]: Finished parsing [  0.05s]
+10:30:40.469631 [info ]: Cached model count updated: 14 models (estimate)
+10:30:40.469644 [info ]: Cached model count updated: 14 models (accurate)
+10:30:40.469693 [info ]: Started scheduling
+10:30:40.469868 [info ]: Finished scheduling [  0.00s]
+10:30:40.469889 [debug]: Compilation - 21 nodes selected: {"model.privatbank_analytics.raw_accounts", "model.privatbank_analytics.raw_customers", "model.privatbank_analytics.raw_exchange_rates", "model.privatbank_analytics.raw_fraud_alerts", "model.privatbank_analytics.raw_loan_applications", "model.privatbank_analytics.raw_loan_repayments", "model.privatbank_analytics.raw_transactions", "model.privatbank_analytics.stg_accounts", "model.privatbank_analytics.stg_customers", "model.privatbank_analytics.stg_exchange_rates", "model.privatbank_analytics.stg_fraud_alerts", "model.privatbank_analytics.stg_loan_applications", "model.privatbank_analytics.stg_loan_repayments", "model.privatbank_analytics.stg_transactions", "seed.privatbank_analytics.accounts", "seed.privatbank_analytics.customers", "seed.privatbank_analytics.exchange_rates", "seed.privatbank_analytics.fraud_alerts", "seed.privatbank_analytics.loan_applications", "seed.privatbank_analytics.loan_repayments", "seed.privatbank_analytics.transactions"}
+10:30:40.469907 [info ]: Started scheduling
+10:30:40.470026 [info ]: Finished scheduling [  0.00s]
+10:30:40.671111 [info ]: Started building task graph
+10:30:40.671311 [info ]: Finished building task graph [  0.00s]
+10:30:40.671516 [info ]: Started rendering (21 nodes)
+10:30:40.671535 [info ]: Started seed main.transactions
+10:30:40.671546 [debug]: Started rendering seed main.transactions
+10:30:40.671568 [info ]: Started seed main.loan_repayments
+10:30:40.671576 [debug]: Started rendering seed main.loan_repayments
+10:30:40.671584 [info ]: Started seed main.loan_applications
+10:30:40.671591 [debug]: Started rendering seed main.loan_applications
+10:30:40.671602 [info ]: Started seed main.fraud_alerts
+10:30:40.671615 [debug]: Started rendering seed main.fraud_alerts
+10:30:40.671626 [info ]: Started seed main.exchange_rates
+10:30:40.671632 [debug]: Started rendering seed main.exchange_rates
+10:30:40.671641 [info ]: Started seed main.customers
+10:30:40.671648 [debug]: Started rendering seed main.customers
+10:30:40.671655 [info ]: Started seed main.accounts
+10:30:40.671663 [debug]: Started rendering seed main.accounts
+10:30:40.693506 [debug]: Finished rendering [  0.02s] seed main.loan_repayments [success]
+10:30:40.693559 [info ]: Started analyzing (21 nodes)
+10:30:40.693572 [debug]: Started analyzing seed main.loan_repayments
+10:30:40.693616 [info ]:  Succeeded [  0.02s] seed  main.loan_repayments (table)
+10:30:40.693632 [debug]: Finished analyzing [  0.00s] seed main.loan_repayments [success]
+10:30:40.693645 [info ]: Started model main.raw_loan_repayments
+10:30:40.693652 [debug]: Started rendering model main.raw_loan_repayments
+10:30:40.694111 [debug]: Finished rendering [  0.02s] seed main.customers [success]
+10:30:40.694159 [debug]: Started analyzing seed main.customers
+10:30:40.694861 [info ]:  Succeeded [  0.02s] seed  main.customers (table)
+10:30:40.694906 [debug]: Finished analyzing [  0.00s] seed main.customers [success]
+10:30:40.694955 [info ]: Started model main.raw_customers
+10:30:40.694975 [debug]: Started rendering model main.raw_customers
+10:30:40.695106 [debug]: Finished rendering [  0.02s] seed main.transactions [success]
+10:30:40.695146 [debug]: Started analyzing seed main.transactions
+10:30:40.695198 [debug]: Finished rendering [  0.02s] seed main.fraud_alerts [success]
+10:30:40.695208 [debug]: Started analyzing seed main.fraud_alerts
+10:30:40.695228 [info ]:  Succeeded [  0.02s] seed  main.transactions (table)
+10:30:40.695243 [debug]: Finished analyzing [  0.00s] seed main.transactions [success]
+10:30:40.695255 [info ]: Started model main.raw_transactions
+10:30:40.695264 [debug]: Started rendering model main.raw_transactions
+10:30:40.695287 [info ]:  Succeeded [  0.02s] seed  main.fraud_alerts (table)
+10:30:40.695303 [debug]: Finished analyzing [  0.00s] seed main.fraud_alerts [success]
+10:30:40.695317 [info ]: Started model main.raw_fraud_alerts
+10:30:40.695326 [debug]: Started rendering model main.raw_fraud_alerts
+10:30:40.697029 [debug]: Finished rendering [  0.03s] seed main.exchange_rates [success]
+10:30:40.697106 [debug]: Started analyzing seed main.exchange_rates
+10:30:40.697179 [info ]:  Succeeded [  0.03s] seed  main.exchange_rates (table)
+10:30:40.697201 [debug]: Finished analyzing [  0.00s] seed main.exchange_rates [success]
+10:30:40.697220 [info ]: Started model main.raw_exchange_rates
+10:30:40.697232 [debug]: Started rendering model main.raw_exchange_rates
+10:30:40.697819 [debug]: Finished rendering [  0.03s] seed main.accounts [success]
+10:30:40.697859 [debug]: Started analyzing seed main.accounts
+10:30:40.697897 [info ]:  Succeeded [  0.03s] seed  main.accounts (table)
+10:30:40.697912 [debug]: Finished analyzing [  0.00s] seed main.accounts [success]
+10:30:40.697925 [info ]: Started model main.raw_accounts
+10:30:40.697935 [debug]: Started rendering model main.raw_accounts
+10:30:40.697950 [debug]: Finished rendering [  0.03s] seed main.loan_applications [success]
+10:30:40.697958 [debug]: Started analyzing seed main.loan_applications
+10:30:40.697976 [info ]:  Succeeded [  0.03s] seed  main.loan_applications (table)
+10:30:40.697985 [debug]: Finished analyzing [  0.00s] seed main.loan_applications [success]
+10:30:40.697995 [info ]: Started model main.raw_loan_applications
+10:30:40.698001 [debug]: Started rendering model main.raw_loan_applications
+10:30:40.708037 [debug]: Compiled SQL for node model.privatbank_analytics.raw_loan_repayments at target\.lsp\compiled\models\raw\raw_loan_repayments.sql
+10:30:40.708156 [debug]: Started analyzing model main.raw_loan_repayments
+10:30:40.708241 [debug]: Compiled SQL for node model.privatbank_analytics.raw_exchange_rates at target\.lsp\compiled\models\raw\raw_exchange_rates.sql
+10:30:40.708967 [debug]: Started analyzing model main.raw_exchange_rates
+10:30:40.709035 [debug]: Finished rendering [  0.02s] model main.raw_loan_repayments [success]
+10:30:40.711156 [debug]: Finished rendering [  0.01s] model main.raw_exchange_rates [success]
+10:30:40.711233 [debug]: Compiled SQL for node model.privatbank_analytics.raw_loan_applications at target\.lsp\compiled\models\raw\raw_loan_applications.sql
+10:30:40.711260 [info ]:  Succeeded [  0.02s] model main.raw_loan_repayments (view)
+10:30:40.711288 [debug]: Finished analyzing [  0.00s] model main.raw_loan_repayments [success]
+10:30:40.711316 [info ]: Started model main.stg_loan_repayments
+10:30:40.711348 [debug]: Started rendering model main.stg_loan_repayments
+10:30:40.711384 [debug]: Finished rendering [  0.01s] model main.raw_loan_applications [success]
+10:30:40.711415 [debug]: Started analyzing model main.raw_loan_applications
+10:30:40.711657 [debug]: Compiled SQL for node model.privatbank_analytics.raw_fraud_alerts at target\.lsp\compiled\models\raw\raw_fraud_alerts.sql
+10:30:40.711745 [debug]: Started analyzing model main.raw_fraud_alerts
+10:30:40.711952 [debug]: Finished rendering [  0.02s] model main.raw_fraud_alerts [success]
+10:30:40.712594 [debug]: Compiled SQL for node model.privatbank_analytics.raw_transactions at target\.lsp\compiled\models\raw\raw_transactions.sql
+10:30:40.712789 [debug]: Started analyzing model main.raw_transactions
+10:30:40.712871 [debug]: Finished rendering [  0.02s] model main.raw_transactions [success]
+10:30:40.713655 [info ]:  Succeeded [  0.01s] model main.raw_exchange_rates (view)
+10:30:40.713736 [debug]: Finished analyzing [  0.00s] model main.raw_exchange_rates [success]
+10:30:40.713803 [info ]: Started model main.stg_exchange_rates
+10:30:40.713910 [debug]: Started rendering model main.stg_exchange_rates
+10:30:40.714003 [info ]:  Succeeded [  0.02s] model main.raw_fraud_alerts (view)
+10:30:40.714038 [debug]: Finished analyzing [  0.00s] model main.raw_fraud_alerts [success]
+10:30:40.714063 [info ]: Started model main.stg_fraud_alerts
+10:30:40.714073 [debug]: Started rendering model main.stg_fraud_alerts
+10:30:40.714086 [debug]: Compiled SQL for node model.privatbank_analytics.raw_accounts at target\.lsp\compiled\models\raw\raw_accounts.sql
+10:30:40.714145 [debug]: Finished rendering [  0.02s] model main.raw_accounts [success]
+10:30:40.714167 [debug]: Started analyzing model main.raw_accounts
+10:30:40.714351 [info ]:  Succeeded [  0.01s] model main.raw_loan_applications (view)
+10:30:40.714377 [debug]: Finished analyzing [  0.00s] model main.raw_loan_applications [success]
+10:30:40.714395 [info ]: Started model main.stg_loan_applications
+10:30:40.714406 [debug]: Started rendering model main.stg_loan_applications
+10:30:40.715731 [info ]:  Succeeded [  0.02s] model main.raw_accounts (view)
+10:30:40.715770 [debug]: Finished analyzing [  0.00s] model main.raw_accounts [success]
+10:30:40.715807 [info ]: Started model main.stg_accounts
+10:30:40.715820 [debug]: Started rendering model main.stg_accounts
+10:30:40.715859 [debug]: Compiled SQL for node model.privatbank_analytics.stg_loan_repayments at target\.lsp\compiled\models\staging\stg_loan_repayments.sql
+10:30:40.715895 [debug]: Started analyzing model main.stg_loan_repayments
+10:30:40.715951 [debug]: Finished rendering [  0.00s] model main.stg_loan_repayments [success]
+10:30:40.716785 [info ]:  Succeeded [  0.02s] model main.raw_transactions (view)
+10:30:40.716852 [debug]: Finished analyzing [  0.00s] model main.raw_transactions [success]
+10:30:40.716883 [info ]: Started model main.stg_transactions
+10:30:40.716898 [debug]: Started rendering model main.stg_transactions
+10:30:40.717361 [error]: dbt0227: No column repayment_id found. Available are source."repayment_id,application_id,payment_date,scheduled_date,amount_paid,principal_paid,interest_paid,outstanding_balance,is_overdue,days_overdue"
+  --> models\staging\stg_loan_repayments.sql:8:9
+10:30:40.717433 [debug]: Compiled SQL for node model.privatbank_analytics.stg_exchange_rates at target\.lsp\compiled\models\staging\stg_exchange_rates.sql
+10:30:40.717476 [info ]:     Failed [  0.01s] model main.stg_loan_repayments (view)
+10:30:40.717544 [debug]: Started analyzing model main.stg_exchange_rates
+10:30:40.717614 [debug]: Finished analyzing [  0.00s] model main.stg_loan_repayments [error]
+10:30:40.718656 [debug]: Finished rendering [  0.00s] model main.stg_exchange_rates [success]
+10:30:40.718684 [error]: dbt0227: No column rate_id found. Available are source."rate_id,rate_date,currency_from,currency_to,rate"
+  --> models\staging\stg_exchange_rates.sql:7:9
+10:30:40.718723 [debug]: Compiled SQL for node model.privatbank_analytics.stg_fraud_alerts at target\.lsp\compiled\models\staging\stg_fraud_alerts.sql
+10:30:40.718803 [debug]: Compiled SQL for node model.privatbank_analytics.stg_loan_applications at target\.lsp\compiled\models\staging\stg_loan_applications.sql
+10:30:40.718817 [debug]: Started analyzing model main.stg_fraud_alerts
+10:30:40.718848 [info ]:     Failed [  0.00s] model main.stg_exchange_rates (view)
+10:30:40.718873 [debug]: Compiled SQL for node model.privatbank_analytics.stg_accounts at target\.lsp\compiled\models\staging\stg_accounts.sql
+10:30:40.718880 [debug]: Finished analyzing [  0.00s] model main.stg_exchange_rates [error]
+10:30:40.718918 [debug]: Finished rendering [  0.00s] model main.stg_fraud_alerts [success]
+10:30:40.719032 [debug]: Finished rendering [  0.00s] model main.stg_loan_applications [success]
+10:30:40.719068 [debug]: Started analyzing model main.stg_loan_applications
+10:30:40.719099 [debug]: Finished rendering [  0.00s] model main.stg_accounts [success]
+10:30:40.719125 [debug]: Started analyzing model main.stg_accounts
+10:30:40.730713 [debug]: Compiled SQL for node model.privatbank_analytics.raw_customers at target\.lsp\compiled\models\raw\raw_customers.sql
+10:30:40.730893 [debug]: Started analyzing model main.raw_customers
+10:30:40.731090 [error]: dbt0227: No column alert_id found. Available are source."alert_id,transaction_id,account_id,alert_date,alert_type,risk_score,investigation_status,is_confirmed_fraud,fraud_type,loss_amount"
+  --> models\staging\stg_fraud_alerts.sql:7:9
+10:30:40.731205 [info ]:     Failed [  0.02s] model main.stg_fraud_alerts (view)
+10:30:40.731269 [debug]: Finished analyzing [  0.01s] model main.stg_fraud_alerts [error]
+10:30:40.732473 [info ]:  Succeeded [  0.04s] model main.raw_customers (view)
+10:30:40.732505 [debug]: Finished analyzing [  0.00s] model main.raw_customers [success]
+10:30:40.732536 [info ]: Started model main.stg_customers
+10:30:40.732553 [debug]: Started rendering model main.stg_customers
+10:30:40.733839 [debug]: Finished rendering [  0.04s] model main.raw_customers [success]
+10:30:40.734009 [error]: dbt0227: No column application_id found. Available are source."application_id,customer_id,application_date,loan_type,requested_amount,approved_amount,interest_rate,term_months,status,rejection_reason,disbursement_date"
+  --> models\staging\stg_loan_applications.sql:8:9
+10:30:40.734133 [info ]:     Failed [  0.02s] model main.stg_loan_applications (view)
+10:30:40.734182 [debug]: Finished analyzing [  0.02s] model main.stg_loan_applications [error]
+10:30:40.734798 [debug]: Compiled SQL for node model.privatbank_analytics.stg_transactions at target\.lsp\compiled\models\staging\stg_transactions.sql
+10:30:40.734953 [debug]: Started analyzing model main.stg_transactions
+10:30:40.735374 [debug]: Finished rendering [  0.02s] model main.stg_transactions [success]
+10:30:40.738297 [debug]: Compiled SQL for node model.privatbank_analytics.stg_customers at target\.lsp\compiled\models\staging\stg_customers.sql
+10:30:40.738980 [debug]: Started analyzing model main.stg_customers
+10:30:40.739049 [debug]: Finished rendering [  0.01s] model main.stg_customers [success]
+10:30:40.739070 [info ]: Finished rendering [  0.07s] (21 nodes, 0 skipped, 0 errors)
+10:30:40.741175 [error]: dbt0227: No column account_id found. Available are source."account_id,customer_id,account_type,currency,opened_date,status,credit_limit,current_balance,overdraft_limit"
+  --> models\staging\stg_accounts.sql:7:9
+10:30:40.741328 [info ]:     Failed [  0.03s] model main.stg_accounts (view)
+10:30:40.741392 [debug]: Finished analyzing [  0.02s] model main.stg_accounts [error]
+10:30:40.765017 [error]: dbt0227: No column transaction_id found. Available are source."transaction_id,account_id,transaction_date,transaction_time,amount,currency,transaction_type,merchant_category,merchant_name,city,country,channel,status,is_flagged"
+  --> models\staging\stg_transactions.sql:7:9
+10:30:40.765176 [info ]:     Failed [  0.05s] model main.stg_transactions (view)
+10:30:40.765252 [debug]: Finished analyzing [  0.03s] model main.stg_transactions [error]
+10:30:40.768140 [info ]:  Succeeded [  0.04s] model main.stg_customers (view)
+10:30:40.768189 [debug]: Finished analyzing [  0.03s] model main.stg_customers [success]
+10:30:40.768201 [info ]: Finished analyzing [  0.07s] (21 nodes, 0 skipped, 6 errors)
+10:30:40.779002 [info ]: Cached model count updated: 14 models (accurate)
+10:30:40.805055 [info ]: Waiting for lease on 'target' directory
+10:30:40.922514 [info ]: Loading profiles.yml
+10:30:40.933379 [info ]: Started loading project
+10:30:40.933942 [info ]: Loading profiles.yml
+10:30:40.940424 [info ]: Started parsing
+10:30:40.964030 [info ]: Finished loading project [  0.03s]
+10:30:40.967442 [info ]: Finished parsing [  0.03s]
+10:30:40.969173 [info ]: Cached model count updated: 14 models (estimate)
+10:30:40.969194 [info ]: Cached model count updated: 14 models (accurate)
+10:30:40.969281 [info ]: Started scheduling
+10:30:40.969356 [info ]: Finished scheduling [  0.00s]
+10:30:40.969374 [debug]: Compilation - 0 nodes selected: {}
+10:30:40.969398 [warn ]: dbt1600: The selection criterion '' does not match any enabled nodes
+10:30:40.969404 [warn ]: dbt1601: Nothing to do. Try checking your model configs and model specification args
+10:30:41.154128 [info ]: Started building task graph
+10:30:41.154174 [info ]: Finished building task graph [  0.00s]
+10:30:41.159860 [info ]: Cached model count updated: 14 models (accurate)
+10:31:37.206970 [info ]: Loading profiles.yml
+10:31:37.229811 [info ]: Started loading project
+10:31:37.230559 [info ]: Loading profiles.yml
+10:31:37.235469 [info ]: Started loading project
+10:31:37.236047 [info ]: Loading profiles.yml
+10:31:37.236104 [info ]: Finished loading project [  0.01s]
+10:31:37.240541 [debug]:    Started loading packages
+10:31:37.243512 [debug]:     Loaded [  0.00s] packages
+10:31:37.244314 [info ]: Started parsing
+10:31:37.274676 [info ]: Finished loading project [  0.04s]
+10:31:37.280227 [debug]: Finished parsing models\raw\raw_accounts.sql [  0.00s]
+10:31:37.280760 [debug]: Finished parsing models\raw\raw_customers.sql [  0.00s]
+10:31:37.281629 [debug]: Finished parsing models\raw\raw_exchange_rates.sql [  0.00s]
+10:31:37.282450 [debug]: Finished parsing models\raw\raw_fraud_alerts.sql [  0.00s]
+10:31:37.283129 [debug]: Finished parsing models\raw\raw_loan_applications.sql [  0.00s]
+10:31:37.283985 [debug]: Finished parsing models\raw\raw_loan_repayments.sql [  0.00s]
+10:31:37.284599 [debug]: Finished parsing models\raw\raw_transactions.sql [  0.00s]
+10:31:37.285404 [debug]: Finished parsing models\staging\stg_accounts.sql [  0.00s]
+10:31:37.286314 [debug]: Finished parsing models\staging\stg_customers.sql [  0.00s]
+10:31:37.286848 [debug]: Finished parsing models\staging\stg_exchange_rates.sql [  0.00s]
+10:31:37.287396 [debug]: Finished parsing models\staging\stg_fraud_alerts.sql [  0.00s]
+10:31:37.287907 [debug]: Finished parsing models\staging\stg_loan_applications.sql [  0.00s]
+10:31:37.288503 [debug]: Finished parsing models\staging\stg_loan_repayments.sql [  0.00s]
+10:31:37.295281 [debug]: Finished parsing models\staging\stg_transactions.sql [  0.01s]
+10:31:37.295728 [info ]: Finished parsing [  0.05s]
+10:31:37.296481 [info ]: Cached model count updated: 14 models (estimate)
+10:31:37.296500 [info ]: Cached model count updated: 14 models (accurate)
+10:31:37.296551 [info ]: Started scheduling
+10:31:37.296729 [info ]: Finished scheduling [  0.00s]
+10:31:37.296745 [debug]: Compilation - 21 nodes selected: {"model.privatbank_analytics.raw_accounts", "model.privatbank_analytics.raw_customers", "model.privatbank_analytics.raw_exchange_rates", "model.privatbank_analytics.raw_fraud_alerts", "model.privatbank_analytics.raw_loan_applications", "model.privatbank_analytics.raw_loan_repayments", "model.privatbank_analytics.raw_transactions", "model.privatbank_analytics.stg_accounts", "model.privatbank_analytics.stg_customers", "model.privatbank_analytics.stg_exchange_rates", "model.privatbank_analytics.stg_fraud_alerts", "model.privatbank_analytics.stg_loan_applications", "model.privatbank_analytics.stg_loan_repayments", "model.privatbank_analytics.stg_transactions", "seed.privatbank_analytics.accounts", "seed.privatbank_analytics.customers", "seed.privatbank_analytics.exchange_rates", "seed.privatbank_analytics.fraud_alerts", "seed.privatbank_analytics.loan_applications", "seed.privatbank_analytics.loan_repayments", "seed.privatbank_analytics.transactions"}
+10:31:37.296759 [info ]: Started scheduling
+10:31:37.296875 [info ]: Finished scheduling [  0.00s]
+10:31:37.475209 [info ]: Started building task graph
+10:31:37.475487 [info ]: Finished building task graph [  0.00s]
+10:31:37.475703 [info ]: Started rendering (21 nodes)
+10:31:37.475720 [info ]: Started seed main_seeds.transactions
+10:31:37.475732 [debug]: Started rendering seed main_seeds.transactions
+10:31:37.475756 [info ]: Started seed main_seeds.loan_repayments
+10:31:37.475764 [debug]: Started rendering seed main_seeds.loan_repayments
+10:31:37.475774 [info ]: Started seed main_seeds.loan_applications
+10:31:37.475780 [debug]: Started rendering seed main_seeds.loan_applications
+10:31:37.475789 [info ]: Started seed main_seeds.fraud_alerts
+10:31:37.475797 [debug]: Started rendering seed main_seeds.fraud_alerts
+10:31:37.475806 [info ]: Started seed main_seeds.exchange_rates
+10:31:37.475811 [debug]: Started rendering seed main_seeds.exchange_rates
+10:31:37.475821 [info ]: Started seed main_seeds.customers
+10:31:37.475826 [debug]: Started rendering seed main_seeds.customers
+10:31:37.475834 [info ]: Started seed main_seeds.accounts
+10:31:37.475839 [debug]: Started rendering seed main_seeds.accounts
+10:31:37.477964 [debug]: Finished rendering [  0.00s] seed main_seeds.fraud_alerts [success]
+10:31:37.478035 [info ]: Started analyzing (21 nodes)
+10:31:37.478051 [debug]: Started analyzing seed main_seeds.fraud_alerts
+10:31:37.478132 [debug]: Finished rendering [  0.00s] seed main_seeds.loan_repayments [success]
+10:31:37.478166 [debug]: Started analyzing seed main_seeds.loan_repayments
+10:31:37.478195 [info ]:  Succeeded [  0.00s] seed  main_seeds.fraud_alerts (table)
+10:31:37.478213 [debug]: Finished analyzing [  0.00s] seed main_seeds.fraud_alerts [success]
+10:31:37.478232 [info ]: Started model main_raw.raw_fraud_alerts
+10:31:37.478241 [debug]: Started rendering model main_raw.raw_fraud_alerts
+10:31:37.478257 [debug]: Finished rendering [  0.00s] seed main_seeds.transactions [success]
+10:31:37.478265 [debug]: Started analyzing seed main_seeds.transactions
+10:31:37.478291 [info ]:  Succeeded [  0.00s] seed  main_seeds.loan_repayments (table)
+10:31:37.478299 [debug]: Finished analyzing [  0.00s] seed main_seeds.loan_repayments [success]
+10:31:37.478312 [info ]: Started model main_raw.raw_loan_repayments
+10:31:37.478317 [debug]: Started rendering model main_raw.raw_loan_repayments
+10:31:37.478389 [info ]:  Succeeded [  0.00s] seed  main_seeds.transactions (table)
+10:31:37.478400 [debug]: Finished analyzing [  0.00s] seed main_seeds.transactions [success]
+10:31:37.478410 [info ]: Started model main_raw.raw_transactions
+10:31:37.478415 [debug]: Started rendering model main_raw.raw_transactions
+10:31:37.478613 [debug]: Finished rendering [  0.00s] seed main_seeds.exchange_rates [success]
+10:31:37.478640 [debug]: Started analyzing seed main_seeds.exchange_rates
+10:31:37.478671 [info ]:  Succeeded [  0.00s] seed  main_seeds.exchange_rates (table)
+10:31:37.478684 [debug]: Finished analyzing [  0.00s] seed main_seeds.exchange_rates [success]
+10:31:37.478700 [info ]: Started model main_raw.raw_exchange_rates
+10:31:37.478708 [debug]: Started rendering model main_raw.raw_exchange_rates
+10:31:37.479026 [debug]: Finished rendering [  0.00s] seed main_seeds.customers [success]
+10:31:37.479077 [debug]: Started analyzing seed main_seeds.customers
+10:31:37.479120 [debug]: Finished rendering [  0.00s] seed main_seeds.accounts [success]
+10:31:37.479130 [debug]: Started analyzing seed main_seeds.accounts
+10:31:37.479306 [debug]: Finished rendering [  0.00s] seed main_seeds.loan_applications [success]
+10:31:37.479327 [debug]: Started analyzing seed main_seeds.loan_applications
+10:31:37.479347 [info ]:  Succeeded [  0.00s] seed  main_seeds.customers (table)
+10:31:37.479361 [debug]: Finished analyzing [  0.00s] seed main_seeds.customers [success]
+10:31:37.479390 [info ]: Started model main_raw.raw_customers
+10:31:37.479402 [debug]: Started rendering model main_raw.raw_customers
+10:31:37.479416 [info ]:  Succeeded [  0.00s] seed  main_seeds.accounts (table)
+10:31:37.479426 [debug]: Finished analyzing [  0.00s] seed main_seeds.accounts [success]
+10:31:37.479471 [info ]: Started model main_raw.raw_accounts
+10:31:37.479499 [debug]: Started rendering model main_raw.raw_accounts
+10:31:37.479552 [info ]:  Succeeded [  0.00s] seed  main_seeds.loan_applications (table)
+10:31:37.479571 [debug]: Finished analyzing [  0.00s] seed main_seeds.loan_applications [success]
+10:31:37.479587 [info ]: Started model main_raw.raw_loan_applications
+10:31:37.479594 [debug]: Started rendering model main_raw.raw_loan_applications
+10:31:37.485987 [debug]: Compiled SQL for node model.privatbank_analytics.raw_loan_repayments at target\.lsp\compiled\models\raw\raw_loan_repayments.sql
+10:31:37.486031 [debug]: Compiled SQL for node model.privatbank_analytics.raw_exchange_rates at target\.lsp\compiled\models\raw\raw_exchange_rates.sql
+10:31:37.486069 [debug]: Compiled SQL for node model.privatbank_analytics.raw_transactions at target\.lsp\compiled\models\raw\raw_transactions.sql
+10:31:37.486110 [debug]: Started analyzing model main_raw.raw_loan_repayments
+10:31:37.486120 [debug]: Finished rendering [  0.01s] model main_raw.raw_loan_repayments [success]
+10:31:37.486135 [debug]: Finished rendering [  0.01s] model main_raw.raw_exchange_rates [success]
+10:31:37.486147 [debug]: Started analyzing model main_raw.raw_exchange_rates
+10:31:37.486160 [debug]: Finished rendering [  0.01s] model main_raw.raw_transactions [success]
+10:31:37.486169 [debug]: Started analyzing model main_raw.raw_transactions
+10:31:37.487329 [info ]:  Succeeded [  0.01s] model main_raw.raw_loan_repayments (view)
+10:31:37.487376 [debug]: Finished analyzing [  0.00s] model main_raw.raw_loan_repayments [success]
+10:31:37.487409 [info ]: Started model main_staging.stg_loan_repayments
+10:31:37.487426 [debug]: Started rendering model main_staging.stg_loan_repayments
+10:31:37.487604 [info ]:  Succeeded [  0.01s] model main_raw.raw_exchange_rates (view)
+10:31:37.487635 [debug]: Finished analyzing [  0.00s] model main_raw.raw_exchange_rates [success]
+10:31:37.487660 [info ]: Started model main_staging.stg_exchange_rates
+10:31:37.487671 [debug]: Started rendering model main_staging.stg_exchange_rates
+10:31:37.488043 [debug]: Compiled SQL for node model.privatbank_analytics.raw_accounts at target\.lsp\compiled\models\raw\raw_accounts.sql
+10:31:37.488254 [debug]: Started analyzing model main_raw.raw_accounts
+10:31:37.488299 [debug]: Finished rendering [  0.01s] model main_raw.raw_accounts [success]
+10:31:37.488487 [info ]:  Succeeded [  0.01s] model main_raw.raw_transactions (view)
+10:31:37.488531 [debug]: Finished analyzing [  0.00s] model main_raw.raw_transactions [success]
+10:31:37.488560 [info ]: Started model main_staging.stg_transactions
+10:31:37.488574 [debug]: Started rendering model main_staging.stg_transactions
+10:31:37.491325 [info ]:  Succeeded [  0.01s] model main_raw.raw_accounts (view)
+10:31:37.491368 [debug]: Finished analyzing [  0.00s] model main_raw.raw_accounts [success]
+10:31:37.491403 [info ]: Started model main_staging.stg_accounts
+10:31:37.491421 [debug]: Started rendering model main_staging.stg_accounts
+10:31:37.491519 [debug]: Compiled SQL for node model.privatbank_analytics.raw_loan_applications at target\.lsp\compiled\models\raw\raw_loan_applications.sql
+10:31:37.491595 [debug]: Started analyzing model main_raw.raw_loan_applications
+10:31:37.491799 [debug]: Compiled SQL for node model.privatbank_analytics.raw_fraud_alerts at target\.lsp\compiled\models\raw\raw_fraud_alerts.sql
+10:31:37.492082 [debug]: Started analyzing model main_raw.raw_fraud_alerts
+10:31:37.492193 [debug]: Finished rendering [  0.01s] model main_raw.raw_fraud_alerts [success]
+10:31:37.492270 [debug]: Finished rendering [  0.01s] model main_raw.raw_loan_applications [success]
+10:31:37.492959 [debug]: Compiled SQL for node model.privatbank_analytics.stg_loan_repayments at target\.lsp\compiled\models\staging\stg_loan_repayments.sql
+10:31:37.493067 [debug]: Started analyzing model main_staging.stg_loan_repayments
+10:31:37.493322 [debug]: Finished rendering [  0.01s] model main_staging.stg_loan_repayments [success]
+10:31:37.493392 [debug]: Compiled SQL for node model.privatbank_analytics.stg_accounts at target\.lsp\compiled\models\staging\stg_accounts.sql
+10:31:37.493404 [info ]:  Succeeded [  0.01s] model main_raw.raw_loan_applications (view)
+10:31:37.493439 [debug]: Finished analyzing [  0.00s] model main_raw.raw_loan_applications [success]
+10:31:37.493470 [info ]: Started model main_staging.stg_loan_applications
+10:31:37.493502 [debug]: Started rendering model main_staging.stg_loan_applications
+10:31:37.493534 [debug]: Started analyzing model main_staging.stg_accounts
+10:31:37.495008 [debug]: Finished rendering [  0.00s] model main_staging.stg_accounts [success]
+10:31:37.495644 [debug]: Compiled SQL for node model.privatbank_analytics.raw_customers at target\.lsp\compiled\models\raw\raw_customers.sql
+10:31:37.496754 [debug]: Compiled SQL for node model.privatbank_analytics.stg_loan_applications at target\.lsp\compiled\models\staging\stg_loan_applications.sql
+10:31:37.496932 [info ]:  Succeeded [  0.02s] model main_raw.raw_fraud_alerts (view)
+10:31:37.497614 [debug]: Finished analyzing [  0.01s] model main_raw.raw_fraud_alerts [success]
+10:31:37.497690 [info ]: Started model main_staging.stg_fraud_alerts
+10:31:37.497727 [debug]: Started rendering model main_staging.stg_fraud_alerts
+10:31:37.497810 [debug]: Finished rendering [  0.02s] model main_raw.raw_customers [success]
+10:31:37.498488 [debug]: Started analyzing model main_raw.raw_customers
+10:31:37.498726 [debug]: Finished rendering [  0.01s] model main_staging.stg_loan_applications [success]
+10:31:37.498784 [debug]: Started analyzing model main_staging.stg_loan_applications
+10:31:37.500628 [info ]:  Succeeded [  0.02s] model main_raw.raw_customers (view)
+10:31:37.500677 [debug]: Finished analyzing [  0.00s] model main_raw.raw_customers [success]
+10:31:37.500710 [info ]: Started model main_staging.stg_customers
+10:31:37.500723 [debug]: Started rendering model main_staging.stg_customers
+10:31:37.502222 [error]: dbt0227: No column repayment_id found. Available are source."repayment_id,application_id,payment_date,scheduled_date,amount_paid,principal_paid,interest_paid,outstanding_balance,is_overdue,days_overdue"
+  --> models\staging\stg_loan_repayments.sql:8:9
+10:31:37.502344 [info ]:     Failed [  0.01s] model main_staging.stg_loan_repayments (view)
+10:31:37.502399 [debug]: Compiled SQL for node model.privatbank_analytics.stg_fraud_alerts at target\.lsp\compiled\models\staging\stg_fraud_alerts.sql
+10:31:37.502441 [debug]: Started analyzing model main_staging.stg_fraud_alerts
+10:31:37.502493 [debug]: Finished analyzing [  0.01s] model main_staging.stg_loan_repayments [error]
+10:31:37.502515 [debug]: Finished rendering [  0.00s] model main_staging.stg_fraud_alerts [success]
+10:31:37.507460 [debug]: Compiled SQL for node model.privatbank_analytics.stg_exchange_rates at target\.lsp\compiled\models\staging\stg_exchange_rates.sql
+10:31:37.507622 [debug]: Started analyzing model main_staging.stg_exchange_rates
+10:31:37.507709 [debug]: Finished rendering [  0.02s] model main_staging.stg_exchange_rates [success]
+10:31:37.509199 [error]: dbt0227: No column account_id found. Available are source."account_id,customer_id,account_type,currency,opened_date,status,credit_limit,current_balance,overdraft_limit"
+  --> models\staging\stg_accounts.sql:7:9
+10:31:37.509199 [error]: dbt0227: No column rate_id found. Available are source."rate_id,rate_date,currency_from,currency_to,rate"
+  --> models\staging\stg_exchange_rates.sql:7:9
+10:31:37.509400 [info ]:     Failed [  0.02s] model main_staging.stg_exchange_rates (view)
+10:31:37.509505 [debug]: Finished analyzing [  0.00s] model main_staging.stg_exchange_rates [error]
+10:31:37.509564 [info ]:     Failed [  0.02s] model main_staging.stg_accounts (view)
+10:31:37.509598 [debug]: Finished analyzing [  0.02s] model main_staging.stg_accounts [error]
+10:31:37.518996 [error]: dbt0227: No column application_id found. Available are source."application_id,customer_id,application_date,loan_type,requested_amount,approved_amount,interest_rate,term_months,status,rejection_reason,disbursement_date"
+  --> models\staging\stg_loan_applications.sql:8:9
+10:31:37.519133 [info ]:     Failed [  0.03s] model main_staging.stg_loan_applications (view)
+10:31:37.519161 [debug]: Finished analyzing [  0.02s] model main_staging.stg_loan_applications [error]
+10:31:37.522281 [error]: dbt0227: No column alert_id found. Available are source."alert_id,transaction_id,account_id,alert_date,alert_type,risk_score,investigation_status,is_confirmed_fraud,fraud_type,loss_amount"
+  --> models\staging\stg_fraud_alerts.sql:7:9
+10:31:37.522407 [info ]:     Failed [  0.02s] model main_staging.stg_fraud_alerts (view)
+10:31:37.522436 [debug]: Finished analyzing [  0.02s] model main_staging.stg_fraud_alerts [error]
+10:31:37.556679 [debug]: Compiled SQL for node model.privatbank_analytics.stg_transactions at target\.lsp\compiled\models\staging\stg_transactions.sql
+10:31:37.556833 [debug]: Started analyzing model main_staging.stg_transactions
+10:31:37.556879 [debug]: Compiled SQL for node model.privatbank_analytics.stg_customers at target\.lsp\compiled\models\staging\stg_customers.sql
+10:31:37.556914 [debug]: Started analyzing model main_staging.stg_customers
+10:31:37.556937 [debug]: Finished rendering [  0.06s] model main_staging.stg_customers [success]
+10:31:37.556918 [debug]: Finished rendering [  0.07s] model main_staging.stg_transactions [success]
+10:31:37.556965 [info ]: Finished rendering [  0.08s] (21 nodes, 0 skipped, 0 errors)
+10:31:37.582305 [info ]:  Succeeded [  0.08s] model main_staging.stg_customers (view)
+10:31:37.582345 [debug]: Finished analyzing [  0.03s] model main_staging.stg_customers [success]
+10:31:37.582690 [error]: dbt0227: No column transaction_id found. Available are source."transaction_id,account_id,transaction_date,transaction_time,amount,currency,transaction_type,merchant_category,merchant_name,city,country,channel,status,is_flagged"
+  --> models\staging\stg_transactions.sql:7:9
+10:31:37.582802 [info ]:     Failed [  0.09s] model main_staging.stg_transactions (view)
+10:31:37.582828 [debug]: Finished analyzing [  0.03s] model main_staging.stg_transactions [error]
+10:31:37.582839 [info ]: Finished analyzing [  0.10s] (21 nodes, 0 skipped, 6 errors)
+10:31:37.591115 [info ]: Cached model count updated: 14 models (accurate)
+10:31:37.638581 [info ]: Waiting for lease on 'target' directory
+10:31:37.752062 [info ]: Loading profiles.yml
+10:31:37.762900 [info ]: Started loading project
+10:31:37.763555 [info ]: Loading profiles.yml
+10:31:37.769901 [info ]: Started parsing
+10:31:37.792944 [info ]: Finished loading project [  0.03s]
+10:31:37.796833 [info ]: Finished parsing [  0.03s]
+10:31:37.798561 [info ]: Cached model count updated: 14 models (estimate)
+10:31:37.798584 [info ]: Cached model count updated: 14 models (accurate)
+10:31:37.798640 [info ]: Started scheduling
+10:31:37.798705 [info ]: Finished scheduling [  0.00s]
+10:31:37.798718 [debug]: Compilation - 0 nodes selected: {}
+10:31:37.798732 [warn ]: dbt1600: The selection criterion '' does not match any enabled nodes
+10:31:37.798737 [warn ]: dbt1601: Nothing to do. Try checking your model configs and model specification args
+10:31:37.987176 [info ]: Started building task graph
+10:31:37.987218 [info ]: Finished building task graph [  0.00s]
+10:31:37.992831 [info ]: Cached model count updated: 14 models (accurate)
+10:50:57.038957 [info ]: Cached model count updated: 14 models (accurate)
+10:50:57.042456 [info ]: Waiting for lease on 'target' directory
+10:50:57.595669 [info ]: Cached model count updated: 14 models (accurate)
+10:50:57.599975 [info ]: Waiting for lease on 'target' directory
+10:50:58.160089 [info ]: Started loading project
+10:50:58.160884 [info ]: Loading profiles.yml
+10:50:58.167320 [info ]: Started parsing
+10:50:58.188662 [info ]: Finished loading project [  0.03s]
+10:50:58.198718 [debug]: Finished parsing models\raw\raw_accounts.sql [  0.01s]
+10:50:58.202715 [debug]: Finished parsing models\staging\stg_accounts.sql [  0.00s]
+10:50:58.203540 [info ]: Finished parsing [  0.04s]
+10:50:58.205399 [info ]: Cached model count updated: 14 models (estimate)
+10:50:58.205424 [info ]: Cached model count updated: 14 models (accurate)
+10:50:58.205503 [info ]: Started scheduling
+10:50:58.205688 [info ]: Finished scheduling [  0.00s]
+10:50:58.205705 [debug]: Compilation - 3 nodes selected: {"model.privatbank_analytics.raw_accounts", "model.privatbank_analytics.stg_accounts", "seed.privatbank_analytics.accounts"}
+10:50:58.396909 [info ]: Started building task graph
+10:50:58.397004 [info ]: Finished building task graph [  0.00s]
+10:50:58.397178 [info ]: Started rendering (3 nodes)
+10:50:58.397201 [info ]: Started seed main_seeds.accounts
+10:50:58.397217 [debug]: Started rendering seed main_seeds.accounts
+10:50:58.398299 [debug]: Finished rendering [  0.00s] seed main_seeds.accounts [success]
+10:50:58.398347 [info ]: Started analyzing (3 nodes)
+10:50:58.398361 [debug]: Started analyzing seed main_seeds.accounts
+10:50:58.398417 [info ]:  Succeeded [  0.00s] seed  main_seeds.accounts (table)
+10:50:58.398435 [debug]: Finished analyzing [  0.00s] seed main_seeds.accounts [success]
+10:50:58.398447 [info ]: Started model main_raw.raw_accounts
+10:50:58.398457 [debug]: Started rendering model main_raw.raw_accounts
+10:50:58.400027 [debug]: Compiled SQL for node model.privatbank_analytics.raw_accounts at target\.lsp\compiled\models\raw\raw_accounts.sql
+10:50:58.400134 [debug]: Started analyzing model main_raw.raw_accounts
+10:50:58.400174 [debug]: Finished rendering [  0.00s] model main_raw.raw_accounts [success]
+10:50:58.401728 [info ]:  Succeeded [  0.00s] model main_raw.raw_accounts (view)
+10:50:58.401803 [debug]: Finished analyzing [  0.00s] model main_raw.raw_accounts [success]
+10:50:58.401842 [info ]: Started model main_staging.stg_accounts
+10:50:58.401859 [debug]: Started rendering model main_staging.stg_accounts
+10:50:58.403459 [debug]: Compiled SQL for node model.privatbank_analytics.stg_accounts at target\.lsp\compiled\models\staging\stg_accounts.sql
+10:50:58.403586 [debug]: Started analyzing model main_staging.stg_accounts
+10:50:58.403633 [debug]: Finished rendering [  0.00s] model main_staging.stg_accounts [success]
+10:50:58.403647 [info ]: Finished rendering [  0.01s] (3 nodes, 0 skipped, 0 errors)
+10:50:58.416949 [error]: dbt0227: No column account_id found. Available are source."account_id,customer_id,account_type,currency,opened_date,status,credit_limit,current_balance,overdraft_limit"
+  --> models\staging\stg_accounts.sql:7:9
+10:50:58.417067 [info ]:     Failed [  0.01s] model main_staging.stg_accounts (view)
+10:50:58.417095 [debug]: Finished analyzing [  0.01s] model main_staging.stg_accounts [error]
+10:50:58.417103 [info ]: Finished analyzing [  0.02s] (3 nodes, 0 skipped, 1 errors)
+10:50:58.424320 [info ]: Cached model count updated: 14 models (accurate)
+10:52:44.814308 [info ]: Started loading project
+10:52:44.814898 [info ]: Loading profiles.yml
+10:52:44.819919 [info ]: Started loading project
+10:52:44.820545 [info ]: Loading profiles.yml
+10:52:44.820594 [info ]: Finished loading project [  0.01s]
+10:52:44.825334 [debug]:    Started loading packages
+10:52:44.828275 [debug]:     Loaded [  0.00s] packages
+10:52:44.829058 [info ]: Started parsing
+10:52:44.858576 [info ]: Finished loading project [  0.04s]
+10:52:44.864317 [debug]: Finished parsing models\marts\transactions\fact_transactions.sql [  0.00s]
+10:52:44.864945 [debug]: Finished parsing models\raw\raw_accounts.sql [  0.00s]
+10:52:44.865497 [debug]: Finished parsing models\raw\raw_customers.sql [  0.00s]
+10:52:44.866180 [debug]: Finished parsing models\raw\raw_exchange_rates.sql [  0.00s]
+10:52:44.867074 [debug]: Finished parsing models\raw\raw_fraud_alerts.sql [  0.00s]
+10:52:44.868027 [debug]: Finished parsing models\raw\raw_loan_applications.sql [  0.00s]
+10:52:44.868979 [debug]: Finished parsing models\raw\raw_loan_repayments.sql [  0.00s]
+10:52:44.869694 [debug]: Finished parsing models\raw\raw_transactions.sql [  0.00s]
+10:52:44.870414 [debug]: Finished parsing models\staging\stg_accounts.sql [  0.00s]
+10:52:44.871185 [debug]: Finished parsing models\staging\stg_customers.sql [  0.00s]
+10:52:44.871845 [debug]: Finished parsing models\staging\stg_exchange_rates.sql [  0.00s]
+10:52:44.872591 [debug]: Finished parsing models\staging\stg_fraud_alerts.sql [  0.00s]
+10:52:44.873295 [debug]: Finished parsing models\staging\stg_loan_applications.sql [  0.00s]
+10:52:44.873845 [debug]: Finished parsing models\staging\stg_loan_repayments.sql [  0.00s]
+10:52:44.880394 [debug]: Finished parsing models\staging\stg_transactions.sql [  0.01s]
+10:52:44.880854 [info ]: Finished parsing [  0.05s]
+10:52:44.881634 [info ]: Cached model count updated: 15 models (estimate)
+10:52:44.881652 [info ]: Cached model count updated: 15 models (accurate)
+10:52:44.881706 [info ]: Started scheduling
+10:52:44.881888 [info ]: Finished scheduling [  0.00s]
+10:52:44.881908 [debug]: Compilation - 21 nodes selected: {"model.privatbank_analytics.raw_accounts", "model.privatbank_analytics.raw_customers", "model.privatbank_analytics.raw_exchange_rates", "model.privatbank_analytics.raw_fraud_alerts", "model.privatbank_analytics.raw_loan_applications", "model.privatbank_analytics.raw_loan_repayments", "model.privatbank_analytics.raw_transactions", "model.privatbank_analytics.stg_accounts", "model.privatbank_analytics.stg_customers", "model.privatbank_analytics.stg_exchange_rates", "model.privatbank_analytics.stg_fraud_alerts", "model.privatbank_analytics.stg_loan_applications", "model.privatbank_analytics.stg_loan_repayments", "model.privatbank_analytics.stg_transactions", "seed.privatbank_analytics.accounts", "seed.privatbank_analytics.customers", "seed.privatbank_analytics.exchange_rates", "seed.privatbank_analytics.fraud_alerts", "seed.privatbank_analytics.loan_applications", "seed.privatbank_analytics.loan_repayments", "seed.privatbank_analytics.transactions"}
+10:52:44.881923 [info ]: Started scheduling
+10:52:44.882049 [info ]: Finished scheduling [  0.00s]
+10:52:45.079649 [info ]: Started building task graph
+10:52:45.079857 [info ]: Finished building task graph [  0.00s]
+10:52:45.080086 [info ]: Started rendering (21 nodes)
+10:52:45.080104 [info ]: Started seed main_seeds.transactions
+10:52:45.080120 [debug]: Started rendering seed main_seeds.transactions
+10:52:45.080144 [info ]: Started seed main_seeds.loan_repayments
+10:52:45.080152 [debug]: Started rendering seed main_seeds.loan_repayments
+10:52:45.080161 [info ]: Started seed main_seeds.loan_applications
+10:52:45.080166 [debug]: Started rendering seed main_seeds.loan_applications
+10:52:45.080176 [info ]: Started seed main_seeds.fraud_alerts
+10:52:45.080182 [debug]: Started rendering seed main_seeds.fraud_alerts
+10:52:45.080190 [info ]: Started seed main_seeds.exchange_rates
+10:52:45.080196 [debug]: Started rendering seed main_seeds.exchange_rates
+10:52:45.080206 [info ]: Started seed main_seeds.customers
+10:52:45.080211 [debug]: Started rendering seed main_seeds.customers
+10:52:45.080219 [info ]: Started seed main_seeds.accounts
+10:52:45.080226 [debug]: Started rendering seed main_seeds.accounts
+10:52:45.081476 [debug]: Finished rendering [  0.00s] seed main_seeds.exchange_rates [success]
+10:52:45.081530 [info ]: Started analyzing (21 nodes)
+10:52:45.081545 [debug]: Started analyzing seed main_seeds.exchange_rates
+10:52:45.081584 [info ]:  Succeeded [  0.00s] seed  main_seeds.exchange_rates (table)
+10:52:45.081600 [debug]: Finished analyzing [  0.00s] seed main_seeds.exchange_rates [success]
+10:52:45.081614 [info ]: Started model main_raw.raw_exchange_rates
+10:52:45.081621 [debug]: Started rendering model main_raw.raw_exchange_rates
+10:52:45.081753 [debug]: Finished rendering [  0.00s] seed main_seeds.transactions [success]
+10:52:45.081923 [debug]: Started analyzing seed main_seeds.transactions
+10:52:45.082585 [debug]: Finished rendering [  0.00s] seed main_seeds.fraud_alerts [success]
+10:52:45.082633 [debug]: Started analyzing seed main_seeds.fraud_alerts
+10:52:45.082700 [info ]:  Succeeded [  0.00s] seed  main_seeds.fraud_alerts (table)
+10:52:45.082717 [debug]: Finished analyzing [  0.00s] seed main_seeds.fraud_alerts [success]
+10:52:45.082732 [info ]: Started model main_raw.raw_fraud_alerts
+10:52:45.082741 [debug]: Started rendering model main_raw.raw_fraud_alerts
+10:52:45.082927 [info ]:  Succeeded [  0.00s] seed  main_seeds.transactions (table)
+10:52:45.082952 [debug]: Finished analyzing [  0.00s] seed main_seeds.transactions [success]
+10:52:45.082973 [info ]: Started model main_raw.raw_transactions
+10:52:45.082985 [debug]: Started rendering model main_raw.raw_transactions
+10:52:45.083872 [debug]: Finished rendering [  0.00s] seed main_seeds.loan_repayments [success]
+10:52:45.083922 [debug]: Started analyzing seed main_seeds.loan_repayments
+10:52:45.083978 [info ]:  Succeeded [  0.00s] seed  main_seeds.loan_repayments (table)
+10:52:45.084148 [debug]: Finished analyzing [  0.00s] seed main_seeds.loan_repayments [success]
+10:52:45.084172 [info ]: Started model main_raw.raw_loan_repayments
+10:52:45.084183 [debug]: Started rendering model main_raw.raw_loan_repayments
+10:52:45.084923 [debug]: Finished rendering [  0.00s] seed main_seeds.customers [success]
+10:52:45.084991 [debug]: Started analyzing seed main_seeds.customers
+10:52:45.085039 [info ]:  Succeeded [  0.00s] seed  main_seeds.customers (table)
+10:52:45.085055 [debug]: Finished analyzing [  0.00s] seed main_seeds.customers [success]
+10:52:45.085072 [info ]: Started model main_raw.raw_customers
+10:52:45.085083 [debug]: Started rendering model main_raw.raw_customers
+10:52:45.085276 [debug]: Finished rendering [  0.01s] seed main_seeds.accounts [success]
+10:52:45.085512 [debug]: Started analyzing seed main_seeds.accounts
+10:52:45.085593 [info ]:  Succeeded [  0.01s] seed  main_seeds.accounts (table)
+10:52:45.086089 [debug]: Finished analyzing [  0.00s] seed main_seeds.accounts [success]
+10:52:45.086129 [info ]: Started model main_raw.raw_accounts
+10:52:45.086146 [debug]: Started rendering model main_raw.raw_accounts
+10:52:45.087173 [debug]: Finished rendering [  0.01s] seed main_seeds.loan_applications [success]
+10:52:45.087231 [debug]: Started analyzing seed main_seeds.loan_applications
+10:52:45.087332 [info ]:  Succeeded [  0.01s] seed  main_seeds.loan_applications (table)
+10:52:45.087356 [debug]: Finished analyzing [  0.00s] seed main_seeds.loan_applications [success]
+10:52:45.087376 [info ]: Started model main_raw.raw_loan_applications
+10:52:45.087385 [debug]: Started rendering model main_raw.raw_loan_applications
+10:52:45.092762 [debug]: Compiled SQL for node model.privatbank_analytics.raw_accounts at target\.lsp\compiled\models\raw\raw_accounts.sql
+10:52:45.092794 [debug]: Compiled SQL for node model.privatbank_analytics.raw_transactions at target\.lsp\compiled\models\raw\raw_transactions.sql
+10:52:45.092853 [debug]: Finished rendering [  0.01s] model main_raw.raw_accounts [success]
+10:52:45.092889 [debug]: Started analyzing model main_raw.raw_accounts
+10:52:45.092911 [debug]: Finished rendering [  0.01s] model main_raw.raw_transactions [success]
+10:52:45.092921 [debug]: Started analyzing model main_raw.raw_transactions
+10:52:45.092939 [debug]: Compiled SQL for node model.privatbank_analytics.raw_loan_repayments at target\.lsp\compiled\models\raw\raw_loan_repayments.sql
+10:52:45.092961 [debug]: Started analyzing model main_raw.raw_loan_repayments
+10:52:45.094254 [info ]:  Succeeded [  0.01s] model main_raw.raw_transactions (view)
+10:52:45.094304 [debug]: Finished analyzing [  0.00s] model main_raw.raw_transactions [success]
+10:52:45.094337 [info ]: Started model main_staging.stg_transactions
+10:52:45.094351 [debug]: Started rendering model main_staging.stg_transactions
+10:52:45.094427 [debug]: Finished rendering [  0.01s] model main_raw.raw_loan_repayments [success]
+10:52:45.095617 [info ]:  Succeeded [  0.01s] model main_raw.raw_loan_repayments (view)
+10:52:45.095664 [debug]: Finished analyzing [  0.00s] model main_raw.raw_loan_repayments [success]
+10:52:45.095702 [info ]: Started model main_staging.stg_loan_repayments
+10:52:45.095721 [debug]: Started rendering model main_staging.stg_loan_repayments
+10:52:45.098929 [info ]:  Succeeded [  0.01s] model main_raw.raw_accounts (view)
+10:52:45.098978 [debug]: Finished analyzing [  0.01s] model main_raw.raw_accounts [success]
+10:52:45.099010 [info ]: Started model main_staging.stg_accounts
+10:52:45.099027 [debug]: Started rendering model main_staging.stg_accounts
+10:52:45.099223 [debug]: Compiled SQL for node model.privatbank_analytics.raw_fraud_alerts at target\.lsp\compiled\models\raw\raw_fraud_alerts.sql
+10:52:45.099325 [debug]: Started analyzing model main_raw.raw_fraud_alerts
+10:52:45.099357 [debug]: Finished rendering [  0.02s] model main_raw.raw_fraud_alerts [success]
+10:52:45.100600 [debug]: Compiled SQL for node model.privatbank_analytics.stg_transactions at target\.lsp\compiled\models\staging\stg_transactions.sql
+10:52:45.100710 [debug]: Started analyzing model main_staging.stg_transactions
+10:52:45.100756 [debug]: Finished rendering [  0.01s] model main_staging.stg_transactions [success]
+10:52:45.100916 [debug]: Compiled SQL for node model.privatbank_analytics.stg_loan_repayments at target\.lsp\compiled\models\staging\stg_loan_repayments.sql
+10:52:45.100959 [debug]: Started analyzing model main_staging.stg_loan_repayments
+10:52:45.100992 [debug]: Finished rendering [  0.01s] model main_staging.stg_loan_repayments [success]
+10:52:45.101300 [debug]: Compiled SQL for node model.privatbank_analytics.raw_loan_applications at target\.lsp\compiled\models\raw\raw_loan_applications.sql
+10:52:45.101360 [debug]: Started analyzing model main_raw.raw_loan_applications
+10:52:45.101389 [debug]: Finished rendering [  0.01s] model main_raw.raw_loan_applications [success]
+10:52:45.102163 [error]: dbt0227: No column repayment_id found. Available are source."repayment_id,application_id,payment_date,scheduled_date,amount_paid,principal_paid,interest_paid,outstanding_balance,is_overdue,days_overdue"
+  --> models\staging\stg_loan_repayments.sql:8:9
+10:52:45.102283 [info ]:     Failed [  0.01s] model main_staging.stg_loan_repayments (view)
+10:52:45.102342 [debug]: Finished analyzing [  0.00s] model main_staging.stg_loan_repayments [error]
+10:52:45.103513 [info ]:  Succeeded [  0.01s] model main_raw.raw_loan_applications (view)
+10:52:45.103566 [debug]: Finished analyzing [  0.00s] model main_raw.raw_loan_applications [success]
+10:52:45.103656 [info ]: Started model main_staging.stg_loan_applications
+10:52:45.103696 [debug]: Started rendering model main_staging.stg_loan_applications
+10:52:45.103753 [info ]:  Succeeded [  0.02s] model main_raw.raw_fraud_alerts (view)
+10:52:45.103772 [debug]: Finished analyzing [  0.00s] model main_raw.raw_fraud_alerts [success]
+10:52:45.103789 [info ]: Started model main_staging.stg_fraud_alerts
+10:52:45.103798 [debug]: Started rendering model main_staging.stg_fraud_alerts
+10:52:45.105261 [debug]: Compiled SQL for node model.privatbank_analytics.stg_accounts at target\.lsp\compiled\models\staging\stg_accounts.sql
+10:52:45.105392 [debug]: Started analyzing model main_staging.stg_accounts
+10:52:45.105448 [debug]: Finished rendering [  0.01s] model main_staging.stg_accounts [success]
+10:52:45.107378 [debug]: Compiled SQL for node model.privatbank_analytics.raw_exchange_rates at target\.lsp\compiled\models\raw\raw_exchange_rates.sql
+10:52:45.107517 [debug]: Started analyzing model main_raw.raw_exchange_rates
+10:52:45.108566 [debug]: Finished rendering [  0.03s] model main_raw.raw_exchange_rates [success]
+10:52:45.110071 [info ]:  Succeeded [  0.03s] model main_raw.raw_exchange_rates (view)
+10:52:45.110110 [debug]: Finished analyzing [  0.00s] model main_raw.raw_exchange_rates [success]
+10:52:45.110138 [info ]: Started model main_staging.stg_exchange_rates
+10:52:45.110315 [debug]: Started rendering model main_staging.stg_exchange_rates
+10:52:45.112165 [debug]: Compiled SQL for node model.privatbank_analytics.raw_customers at target\.lsp\compiled\models\raw\raw_customers.sql
+10:52:45.112279 [debug]: Started analyzing model main_raw.raw_customers
+10:52:45.112312 [debug]: Compiled SQL for node model.privatbank_analytics.stg_loan_applications at target\.lsp\compiled\models\staging\stg_loan_applications.sql
+10:52:45.112339 [debug]: Started analyzing model main_staging.stg_loan_applications
+10:52:45.112390 [debug]: Finished rendering [  0.03s] model main_raw.raw_customers [success]
+10:52:45.112999 [debug]: Finished rendering [  0.01s] model main_staging.stg_loan_applications [success]
+10:52:45.114899 [info ]:  Succeeded [  0.03s] model main_raw.raw_customers (view)
+10:52:45.114964 [debug]: Finished analyzing [  0.00s] model main_raw.raw_customers [success]
+10:52:45.114998 [info ]: Started model main_staging.stg_customers
+10:52:45.115013 [debug]: Started rendering model main_staging.stg_customers
+10:52:45.115305 [debug]: Compiled SQL for node model.privatbank_analytics.stg_exchange_rates at target\.lsp\compiled\models\staging\stg_exchange_rates.sql
+10:52:45.115382 [debug]: Started analyzing model main_staging.stg_exchange_rates
+10:52:45.115412 [debug]: Finished rendering [  0.01s] model main_staging.stg_exchange_rates [success]
+10:52:45.116897 [error]: dbt0227: No column rate_id found. Available are source."rate_id,rate_date,currency_from,currency_to,rate"
+  --> models\staging\stg_exchange_rates.sql:7:9
+10:52:45.117041 [info ]:     Failed [  0.01s] model main_staging.stg_exchange_rates (view)
+10:52:45.117137 [debug]: Finished analyzing [  0.00s] model main_staging.stg_exchange_rates [error]
+10:52:45.119414 [debug]: Compiled SQL for node model.privatbank_analytics.stg_customers at target\.lsp\compiled\models\staging\stg_customers.sql
+10:52:45.119535 [debug]: Started analyzing model main_staging.stg_customers
+10:52:45.119595 [debug]: Finished rendering [  0.00s] model main_staging.stg_customers [success]
+10:52:45.120562 [debug]: Compiled SQL for node model.privatbank_analytics.stg_fraud_alerts at target\.lsp\compiled\models\staging\stg_fraud_alerts.sql
+10:52:45.121180 [error]: dbt0227: No column account_id found. Available are source."account_id,customer_id,account_type,currency,opened_date,status,credit_limit,current_balance,overdraft_limit"
+  --> models\staging\stg_accounts.sql:7:9
+10:52:45.121354 [info ]:     Failed [  0.02s] model main_staging.stg_accounts (view)
+10:52:45.121413 [debug]: Finished analyzing [  0.02s] model main_staging.stg_accounts [error]
+10:52:45.121692 [debug]: Finished rendering [  0.02s] model main_staging.stg_fraud_alerts [success]
+10:52:45.121745 [info ]: Finished rendering [  0.04s] (21 nodes, 0 skipped, 0 errors)
+10:52:45.121797 [debug]: Started analyzing model main_staging.stg_fraud_alerts
+10:52:45.133756 [error]: dbt0227: No column alert_id found. Available are source."alert_id,transaction_id,account_id,alert_date,alert_type,risk_score,investigation_status,is_confirmed_fraud,fraud_type,loss_amount"
+  --> models\staging\stg_fraud_alerts.sql:7:9
+10:52:45.133926 [info ]:     Failed [  0.03s] model main_staging.stg_fraud_alerts (view)
+10:52:45.133960 [debug]: Finished analyzing [  0.01s] model main_staging.stg_fraud_alerts [error]
+10:52:45.134316 [error]: dbt0227: No column application_id found. Available are source."application_id,customer_id,application_date,loan_type,requested_amount,approved_amount,interest_rate,term_months,status,rejection_reason,disbursement_date"
+  --> models\staging\stg_loan_applications.sql:8:9
+10:52:45.134537 [info ]:     Failed [  0.03s] model main_staging.stg_loan_applications (view)
+10:52:45.134604 [debug]: Finished analyzing [  0.02s] model main_staging.stg_loan_applications [error]
+10:52:45.136957 [error]: dbt0227: No column transaction_id found. Available are source."transaction_id,account_id,transaction_date,transaction_time,amount,currency,transaction_type,merchant_category,merchant_name,city,country,channel,status,is_flagged"
+  --> models\staging\stg_transactions.sql:7:9
+10:52:45.137289 [info ]:     Failed [  0.04s] model main_staging.stg_transactions (view)
+10:52:45.137319 [debug]: Finished analyzing [  0.04s] model main_staging.stg_transactions [error]
+10:52:45.146714 [info ]:  Succeeded [  0.03s] model main_staging.stg_customers (view)
+10:52:45.146756 [debug]: Finished analyzing [  0.03s] model main_staging.stg_customers [success]
+10:52:45.146768 [info ]: Finished analyzing [  0.07s] (21 nodes, 0 skipped, 6 errors)
+10:52:45.154909 [info ]: Cached model count updated: 15 models (accurate)
+==================== 2026-03-26T20:37:59.549372Z | 4eebe583-a443-49c8-8173-86a3916dd4a4 ====================
+20:37:59.549455 [info ]: Starting dbt LSP server
+20:37:59.549494 [info ]: Connecting to LSP client on port 8000
+20:37:59.553049 [info ]: Successfully connected to LSP client
+20:37:59.553091 [info ]: Creating LSP service...
+20:37:59.703976 [info ]: Creating LSP server...
+20:37:59.704029 [info ]: Starting LSP server...
+20:37:59.747961 [info ]: Loading ~/.dbt/profiles.yml
+20:37:59.812114 [info ]: Started loading project
+20:37:59.813368 [info ]: Loading ~/.dbt/profiles.yml
+20:37:59.822743 [debug]:    Started loading packages
+20:37:59.829243 [debug]:     Loaded [  0.01s] packages
+20:37:59.830679 [info ]: Started parsing
+20:37:59.887301 [info ]: Finished loading project [  0.08s]
+20:37:59.893733 [debug]: Finished parsing seeds\shema.yml [  0.00s]
+20:37:59.924715 [debug]: Finished parsing models\marts\finance\fact_loan_repayments.sql [  0.01s]
+20:37:59.927432 [debug]: Finished parsing models\marts\fraud\fact_fraud_events.sql [  0.00s]
+20:37:59.929064 [debug]: Finished parsing models\marts\mart_customer_360.sql [  0.00s]
+20:37:59.930579 [debug]: Finished parsing models\marts\mart_loan_portfolio.sql [  0.00s]
+20:37:59.932084 [debug]: Finished parsing models\marts\mart_monthly_revenue.sql [  0.00s]
+20:37:59.933888 [debug]: Finished parsing models\marts\transactions\fact_transactions.sql [  0.00s]
+20:37:59.935380 [debug]: Finished parsing models\raw\raw_accounts.sql [  0.00s]
+20:37:59.936809 [debug]: Finished parsing models\raw\raw_customers.sql [  0.00s]
+20:37:59.937963 [debug]: Finished parsing models\raw\raw_exchange_rates.sql [  0.00s]
+20:37:59.939081 [debug]: Finished parsing models\raw\raw_fraud_alerts.sql [  0.00s]
+20:37:59.940216 [debug]: Finished parsing models\raw\raw_loan_applications.sql [  0.00s]
+20:37:59.941374 [debug]: Finished parsing models\raw\raw_loan_repayments.sql [  0.00s]
+20:37:59.942575 [debug]: Finished parsing models\raw\raw_transactions.sql [  0.00s]
+20:37:59.943786 [debug]: Finished parsing models\staging\stg_accounts.sql [  0.00s]
+20:37:59.945158 [debug]: Finished parsing models\staging\stg_customers.sql [  0.00s]
+20:37:59.946708 [debug]: Finished parsing models\staging\stg_exchange_rates.sql [  0.00s]
+20:37:59.948160 [debug]: Finished parsing models\staging\stg_fraud_alerts.sql [  0.00s]
+20:37:59.949552 [debug]: Finished parsing models\staging\stg_loan_applications.sql [  0.00s]
+20:37:59.951025 [debug]: Finished parsing models\staging\stg_loan_repayments.sql [  0.00s]
+20:37:59.968139 [debug]: Finished parsing models\staging\stg_transactions.sql [  0.02s]
+20:37:59.983391 [info ]: Finished parsing [  0.15s]
+20:37:59.985138 [info ]: Cached model count updated: 20 models (estimate)
+20:37:59.985180 [info ]: Cached model count updated: 20 models (accurate)
+20:37:59.985346 [info ]: Started scheduling
+20:37:59.987617 [info ]: Finished scheduling [  0.00s]
+20:37:59.987675 [debug]: Compilation - 27 nodes selected: {"model.privatbank_analytics.fact_fraud_events", "model.privatbank_analytics.fact_loan_repayments", "model.privatbank_analytics.fact_transactions", "model.privatbank_analytics.mart_customer_360", "model.privatbank_analytics.mart_loan_portfolio", "model.privatbank_analytics.mart_monthly_revenue", "model.privatbank_analytics.raw_accounts", "model.privatbank_analytics.raw_customers", "model.privatbank_analytics.raw_exchange_rates", "model.privatbank_analytics.raw_fraud_alerts", "model.privatbank_analytics.raw_loan_applications", "model.privatbank_analytics.raw_loan_repayments", "model.privatbank_analytics.raw_transactions", "model.privatbank_analytics.stg_accounts", "model.privatbank_analytics.stg_customers", "model.privatbank_analytics.stg_exchange_rates", "model.privatbank_analytics.stg_fraud_alerts", "model.privatbank_analytics.stg_loan_applications", "model.privatbank_analytics.stg_loan_repayments", "model.privatbank_analytics.stg_transactions", "seed.privatbank_analytics.accounts", "seed.privatbank_analytics.customers", "seed.privatbank_analytics.exchange_rates", "seed.privatbank_analytics.fraud_alerts", "seed.privatbank_analytics.loan_applications", "seed.privatbank_analytics.loan_repayments", "seed.privatbank_analytics.transactions"}
+20:37:59.987716 [info ]: Started scheduling
+20:37:59.988057 [info ]: Finished scheduling [  0.00s]
+20:37:59.992543 [debug]:    Started downloading relations (1 items)
+20:38:04.841303 [debug]: Query executed on node unknown:
+SELECT table_catalog, table_schema, table_name, table_type FROM information_schema.tables WHERE table_schema = 'main'
+20:38:05.852207 [debug]:   Finished [  5.86s] downloading relations (1 items)
+20:38:05.852295 [info ]: Started downloading schemas
+20:38:05.873747 [debug]: Query executed on node unknown:
+DESCRIBE "privatbank"."main"."fact_fraud_events";
+20:38:05.873747 [debug]: Query executed on node unknown:
+DESCRIBE "privatbank"."main"."fact_loan_repayments";
+20:38:06.911664 [debug]: Query executed on node unknown:
+DESCRIBE "privatbank"."main"."fact_transactions";
+20:38:07.954252 [info ]: Finished downloading schemas [  2.10s]
+20:38:08.434402 [info ]: Started building task graph
+20:38:08.479753 [info ]: Finished building task graph [  0.05s]
+20:38:08.483074 [info ]: Started rendering (27 nodes)
+20:38:08.484717 [info ]: Started seed main.loan_repayments
+20:38:08.486342 [debug]: Started rendering seed main.loan_repayments
+20:38:08.487667 [info ]: Started seed main.loan_applications
+20:38:08.487706 [debug]: Started rendering seed main.loan_applications
+20:38:08.487744 [info ]: Started seed main.fraud_alerts
+20:38:08.487764 [debug]: Started rendering seed main.fraud_alerts
+20:38:08.487797 [info ]: Started seed main.transactions
+20:38:08.487816 [debug]: Started rendering seed main.transactions
+20:38:08.487852 [info ]: Started seed main.exchange_rates
+20:38:08.487877 [debug]: Started rendering seed main.exchange_rates
+20:38:08.487904 [info ]: Started seed main.customers
+20:38:08.487920 [debug]: Started rendering seed main.customers
+20:38:08.487945 [info ]: Started seed main.accounts
+20:38:08.487961 [debug]: Started rendering seed main.accounts
+20:38:08.525487 [debug]: Finished rendering [  0.04s] seed main.customers [success]
+20:38:08.525568 [info ]: Started analyzing (27 nodes)
+20:38:08.525590 [debug]: Started analyzing seed main.customers
+20:38:08.526023 [debug]: Finished rendering [  0.04s] seed main.exchange_rates [success]
+20:38:08.526055 [debug]: Started analyzing seed main.exchange_rates
+20:38:08.526896 [debug]: Finished rendering [  0.04s] seed main.accounts [success]
+20:38:08.526947 [debug]: Started analyzing seed main.accounts
+20:38:08.527107 [debug]: Finished rendering [  0.04s] seed main.loan_repayments [success]
+20:38:08.527156 [debug]: Started analyzing seed main.loan_repayments
+20:38:08.527215 [debug]: Finished rendering [  0.04s] seed main.loan_applications [success]
+20:38:08.527239 [debug]: Started analyzing seed main.loan_applications
+20:38:08.527315 [debug]: Finished rendering [  0.04s] seed main.transactions [success]
+20:38:08.527367 [debug]: Started analyzing seed main.transactions
+20:38:08.527418 [debug]: Finished rendering [  0.04s] seed main.fraud_alerts [success]
+20:38:08.527528 [debug]: Started analyzing seed main.fraud_alerts
+20:38:08.527620 [info ]:  Succeeded [  0.04s] seed  main.customers (table)
+20:38:08.527894 [debug]: Finished analyzing [  0.00s] seed main.customers [success]
+20:38:08.528108 [info ]: Started model main.raw_customers
+20:38:08.528133 [debug]: Started rendering model main.raw_customers
+20:38:08.528176 [info ]:  Succeeded [  0.04s] seed  main.exchange_rates (table)
+20:38:08.528197 [debug]: Finished analyzing [  0.00s] seed main.exchange_rates [success]
+20:38:08.528216 [info ]: Started model main.raw_exchange_rates
+20:38:08.528226 [debug]: Started rendering model main.raw_exchange_rates
+20:38:08.528245 [info ]:  Succeeded [  0.04s] seed  main.accounts (table)
+20:38:08.528261 [debug]: Finished analyzing [  0.00s] seed main.accounts [success]
+20:38:08.528279 [info ]: Started model main.raw_accounts
+20:38:08.528288 [debug]: Started rendering model main.raw_accounts
+20:38:08.528311 [info ]:  Succeeded [  0.04s] seed  main.loan_applications (table)
+20:38:08.528340 [debug]: Finished analyzing [  0.00s] seed main.loan_applications [success]
+20:38:08.528357 [info ]: Started model main.raw_loan_applications
+20:38:08.528375 [debug]: Started rendering model main.raw_loan_applications
+20:38:08.528394 [info ]:  Succeeded [  0.04s] seed  main.loan_repayments (table)
+20:38:08.528408 [debug]: Finished analyzing [  0.00s] seed main.loan_repayments [success]
+20:38:08.528423 [info ]: Started model main.raw_loan_repayments
+20:38:08.528433 [debug]: Started rendering model main.raw_loan_repayments
+20:38:08.528456 [info ]:  Succeeded [  0.04s] seed  main.transactions (table)
+20:38:08.528470 [debug]: Finished analyzing [  0.00s] seed main.transactions [success]
+20:38:08.528487 [info ]: Started model main.raw_transactions
+20:38:08.528503 [debug]: Started rendering model main.raw_transactions
+20:38:08.528521 [info ]:  Succeeded [  0.04s] seed  main.fraud_alerts (table)
+20:38:08.528533 [debug]: Finished analyzing [  0.00s] seed main.fraud_alerts [success]
+20:38:08.528546 [info ]: Started model main.raw_fraud_alerts
+20:38:08.528555 [debug]: Started rendering model main.raw_fraud_alerts
+20:38:08.540589 [debug]: Compiled SQL for node model.privatbank_analytics.raw_exchange_rates at target\.lsp\compiled\models\raw\raw_exchange_rates.sql
+20:38:08.540891 [debug]: Started analyzing model main.raw_exchange_rates
+20:38:08.540949 [debug]: Finished rendering [  0.01s] model main.raw_exchange_rates [success]
+20:38:08.543062 [debug]: Compiled SQL for node model.privatbank_analytics.raw_customers at target\.lsp\compiled\models\raw\raw_customers.sql
+20:38:08.543172 [debug]: Finished rendering [  0.02s] model main.raw_customers [success]
+20:38:08.543212 [debug]: Started analyzing model main.raw_customers
+20:38:08.543938 [debug]: Compiled SQL for node model.privatbank_analytics.raw_transactions at target\.lsp\compiled\models\raw\raw_transactions.sql
+20:38:08.544066 [debug]: Started analyzing model main.raw_transactions
+20:38:08.544121 [debug]: Finished rendering [  0.02s] model main.raw_transactions [success]
+20:38:08.544193 [debug]: Compiled SQL for node model.privatbank_analytics.raw_accounts at target\.lsp\compiled\models\raw\raw_accounts.sql
+20:38:08.544228 [debug]: Started analyzing model main.raw_accounts
+20:38:08.544252 [debug]: Finished rendering [  0.02s] model main.raw_accounts [success]
+20:38:08.545212 [debug]: Compiled SQL for node model.privatbank_analytics.raw_loan_applications at target\.lsp\compiled\models\raw\raw_loan_applications.sql
+20:38:08.545315 [debug]: Started analyzing model main.raw_loan_applications
+20:38:08.545362 [debug]: Finished rendering [  0.02s] model main.raw_loan_applications [success]
+20:38:08.546557 [debug]: Compiled SQL for node model.privatbank_analytics.raw_loan_repayments at target\.lsp\compiled\models\raw\raw_loan_repayments.sql
+20:38:08.546707 [debug]: Started analyzing model main.raw_loan_repayments
+20:38:08.547005 [debug]: Finished rendering [  0.02s] model main.raw_loan_repayments [success]
+20:38:08.547094 [debug]: Compiled SQL for node model.privatbank_analytics.raw_fraud_alerts at target\.lsp\compiled\models\raw\raw_fraud_alerts.sql
+20:38:08.547196 [debug]: Started analyzing model main.raw_fraud_alerts
+20:38:08.650873 [debug]: Finished rendering [  0.12s] model main.raw_fraud_alerts [success]
+20:38:08.652681 [info ]:  Succeeded [  0.12s] model main.raw_transactions (view)
+20:38:08.652737 [debug]: Finished analyzing [  0.11s] model main.raw_transactions [success]
+20:38:08.652785 [info ]: Started model main.stg_transactions
+20:38:08.652804 [debug]: Started rendering model main.stg_transactions
+20:38:08.652849 [info ]:  Succeeded [  0.12s] model main.raw_customers (view)
+20:38:08.652866 [debug]: Finished analyzing [  0.11s] model main.raw_customers [success]
+20:38:08.652882 [info ]: Started model main.stg_customers
+20:38:08.652891 [debug]: Started rendering model main.stg_customers
+20:38:08.652918 [info ]:  Succeeded [  0.12s] model main.raw_accounts (view)
+20:38:08.652930 [debug]: Finished analyzing [  0.11s] model main.raw_accounts [success]
+20:38:08.652943 [info ]: Started model main.stg_accounts
+20:38:08.652955 [debug]: Started rendering model main.stg_accounts
+20:38:08.652978 [info ]:  Succeeded [  0.12s] model main.raw_loan_repayments (view)
+20:38:08.652992 [debug]: Finished analyzing [  0.11s] model main.raw_loan_repayments [success]
+20:38:08.653008 [info ]: Started model main.stg_loan_repayments
+20:38:08.653019 [debug]: Started rendering model main.stg_loan_repayments
+20:38:08.653037 [info ]:  Succeeded [  0.12s] model main.raw_exchange_rates (view)
+20:38:08.653051 [debug]: Finished analyzing [  0.11s] model main.raw_exchange_rates [success]
+20:38:08.653064 [info ]: Started model main.stg_exchange_rates
+20:38:08.653072 [debug]: Started rendering model main.stg_exchange_rates
+20:38:08.653091 [info ]:  Succeeded [  0.12s] model main.raw_fraud_alerts (view)
+20:38:08.653103 [debug]: Finished analyzing [  0.11s] model main.raw_fraud_alerts [success]
+20:38:08.653115 [info ]: Started model main.stg_fraud_alerts
+20:38:08.653126 [debug]: Started rendering model main.stg_fraud_alerts
+20:38:08.664561 [debug]: Compiled SQL for node model.privatbank_analytics.stg_transactions at target\.lsp\compiled\models\staging\stg_transactions.sql
+20:38:08.664722 [debug]: Started analyzing model main.stg_transactions
+20:38:08.666102 [debug]: Compiled SQL for node model.privatbank_analytics.stg_exchange_rates at target\.lsp\compiled\models\staging\stg_exchange_rates.sql
+20:38:08.667235 [debug]: Started analyzing model main.stg_exchange_rates
+20:38:08.667335 [debug]: Finished rendering [  0.01s] model main.stg_exchange_rates [success]
+20:38:08.669588 [debug]: Compiled SQL for node model.privatbank_analytics.stg_loan_repayments at target\.lsp\compiled\models\staging\stg_loan_repayments.sql
+20:38:08.669795 [debug]: Started analyzing model main.stg_loan_repayments
+20:38:08.669969 [debug]: Finished rendering [  0.02s] model main.stg_loan_repayments [success]
+20:38:08.681679 [debug]: Compiled SQL for node model.privatbank_analytics.stg_fraud_alerts at target\.lsp\compiled\models\staging\stg_fraud_alerts.sql
+20:38:08.682316 [info ]:  Succeeded [  0.15s] model main.raw_loan_applications (view)
+20:38:08.682403 [debug]: Finished analyzing [  0.14s] model main.raw_loan_applications [success]
+20:38:08.682542 [info ]: Started model main.stg_loan_applications
+20:38:08.682566 [debug]: Started rendering model main.stg_loan_applications
+20:38:08.682623 [debug]: Started analyzing model main.stg_fraud_alerts
+20:38:08.683506 [debug]: Finished rendering [  0.03s] model main.stg_transactions [success]
+20:38:08.684898 [debug]: Finished rendering [  0.03s] model main.stg_fraud_alerts [success]
+20:38:08.691704 [debug]: Compiled SQL for node model.privatbank_analytics.stg_loan_applications at target\.lsp\compiled\models\staging\stg_loan_applications.sql
+20:38:08.691886 [debug]: Started analyzing model main.stg_loan_applications
+20:38:08.691971 [debug]: Compiled SQL for node model.privatbank_analytics.stg_customers at target\.lsp\compiled\models\staging\stg_customers.sql
+20:38:08.692032 [debug]: Started analyzing model main.stg_customers
+20:38:08.692221 [debug]: Finished rendering [  0.01s] model main.stg_loan_applications [success]
+20:38:08.707570 [debug]: Finished rendering [  0.05s] model main.stg_customers [success]
+20:38:08.750768 [error]: dbt0227: No column rate_id found. Available are source."rate_id,rate_date,currency_from,currency_to,rate"
+  --> models\staging\stg_exchange_rates.sql:7:9
+20:38:08.750935 [info ]:     Failed [  0.10s] model main.stg_exchange_rates (view)
+20:38:08.751514 [debug]: Compiled SQL for node model.privatbank_analytics.stg_accounts at target\.lsp\compiled\models\staging\stg_accounts.sql
+20:38:08.751585 [debug]: Started analyzing model main.stg_accounts
+20:38:08.751646 [debug]: Finished analyzing [  0.08s] model main.stg_exchange_rates [error]
+20:38:08.751698 [debug]: Finished rendering [  0.10s] model main.stg_accounts [success]
+20:38:08.763905 [error]: dbt0227: No column application_id found. Available are source."application_id,customer_id,application_date,loan_type,requested_amount,approved_amount,interest_rate,term_months,status,rejection_reason,disbursement_date"
+  --> models\staging\stg_loan_applications.sql:8:9
+20:38:08.764113 [info ]:     Failed [  0.08s] model main.stg_loan_applications (view)
+20:38:08.764707 [debug]: Finished analyzing [  0.07s] model main.stg_loan_applications [error]
+20:38:08.771875 [error]: dbt0227: No column repayment_id found. Available are source."repayment_id,application_id,payment_date,scheduled_date,amount_paid,principal_paid,interest_paid,outstanding_balance,is_overdue,days_overdue"
+  --> models\staging\stg_loan_repayments.sql:8:9
+20:38:08.772044 [info ]:     Failed [  0.12s] model main.stg_loan_repayments (view)
+20:38:08.772173 [debug]: Finished analyzing [  0.10s] model main.stg_loan_repayments [error]
+20:38:08.789098 [error]: dbt0227: No column alert_id found. Available are source."alert_id,transaction_id,account_id,alert_date,alert_type,risk_score,investigation_status,is_confirmed_fraud,fraud_type,loss_amount"
+  --> models\staging\stg_fraud_alerts.sql:7:9
+20:38:08.789257 [info ]:     Failed [  0.14s] model main.stg_fraud_alerts (view)
+20:38:08.789377 [debug]: Finished analyzing [  0.11s] model main.stg_fraud_alerts [error]
+20:38:08.812396 [error]: dbt0227: No column account_id found. Available are source."account_id,customer_id,account_type,currency,opened_date,status,credit_limit,current_balance,overdraft_limit"
+  --> models\staging\stg_accounts.sql:7:9
+20:38:08.812572 [info ]:     Failed [  0.16s] model main.stg_accounts (view)
+20:38:08.812643 [debug]: Finished analyzing [  0.06s] model main.stg_accounts [error]
+20:38:08.855585 [info ]:  Succeeded [  0.20s] model main.stg_customers (view)
+20:38:08.855631 [debug]: Finished analyzing [  0.16s] model main.stg_customers [success]
+20:38:08.855666 [info ]: Started model main.fact_loan_repayments
+20:38:08.855689 [debug]: Started rendering model main.fact_loan_repayments
+20:38:08.855716 [debug]: Finished rendering [  0.00s] model main.fact_loan_repayments [skipped]
+20:38:08.855731 [debug]: Started analyzing model main.fact_loan_repayments
+20:38:08.855743 [info ]:    Skipped [-------] model main.fact_loan_repayments (incremental)
+20:38:08.855758 [debug]: Finished analyzing [  0.00s] model main.fact_loan_repayments [skipped]
+20:38:08.855772 [info ]: Started model main.mart_loan_portfolio
+20:38:08.855783 [debug]: Started rendering model main.mart_loan_portfolio
+20:38:08.855794 [debug]: Finished rendering [  0.00s] model main.mart_loan_portfolio [skipped]
+20:38:08.855805 [debug]: Started analyzing model main.mart_loan_portfolio
+20:38:08.855815 [info ]:    Skipped [-------] model main.mart_loan_portfolio (table)
+20:38:08.855826 [debug]: Finished analyzing [  0.00s] model main.mart_loan_portfolio [skipped]
+20:38:08.865886 [error]: dbt0227: No column transaction_id found. Available are source."transaction_id,account_id,transaction_date,transaction_time,amount,currency,transaction_type,merchant_category,merchant_name,city,country,channel,status,is_flagged"
+  --> models\staging\stg_transactions.sql:7:9
+20:38:08.866158 [info ]:     Failed [  0.21s] model main.stg_transactions (view)
+20:38:08.866205 [debug]: Finished analyzing [  0.20s] model main.stg_transactions [error]
+20:38:08.866348 [info ]: Started model main.fact_transactions
+20:38:08.866379 [debug]: Started rendering model main.fact_transactions
+20:38:08.866410 [debug]: Finished rendering [  0.00s] model main.fact_transactions [skipped]
+20:38:08.866430 [debug]: Started analyzing model main.fact_transactions
+20:38:08.866444 [info ]:    Skipped [-------] model main.fact_transactions (incremental)
+20:38:08.866466 [debug]: Finished analyzing [  0.00s] model main.fact_transactions [skipped]
+20:38:08.866480 [info ]: Started model main.fact_fraud_events
+20:38:08.866489 [debug]: Started rendering model main.fact_fraud_events
+20:38:08.866502 [debug]: Finished rendering [  0.00s] model main.fact_fraud_events [skipped]
+20:38:08.866512 [debug]: Started analyzing model main.fact_fraud_events
+20:38:08.866526 [info ]:    Skipped [-------] model main.fact_fraud_events (incremental)
+20:38:08.866538 [debug]: Finished analyzing [  0.00s] model main.fact_fraud_events [skipped]
+20:38:08.866562 [info ]: Started model main.mart_customer_360
+20:38:08.866574 [debug]: Started rendering model main.mart_customer_360
+20:38:08.866590 [debug]: Finished rendering [  0.00s] model main.mart_customer_360 [skipped]
+20:38:08.866600 [debug]: Started analyzing model main.mart_customer_360
+20:38:08.866610 [info ]:    Skipped [-------] model main.mart_customer_360 (table)
+20:38:08.866623 [debug]: Finished analyzing [  0.00s] model main.mart_customer_360 [skipped]
+20:38:08.866637 [info ]: Started model main.mart_monthly_revenue
+20:38:08.866646 [debug]: Started rendering model main.mart_monthly_revenue
+20:38:08.866658 [debug]: Finished rendering [  0.00s] model main.mart_monthly_revenue [skipped]
+20:38:08.866667 [info ]: Finished rendering [  0.38s] (27 nodes, 6 skipped, 0 errors)
+20:38:08.866678 [debug]: Started analyzing model main.mart_monthly_revenue
+20:38:08.866695 [info ]:    Skipped [-------] model main.mart_monthly_revenue (table)
+20:38:08.866710 [debug]: Finished analyzing [  0.00s] model main.mart_monthly_revenue [skipped]
+20:38:08.866717 [info ]: Finished analyzing [  0.34s] (27 nodes, 6 skipped, 6 errors)
+20:38:08.878010 [info ]: Cached model count updated: 20 models (accurate)
+20:38:14.400548 [info ]: Started loading project
+20:38:14.401716 [info ]: Loading ~/.dbt/profiles.yml
+20:38:14.436754 [info ]: Started loading project
+20:38:14.438541 [info ]: Loading ~/.dbt/profiles.yml
+20:38:14.438654 [info ]: Finished loading project [  0.04s]
+20:38:14.450328 [debug]:    Started loading packages
+20:38:14.458311 [debug]:     Loaded [  0.01s] packages
+20:38:14.459659 [info ]: Started parsing
+20:38:14.525200 [info ]: Finished loading project [  0.09s]
+20:38:14.527227 [debug]: Finished parsing seeds\schema.yml [  0.00s]
+20:38:14.538394 [debug]: Finished parsing models\marts\finance\fact_loan_repayments.sql [  0.00s]
+20:38:14.540870 [debug]: Finished parsing models\marts\fraud\fact_fraud_events.sql [  0.00s]
+20:38:14.542565 [debug]: Finished parsing models\marts\mart_customer_360.sql [  0.00s]
+20:38:14.544103 [debug]: Finished parsing models\marts\mart_loan_portfolio.sql [  0.00s]
+20:38:14.546166 [debug]: Finished parsing models\marts\mart_monthly_revenue.sql [  0.00s]
+20:38:14.548390 [debug]: Finished parsing models\marts\transactions\fact_transactions.sql [  0.00s]
+20:38:14.549843 [debug]: Finished parsing models\raw\raw_accounts.sql [  0.00s]
+20:38:14.551084 [debug]: Finished parsing models\raw\raw_customers.sql [  0.00s]
+20:38:14.552232 [debug]: Finished parsing models\raw\raw_exchange_rates.sql [  0.00s]
+20:38:14.553328 [debug]: Finished parsing models\raw\raw_fraud_alerts.sql [  0.00s]
+20:38:14.555074 [debug]: Finished parsing models\raw\raw_loan_applications.sql [  0.00s]
+20:38:14.556476 [debug]: Finished parsing models\raw\raw_loan_repayments.sql [  0.00s]
+20:38:14.557517 [debug]: Finished parsing models\raw\raw_transactions.sql [  0.00s]
+20:38:14.558690 [debug]: Finished parsing models\staging\stg_accounts.sql [  0.00s]
+20:38:14.559911 [debug]: Finished parsing models\staging\stg_customers.sql [  0.00s]
+20:38:14.561248 [debug]: Finished parsing models\staging\stg_exchange_rates.sql [  0.00s]
+20:38:14.562674 [debug]: Finished parsing models\staging\stg_fraud_alerts.sql [  0.00s]
+20:38:14.564337 [debug]: Finished parsing models\staging\stg_loan_applications.sql [  0.00s]
+20:38:14.565737 [debug]: Finished parsing models\staging\stg_loan_repayments.sql [  0.00s]
+20:38:14.577662 [debug]: Finished parsing models\staging\stg_transactions.sql [  0.01s]
+20:38:14.583736 [info ]: Finished parsing [  0.12s]
+20:38:14.585779 [info ]: Cached model count updated: 20 models (estimate)
+20:38:14.585822 [info ]: Cached model count updated: 20 models (accurate)
+20:38:14.586016 [info ]: Started scheduling
+20:38:14.586770 [info ]: Finished scheduling [  0.00s]
+20:38:14.586845 [debug]: Compilation - 27 nodes selected: {"model.privatbank_analytics.fact_fraud_events", "model.privatbank_analytics.fact_loan_repayments", "model.privatbank_analytics.fact_transactions", "model.privatbank_analytics.mart_customer_360", "model.privatbank_analytics.mart_loan_portfolio", "model.privatbank_analytics.mart_monthly_revenue", "model.privatbank_analytics.raw_accounts", "model.privatbank_analytics.raw_customers", "model.privatbank_analytics.raw_exchange_rates", "model.privatbank_analytics.raw_fraud_alerts", "model.privatbank_analytics.raw_loan_applications", "model.privatbank_analytics.raw_loan_repayments", "model.privatbank_analytics.raw_transactions", "model.privatbank_analytics.stg_accounts", "model.privatbank_analytics.stg_customers", "model.privatbank_analytics.stg_exchange_rates", "model.privatbank_analytics.stg_fraud_alerts", "model.privatbank_analytics.stg_loan_applications", "model.privatbank_analytics.stg_loan_repayments", "model.privatbank_analytics.stg_transactions", "seed.privatbank_analytics.accounts", "seed.privatbank_analytics.customers", "seed.privatbank_analytics.exchange_rates", "seed.privatbank_analytics.fraud_alerts", "seed.privatbank_analytics.loan_applications", "seed.privatbank_analytics.loan_repayments", "seed.privatbank_analytics.transactions"}
+20:38:14.586992 [info ]: Started scheduling
+20:38:14.587982 [info ]: Finished scheduling [  0.00s]
+20:38:14.590151 [debug]:    Started downloading relations (1 items)
+20:38:14.667355 [debug]: Query executed on node unknown:
+SELECT table_catalog, table_schema, table_name, table_type FROM information_schema.tables WHERE table_schema = 'main'
+20:38:14.671057 [debug]:   Finished [  0.08s] downloading relations (1 items)
+20:38:14.671133 [info ]: Started downloading schemas
+20:38:14.673120 [debug]: Query executed on node unknown:
+DESCRIBE "privatbank"."main"."fact_fraud_events";
+20:38:14.673199 [debug]: Query executed on node unknown:
+DESCRIBE "privatbank"."main"."fact_loan_repayments";
+20:38:15.675124 [debug]: Query executed on node unknown:
+DESCRIBE "privatbank"."main"."fact_transactions";
+20:38:16.676189 [info ]: Finished downloading schemas [  2.01s]
+20:38:17.058122 [info ]: Started building task graph
+20:38:17.058850 [info ]: Finished building task graph [  0.00s]
+20:38:17.059462 [info ]: Started rendering (27 nodes)
+20:38:17.059504 [info ]: Started seed main.loan_repayments
+20:38:17.059536 [debug]: Started rendering seed main.loan_repayments
+20:38:17.059603 [info ]: Started seed main.loan_applications
+20:38:17.059630 [debug]: Started rendering seed main.loan_applications
+20:38:17.059660 [info ]: Started seed main.fraud_alerts
+20:38:17.059680 [debug]: Started rendering seed main.fraud_alerts
+20:38:17.059705 [info ]: Started seed main.transactions
+20:38:17.059730 [debug]: Started rendering seed main.transactions
+20:38:17.059753 [info ]: Started seed main.exchange_rates
+20:38:17.059781 [debug]: Started rendering seed main.exchange_rates
+20:38:17.059804 [info ]: Started seed main.customers
+20:38:17.059821 [debug]: Started rendering seed main.customers
+20:38:17.059852 [info ]: Started seed main.accounts
+20:38:17.059877 [debug]: Started rendering seed main.accounts
+20:38:17.063400 [debug]: Finished rendering [  0.00s] seed main.exchange_rates [success]
+20:38:17.063492 [info ]: Started analyzing (27 nodes)
+20:38:17.063520 [debug]: Started analyzing seed main.exchange_rates
+20:38:17.063562 [debug]: Finished rendering [  0.00s] seed main.customers [success]
+20:38:17.063577 [debug]: Started analyzing seed main.customers
+20:38:17.063598 [debug]: Finished rendering [  0.00s] seed main.transactions [success]
+20:38:17.063610 [debug]: Started analyzing seed main.transactions
+20:38:17.063658 [info ]:  Succeeded [  0.00s] seed  main.exchange_rates (table)
+20:38:17.063682 [debug]: Finished analyzing [  0.00s] seed main.exchange_rates [success]
+20:38:17.063703 [info ]: Started model main.raw_exchange_rates
+20:38:17.063715 [debug]: Started rendering model main.raw_exchange_rates
+20:38:17.063744 [info ]:  Succeeded [  0.00s] seed  main.customers (table)
+20:38:17.063756 [debug]: Finished analyzing [  0.00s] seed main.customers [success]
+20:38:17.063771 [info ]: Started model main.raw_customers
+20:38:17.063780 [debug]: Started rendering model main.raw_customers
+20:38:17.063806 [info ]:  Succeeded [  0.00s] seed  main.transactions (table)
+20:38:17.063818 [debug]: Finished analyzing [  0.00s] seed main.transactions [success]
+20:38:17.063833 [info ]: Started model main.raw_transactions
+20:38:17.063843 [debug]: Started rendering model main.raw_transactions
+20:38:17.064546 [debug]: Finished rendering [  0.00s] seed main.fraud_alerts [success]
+20:38:17.064615 [debug]: Started analyzing seed main.fraud_alerts
+20:38:17.064709 [info ]:  Succeeded [  0.00s] seed  main.fraud_alerts (table)
+20:38:17.064738 [debug]: Finished analyzing [  0.00s] seed main.fraud_alerts [success]
+20:38:17.064762 [info ]: Started model main.raw_fraud_alerts
+20:38:17.064776 [debug]: Started rendering model main.raw_fraud_alerts
+20:38:17.065738 [debug]: Finished rendering [  0.01s] seed main.accounts [success]
+20:38:17.065805 [debug]: Started analyzing seed main.accounts
+20:38:17.065872 [info ]:  Succeeded [  0.01s] seed  main.accounts (table)
+20:38:17.065976 [debug]: Finished analyzing [  0.00s] seed main.accounts [success]
+20:38:17.066073 [info ]: Started model main.raw_accounts
+20:38:17.066106 [debug]: Started rendering model main.raw_accounts
+20:38:17.067700 [debug]: Finished rendering [  0.01s] seed main.loan_applications [success]
+20:38:17.067858 [debug]: Started analyzing seed main.loan_applications
+20:38:17.067988 [info ]:  Succeeded [  0.01s] seed  main.loan_applications (table)
+20:38:17.068152 [debug]: Finished analyzing [  0.00s] seed main.loan_applications [success]
+20:38:17.068256 [info ]: Started model main.raw_loan_applications
+20:38:17.068327 [debug]: Started rendering model main.raw_loan_applications
+20:38:17.069011 [debug]: Finished rendering [  0.01s] seed main.loan_repayments [success]
+20:38:17.069086 [debug]: Started analyzing seed main.loan_repayments
+20:38:17.069208 [info ]:  Succeeded [  0.01s] seed  main.loan_repayments (table)
+20:38:17.069243 [debug]: Finished analyzing [  0.00s] seed main.loan_repayments [success]
+20:38:17.069268 [info ]: Started model main.raw_loan_repayments
+20:38:17.069281 [debug]: Started rendering model main.raw_loan_repayments
+20:38:17.069229 [debug]: Compiled SQL for node model.privatbank_analytics.raw_accounts at target\.lsp\compiled\models\raw\raw_accounts.sql
+20:38:17.070114 [debug]: Started analyzing model main.raw_accounts
+20:38:17.070601 [debug]: Finished rendering [  0.00s] model main.raw_accounts [success]
+20:38:17.072811 [debug]: Compiled SQL for node model.privatbank_analytics.raw_loan_applications at target\.lsp\compiled\models\raw\raw_loan_applications.sql
+20:38:17.072998 [debug]: Started analyzing model main.raw_loan_applications
+20:38:17.073213 [debug]: Compiled SQL for node model.privatbank_analytics.raw_loan_repayments at target\.lsp\compiled\models\raw\raw_loan_repayments.sql
+20:38:17.073344 [debug]: Started analyzing model main.raw_loan_repayments
+20:38:17.074065 [debug]: Finished rendering [  0.00s] model main.raw_loan_repayments [success]
+20:38:17.076168 [debug]: Finished rendering [  0.01s] model main.raw_loan_applications [success]
+20:38:17.077080 [info ]:  Succeeded [  0.01s] model main.raw_accounts (view)
+20:38:17.077210 [debug]: Finished analyzing [  0.01s] model main.raw_accounts [success]
+20:38:17.077316 [info ]: Started model main.stg_accounts
+20:38:17.077436 [debug]: Started rendering model main.stg_accounts
+20:38:17.077553 [info ]:  Succeeded [  0.01s] model main.raw_loan_repayments (view)
+20:38:17.077626 [debug]: Finished analyzing [  0.00s] model main.raw_loan_repayments [success]
+20:38:17.077704 [info ]: Started model main.stg_loan_repayments
+20:38:17.077767 [debug]: Started rendering model main.stg_loan_repayments
+20:38:17.078009 [info ]:  Succeeded [  0.01s] model main.raw_loan_applications (view)
+20:38:17.078038 [debug]: Finished analyzing [  0.01s] model main.raw_loan_applications [success]
+20:38:17.078065 [info ]: Started model main.stg_loan_applications
+20:38:17.078078 [debug]: Started rendering model main.stg_loan_applications
+20:38:17.081759 [debug]: Compiled SQL for node model.privatbank_analytics.stg_loan_applications at target\.lsp\compiled\models\staging\stg_loan_applications.sql
+20:38:17.081955 [debug]: Started analyzing model main.stg_loan_applications
+20:38:17.082016 [debug]: Compiled SQL for node model.privatbank_analytics.stg_accounts at target\.lsp\compiled\models\staging\stg_accounts.sql
+20:38:17.082053 [debug]: Started analyzing model main.stg_accounts
+20:38:17.082104 [debug]: Finished rendering [  0.00s] model main.stg_loan_applications [success]
+20:38:17.084943 [debug]: Finished rendering [  0.01s] model main.stg_accounts [success]
+20:38:17.085130 [debug]: Compiled SQL for node model.privatbank_analytics.raw_customers at target\.lsp\compiled\models\raw\raw_customers.sql
+20:38:17.085260 [debug]: Started analyzing model main.raw_customers
+20:38:17.085315 [debug]: Finished rendering [  0.02s] model main.raw_customers [success]
+20:38:17.088299 [info ]:  Succeeded [  0.02s] model main.raw_customers (view)
+20:38:17.088370 [debug]: Finished analyzing [  0.00s] model main.raw_customers [success]
+20:38:17.088416 [info ]: Started model main.stg_customers
+20:38:17.088442 [debug]: Started rendering model main.stg_customers
+20:38:17.093273 [debug]: Compiled SQL for node model.privatbank_analytics.raw_transactions at target\.lsp\compiled\models\raw\raw_transactions.sql
+20:38:17.093426 [debug]: Started analyzing model main.raw_transactions
+20:38:17.093730 [debug]: Finished rendering [  0.03s] model main.raw_transactions [success]
+20:38:17.096177 [info ]:  Succeeded [  0.03s] model main.raw_transactions (view)
+20:38:17.096290 [debug]: Finished analyzing [  0.00s] model main.raw_transactions [success]
+20:38:17.096371 [info ]: Started model main.stg_transactions
+20:38:17.096420 [debug]: Started rendering model main.stg_transactions
+20:38:17.097946 [debug]: Compiled SQL for node model.privatbank_analytics.stg_customers at target\.lsp\compiled\models\staging\stg_customers.sql
+20:38:17.098207 [debug]: Started analyzing model main.stg_customers
+20:38:17.098738 [debug]: Finished rendering [  0.01s] model main.stg_customers [success]
+20:38:17.108398 [error]: dbt0227: No column application_id found. Available are source."application_id,customer_id,application_date,loan_type,requested_amount,approved_amount,interest_rate,term_months,status,rejection_reason,disbursement_date"
+  --> models\staging\stg_loan_applications.sql:8:9
+20:38:17.108641 [info ]:     Failed [  0.03s] model main.stg_loan_applications (view)
+20:38:17.108821 [debug]: Finished analyzing [  0.03s] model main.stg_loan_applications [error]
+20:38:17.108882 [debug]: Compiled SQL for node model.privatbank_analytics.stg_transactions at target\.lsp\compiled\models\staging\stg_transactions.sql
+20:38:17.108957 [debug]: Started analyzing model main.stg_transactions
+20:38:17.109281 [debug]: Finished rendering [  0.01s] model main.stg_transactions [success]
+20:38:17.112120 [debug]: Compiled SQL for node model.privatbank_analytics.raw_fraud_alerts at target\.lsp\compiled\models\raw\raw_fraud_alerts.sql
+20:38:17.112490 [debug]: Started analyzing model main.raw_fraud_alerts
+20:38:17.113761 [debug]: Finished rendering [  0.05s] model main.raw_fraud_alerts [success]
+20:38:17.115475 [info ]:  Succeeded [  0.05s] model main.raw_fraud_alerts (view)
+20:38:17.115528 [debug]: Finished analyzing [  0.00s] model main.raw_fraud_alerts [success]
+20:38:17.115570 [info ]: Started model main.stg_fraud_alerts
+20:38:17.115594 [debug]: Started rendering model main.stg_fraud_alerts
+20:38:17.118813 [error]: dbt0227: No column account_id found. Available are source."account_id,customer_id,account_type,currency,opened_date,status,credit_limit,current_balance,overdraft_limit"
+  --> models\staging\stg_accounts.sql:7:9
+20:38:17.119041 [info ]:     Failed [  0.04s] model main.stg_accounts (view)
+20:38:17.119798 [debug]: Finished analyzing [  0.04s] model main.stg_accounts [error]
+20:38:17.119914 [debug]: Compiled SQL for node model.privatbank_analytics.stg_loan_repayments at target\.lsp\compiled\models\staging\stg_loan_repayments.sql
+20:38:17.120444 [debug]: Started analyzing model main.stg_loan_repayments
+20:38:17.120953 [debug]: Finished rendering [  0.04s] model main.stg_loan_repayments [success]
+20:38:17.123765 [error]: dbt0227: No column repayment_id found. Available are source."repayment_id,application_id,payment_date,scheduled_date,amount_paid,principal_paid,interest_paid,outstanding_balance,is_overdue,days_overdue"
+  --> models\staging\stg_loan_repayments.sql:8:9
+20:38:17.124193 [info ]:     Failed [  0.04s] model main.stg_loan_repayments (view)
+20:38:17.124607 [debug]: Finished analyzing [  0.00s] model main.stg_loan_repayments [error]
+20:38:17.125143 [debug]: Compiled SQL for node model.privatbank_analytics.stg_fraud_alerts at target\.lsp\compiled\models\staging\stg_fraud_alerts.sql
+20:38:17.125369 [debug]: Finished rendering [  0.01s] model main.stg_fraud_alerts [success]
+20:38:17.126056 [debug]: Compiled SQL for node model.privatbank_analytics.raw_exchange_rates at target\.lsp\compiled\models\raw\raw_exchange_rates.sql
+20:38:17.126323 [debug]: Started analyzing model main.stg_fraud_alerts
+20:38:17.126905 [debug]: Finished rendering [  0.06s] model main.raw_exchange_rates [success]
+20:38:17.126956 [debug]: Started analyzing model main.raw_exchange_rates
+20:38:17.128525 [info ]:  Succeeded [  0.06s] model main.raw_exchange_rates (view)
+20:38:17.128579 [debug]: Finished analyzing [  0.00s] model main.raw_exchange_rates [success]
+20:38:17.128625 [info ]: Started model main.stg_exchange_rates
+20:38:17.128643 [debug]: Started rendering model main.stg_exchange_rates
+20:38:17.131042 [debug]: Compiled SQL for node model.privatbank_analytics.stg_exchange_rates at target\.lsp\compiled\models\staging\stg_exchange_rates.sql
+20:38:17.131178 [debug]: Started analyzing model main.stg_exchange_rates
+20:38:17.131235 [debug]: Finished rendering [  0.00s] model main.stg_exchange_rates [success]
+20:38:17.132834 [error]: dbt0227: No column rate_id found. Available are source."rate_id,rate_date,currency_from,currency_to,rate"
+  --> models\staging\stg_exchange_rates.sql:7:9
+20:38:17.133023 [info ]:     Failed [  0.00s] model main.stg_exchange_rates (view)
+20:38:17.133181 [debug]: Finished analyzing [  0.00s] model main.stg_exchange_rates [error]
+20:38:17.145359 [error]: dbt0227: No column alert_id found. Available are source."alert_id,transaction_id,account_id,alert_date,alert_type,risk_score,investigation_status,is_confirmed_fraud,fraud_type,loss_amount"
+  --> models\staging\stg_fraud_alerts.sql:7:9
+20:38:17.145591 [info ]:     Failed [  0.03s] model main.stg_fraud_alerts (view)
+20:38:17.145668 [debug]: Finished analyzing [  0.02s] model main.stg_fraud_alerts [error]
+20:38:17.156788 [info ]:  Succeeded [  0.07s] model main.stg_customers (view)
+20:38:17.156901 [debug]: Finished analyzing [  0.06s] model main.stg_customers [success]
+20:38:17.156976 [info ]: Started model main.fact_loan_repayments
+20:38:17.157309 [debug]: Started rendering model main.fact_loan_repayments
+20:38:17.157482 [debug]: Finished rendering [  0.00s] model main.fact_loan_repayments [skipped]
+20:38:17.157532 [debug]: Started analyzing model main.fact_loan_repayments
+20:38:17.157561 [info ]:    Skipped [-------] model main.fact_loan_repayments (incremental)
+20:38:17.157647 [debug]: Finished analyzing [  0.00s] model main.fact_loan_repayments [skipped]
+20:38:17.157682 [info ]: Started model main.mart_loan_portfolio
+20:38:17.157703 [debug]: Started rendering model main.mart_loan_portfolio
+20:38:17.157720 [debug]: Finished rendering [  0.00s] model main.mart_loan_portfolio [skipped]
+20:38:17.157735 [debug]: Started analyzing model main.mart_loan_portfolio
+20:38:17.157757 [info ]:    Skipped [-------] model main.mart_loan_portfolio (table)
+20:38:17.157770 [debug]: Finished analyzing [  0.00s] model main.mart_loan_portfolio [skipped]
+20:38:17.172200 [error]: dbt0227: No column transaction_id found. Available are source."transaction_id,account_id,transaction_date,transaction_time,amount,currency,transaction_type,merchant_category,merchant_name,city,country,channel,status,is_flagged"
+  --> models\staging\stg_transactions.sql:7:9
+20:38:17.172427 [info ]:     Failed [  0.07s] model main.stg_transactions (view)
+20:38:17.172520 [debug]: Finished analyzing [  0.06s] model main.stg_transactions [error]
+20:38:17.172608 [info ]: Started model main.fact_transactions
+20:38:17.172648 [debug]: Started rendering model main.fact_transactions
+20:38:17.172683 [debug]: Finished rendering [  0.00s] model main.fact_transactions [skipped]
+20:38:17.172705 [debug]: Started analyzing model main.fact_transactions
+20:38:17.172720 [info ]:    Skipped [-------] model main.fact_transactions (incremental)
+20:38:17.172735 [debug]: Finished analyzing [  0.00s] model main.fact_transactions [skipped]
+20:38:17.172750 [info ]: Started model main.mart_monthly_revenue
+20:38:17.172762 [debug]: Started rendering model main.mart_monthly_revenue
+20:38:17.172776 [debug]: Finished rendering [  0.00s] model main.mart_monthly_revenue [skipped]
+20:38:17.172786 [debug]: Started analyzing model main.mart_monthly_revenue
+20:38:17.172799 [info ]:    Skipped [-------] model main.mart_monthly_revenue (table)
+20:38:17.172815 [debug]: Finished analyzing [  0.00s] model main.mart_monthly_revenue [skipped]
+20:38:17.172831 [info ]: Started model main.fact_fraud_events
+20:38:17.172841 [debug]: Started rendering model main.fact_fraud_events
+20:38:17.172853 [debug]: Finished rendering [  0.00s] model main.fact_fraud_events [skipped]
+20:38:17.172867 [debug]: Started analyzing model main.fact_fraud_events
+20:38:17.172880 [info ]:    Skipped [-------] model main.fact_fraud_events (incremental)
+20:38:17.172893 [debug]: Finished analyzing [  0.00s] model main.fact_fraud_events [skipped]
+20:38:17.172907 [info ]: Started model main.mart_customer_360
+20:38:17.172919 [debug]: Started rendering model main.mart_customer_360
+20:38:17.172933 [debug]: Finished rendering [  0.00s] model main.mart_customer_360 [skipped]
+20:38:17.172943 [info ]: Finished rendering [  0.11s] (27 nodes, 6 skipped, 0 errors)
+20:38:17.172956 [debug]: Started analyzing model main.mart_customer_360
+20:38:17.172981 [info ]:    Skipped [-------] model main.mart_customer_360 (table)
+20:38:17.172998 [debug]: Finished analyzing [  0.00s] model main.mart_customer_360 [skipped]
+20:38:17.173006 [info ]: Finished analyzing [  0.11s] (27 nodes, 6 skipped, 6 errors)
+20:38:17.194296 [info ]: Cached model count updated: 20 models (accurate)
+20:38:25.487866 [info ]: Started loading project
+20:38:25.489127 [info ]: Loading ~/.dbt/profiles.yml
+20:38:25.519292 [info ]: Started parsing
+20:38:25.558733 [info ]: Finished loading project [  0.07s]
+20:38:25.568072 [debug]: Finished parsing seeds\schema.yml [  0.01s]
+20:38:25.574384 [info ]: Finished parsing [  0.06s]
+20:38:25.578695 [info ]: Cached model count updated: 20 models (estimate)
+20:38:25.578737 [info ]: Cached model count updated: 20 models (accurate)
+20:38:25.578919 [info ]: Started scheduling
+20:38:25.579099 [info ]: Finished scheduling [  0.00s]
+20:38:25.579133 [debug]: Compilation - 0 nodes selected: {}
+20:38:25.579175 [warn ]: dbt1600: The selection criterion '' does not match any enabled nodes
+20:38:25.579192 [warn ]: dbt1601: Nothing to do. Try checking your model configs and model specification args
+20:38:25.581290 [warn ]: dbt1014: Failed to download incremental schema for 'model.privatbank_analytics.fact_loan_repayments'. Setting 'static_analysis' to off. Skipping analysis for 'model.privatbank_analytics.mart_customer_360', 'model.privatbank_analytics.mart_loan_portfolio' and 1 others: Catalog Error: Table with name fact_loan_repayments does not exist!
+Did you mean "loan_repayments"?
+
+LINE 1: DESCRIBE "privatbank"."main"."fact_loan_repayments";
+                 ^
+20:38:25.582450 [warn ]: dbt1014: Failed to download incremental schema for 'model.privatbank_analytics.fact_transactions'. Setting 'static_analysis' to off. Skipping analysis for 'model.privatbank_analytics.fact_fraud_events', 'model.privatbank_analytics.mart_customer_360' and 1 others: Catalog Error: Table with name fact_transactions does not exist!
+Did you mean "transactions"?
+
+LINE 1: DESCRIBE "privatbank"."main"."fact_transactions";
+                 ^
+20:38:25.582647 [warn ]: dbt1014: Failed to download incremental schema for 'model.privatbank_analytics.fact_fraud_events'. Setting 'static_analysis' to off. Skipping analysis for 'model.privatbank_analytics.mart_customer_360': Catalog Error: Table with name fact_fraud_events does not exist!
+Did you mean "fraud_alerts"?
+
+LINE 1: DESCRIBE "privatbank"."main"."fact_fraud_events";
+                 ^
+20:38:26.029147 [info ]: Started building task graph
+20:38:26.029389 [info ]: Finished building task graph [  0.00s]
+20:38:26.067306 [info ]: Cached model count updated: 20 models (accurate)
+20:38:26.076831 [info ]: Waiting for lease on 'target' directory
+20:38:26.550705 [info ]: Started loading project
+20:38:26.552292 [info ]: Loading ~/.dbt/profiles.yml
+20:38:26.565319 [info ]: Started parsing
+20:38:26.602332 [info ]: Finished loading project [  0.05s]
+20:38:26.603940 [debug]: Finished parsing seeds\schema.yml [  0.00s]
+20:38:26.609042 [info ]: Finished parsing [  0.04s]
+20:38:26.613937 [info ]: Cached model count updated: 20 models (estimate)
+20:38:26.613982 [info ]: Cached model count updated: 20 models (accurate)
+20:38:26.614107 [info ]: Started scheduling
+20:38:26.614260 [info ]: Finished scheduling [  0.00s]
+20:38:26.614284 [debug]: Compilation - 0 nodes selected: {}
+20:38:26.614305 [warn ]: dbt1600: The selection criterion '' does not match any enabled nodes
+20:38:26.614316 [warn ]: dbt1601: Nothing to do. Try checking your model configs and model specification args
+20:38:26.616043 [warn ]: dbt1014: Failed to download incremental schema for 'model.privatbank_analytics.fact_loan_repayments'. Setting 'static_analysis' to off. Skipping analysis for 'model.privatbank_analytics.mart_customer_360', 'model.privatbank_analytics.mart_loan_portfolio' and 1 others: Catalog Error: Table with name fact_loan_repayments does not exist!
+Did you mean "loan_repayments"?
+
+LINE 1: DESCRIBE "privatbank"."main"."fact_loan_repayments";
+                 ^
+20:38:26.616095 [warn ]: dbt1014: Failed to download incremental schema for 'model.privatbank_analytics.fact_transactions'. Setting 'static_analysis' to off. Skipping analysis for 'model.privatbank_analytics.fact_fraud_events', 'model.privatbank_analytics.mart_customer_360' and 1 others: Catalog Error: Table with name fact_transactions does not exist!
+Did you mean "transactions"?
+
+LINE 1: DESCRIBE "privatbank"."main"."fact_transactions";
+                 ^
+20:38:26.616108 [warn ]: dbt1014: Failed to download incremental schema for 'model.privatbank_analytics.fact_fraud_events'. Setting 'static_analysis' to off. Skipping analysis for 'model.privatbank_analytics.mart_customer_360': Catalog Error: Table with name fact_fraud_events does not exist!
+Did you mean "fraud_alerts"?
+
+LINE 1: DESCRIBE "privatbank"."main"."fact_fraud_events";
+                 ^
+20:38:27.014207 [info ]: Started building task graph
+20:38:27.014286 [info ]: Finished building task graph [  0.00s]
+20:38:27.023177 [info ]: Cached model count updated: 20 models (accurate)

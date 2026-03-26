@@ -1,0 +1,13 @@
+
+    
+    
+    
+    create table "privatbank"."main"."customers" ("customer_id" text,"first_name" text,"last_name" text,"date_of_birth" date,"gender" text,"phone" varchar,"email" text,"city" text,"region" text,"registration_date" date,"customer_segment" text,"credit_score" varchar,"is_active" boolean)
+  ;
+    -- dbt seed --
+    
+          COPY "privatbank"."main"."customers" FROM 'D:\DE_HW_3\privatbank_analytics\seeds\customers.csv' (FORMAT CSV, HEADER TRUE, DELIMITER ',')
+        
+
+;
+  

@@ -1,0 +1,11 @@
+
+    
+    
+    truncate table "privatbank"."main"."transactions";
+    -- dbt seed --
+    
+          COPY "privatbank"."main"."transactions" FROM 'D:\DE_HW_3\privatbank_analytics\seeds\transactions.csv' (FORMAT CSV, HEADER TRUE, DELIMITER ',')
+        
+
+;
+  

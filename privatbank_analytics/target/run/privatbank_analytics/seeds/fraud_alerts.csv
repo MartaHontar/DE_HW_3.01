@@ -1,0 +1,11 @@
+
+    
+    
+    truncate table "privatbank"."main"."fraud_alerts";
+    -- dbt seed --
+    
+          COPY "privatbank"."main"."fraud_alerts" FROM 'D:\DE_HW_3\privatbank_analytics\seeds\fraud_alerts.csv' (FORMAT CSV, HEADER TRUE, DELIMITER ',')
+        
+
+;
+  

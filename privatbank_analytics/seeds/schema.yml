@@ -1,0 +1,8 @@
+version: 2
+
+seeds:
+  - name: customers
+    config:
+      column_types:
+        phone: varchar
+        credit_score: varchar

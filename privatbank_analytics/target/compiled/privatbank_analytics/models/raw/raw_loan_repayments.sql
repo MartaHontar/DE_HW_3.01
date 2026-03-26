@@ -1,0 +1,1 @@
+select * from "privatbank"."main"."loan_repayments"

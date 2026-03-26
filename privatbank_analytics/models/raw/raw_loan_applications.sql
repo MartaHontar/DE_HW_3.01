@@ -1,0 +1,1 @@
+select * from {{ ref('loan_applications') }}

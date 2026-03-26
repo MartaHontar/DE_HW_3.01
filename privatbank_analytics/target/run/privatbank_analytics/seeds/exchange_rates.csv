@@ -1,0 +1,11 @@
+
+    
+    
+    truncate table "privatbank"."main"."exchange_rates";
+    -- dbt seed --
+    
+          COPY "privatbank"."main"."exchange_rates" FROM 'D:\DE_HW_3\privatbank_analytics\seeds\exchange_rates.csv' (FORMAT CSV, HEADER TRUE, DELIMITER ',')
+        
+
+;
+  
